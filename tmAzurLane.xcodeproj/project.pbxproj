@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1D43E27CE248724A04C445E7 /* Pods_tmAzurLane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70473F847578F62E66C7331A /* Pods_tmAzurLane.framework */; };
+		416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */ = {isa = PBXBuildFile; fileRef = 416BEA9523FE417700FA9197 /* OpenCVMethods.mm */; };
+		416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BEA9723FE805B00FA9197 /* tmOOB.swift */; };
+		416BEA9A23FE86D000FA9197 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9923FE86D000FA9197 /* CoreGraphics.framework */; };
+		416BEA9E23FE86F100FA9197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9D23FE86F100FA9197 /* Foundation.framework */; };
+		416BEAA023FE86FA00FA9197 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9F23FE86FA00FA9197 /* UIKit.framework */; };
+		416BEAA223FE89E700FA9197 /* tmAL.db in Resources */ = {isa = PBXBuildFile; fileRef = 416BEAA123FE89E700FA9197 /* tmAL.db */; };
 		417916E323FCE94E00D24C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417916E223FCE94E00D24C08 /* AppDelegate.swift */; };
 		417916E523FCE94E00D24C08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417916E423FCE94E00D24C08 /* SceneDelegate.swift */; };
 		417916E723FCE94E00D24C08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417916E623FCE94E00D24C08 /* ContentView.swift */; };
@@ -20,6 +26,7 @@
 		41F740EC23FCEAC4004AAAE9 /* tmSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F740E723FCEAC4004AAAE9 /* tmSearchTableViewCell.swift */; };
 		41F740ED23FCEAC4004AAAE9 /* tmSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F740E823FCEAC4004AAAE9 /* tmSearchTableViewCell.xib */; };
 		41F740EE23FCEAC4004AAAE9 /* tmSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F740E923FCEAC4004AAAE9 /* tmSearchViewController.swift */; };
+		41F740F023FCF1F0004AAAE9 /* tmDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F740EF23FCF1F0004AAAE9 /* tmDataBase.swift */; };
 		B04BA84DD9F562C82C8583F0 /* Pods_tmAzurLaneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00E4C21DDD45447B75A9AC4 /* Pods_tmAzurLaneTests.framework */; };
 		CFE44329F3BB341CF2F52E6B /* Pods_tmAzurLaneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490D3A90E70B4A1D47F56144 /* Pods_tmAzurLaneUITests.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +50,17 @@
 
 /* Begin PBXFileReference section */
 		2875070EDB5D8F884DDB5573 /* Pods-tmAzurLaneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmAzurLaneTests.release.xcconfig"; path = "Target Support Files/Pods-tmAzurLaneTests/Pods-tmAzurLaneTests.release.xcconfig"; sourceTree = "<group>"; };
+		416BEA8E23FE401500FA9197 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		416BEA9023FE402100FA9197 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		416BEA9223FE402E00FA9197 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		416BEA9423FE417700FA9197 /* OpenCVMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVMethods.h; sourceTree = "<group>"; };
+		416BEA9523FE417700FA9197 /* OpenCVMethods.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVMethods.mm; sourceTree = "<group>"; };
+		416BEA9723FE805B00FA9197 /* tmOOB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmOOB.swift; sourceTree = "<group>"; };
+		416BEA9923FE86D000FA9197 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		416BEA9B23FE86E400FA9197 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		416BEA9D23FE86F100FA9197 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		416BEA9F23FE86FA00FA9197 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		416BEAA123FE89E700FA9197 /* tmAL.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = tmAL.db; sourceTree = "<group>"; };
 		417916DF23FCE94E00D24C08 /* tmAzurLane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tmAzurLane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		417916E223FCE94E00D24C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		417916E423FCE94E00D24C08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +79,8 @@
 		41F740E723FCEAC4004AAAE9 /* tmSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tmSearchTableViewCell.swift; sourceTree = "<group>"; };
 		41F740E823FCEAC4004AAAE9 /* tmSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tmSearchTableViewCell.xib; sourceTree = "<group>"; };
 		41F740E923FCEAC4004AAAE9 /* tmSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tmSearchViewController.swift; sourceTree = "<group>"; };
+		41F740EF23FCF1F0004AAAE9 /* tmDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmDataBase.swift; sourceTree = "<group>"; };
+		41F740F323FD031E004AAAE9 /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
 		490D3A90E70B4A1D47F56144 /* Pods_tmAzurLaneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tmAzurLaneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54DD9FE874B92E3C484F8DAF /* Pods-tmAzurLaneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmAzurLaneUITests.release.xcconfig"; path = "Target Support Files/Pods-tmAzurLaneUITests/Pods-tmAzurLaneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		68C6488A6544DD0F6C0240D5 /* Pods-tmAzurLane.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmAzurLane.debug.xcconfig"; path = "Target Support Files/Pods-tmAzurLane/Pods-tmAzurLane.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				416BEAA023FE86FA00FA9197 /* UIKit.framework in Frameworks */,
+				416BEA9E23FE86F100FA9197 /* Foundation.framework in Frameworks */,
+				416BEA9A23FE86D000FA9197 /* CoreGraphics.framework in Frameworks */,
 				1D43E27CE248724A04C445E7 /* Pods_tmAzurLane.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,9 +122,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		416BEA8B23FE3DB200FA9197 /* OpenCVMethod */ = {
+			isa = PBXGroup;
+			children = (
+				416BEA9423FE417700FA9197 /* OpenCVMethods.h */,
+				416BEA9523FE417700FA9197 /* OpenCVMethods.mm */,
+				416BEA9723FE805B00FA9197 /* tmOOB.swift */,
+			);
+			path = OpenCVMethod;
+			sourceTree = "<group>";
+		};
 		417916D623FCE94E00D24C08 = {
 			isa = PBXGroup;
 			children = (
+				416BEAA123FE89E700FA9197 /* tmAL.db */,
 				417916E123FCE94E00D24C08 /* tmAzurLane */,
 				417916F823FCE95200D24C08 /* tmAzurLaneTests */,
 				4179170323FCE95200D24C08 /* tmAzurLaneUITests */,
@@ -124,6 +158,8 @@
 		417916E123FCE94E00D24C08 /* tmAzurLane */ = {
 			isa = PBXGroup;
 			children = (
+				416BEA8B23FE3DB200FA9197 /* OpenCVMethod */,
+				41F740F223FD02EC004AAAE9 /* Bridge */,
 				41F740EA23FCEAC4004AAAE9 /* Database */,
 				41F740E223FCEAC4004AAAE9 /* Model */,
 				41F740E423FCEAC4004AAAE9 /* View */,
@@ -201,13 +237,29 @@
 		41F740EA23FCEAC4004AAAE9 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				41F740EF23FCF1F0004AAAE9 /* tmDataBase.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		41F740F223FD02EC004AAAE9 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				41F740F323FD031E004AAAE9 /* bridging.h */,
+			);
+			path = Bridge;
 			sourceTree = "<group>";
 		};
 		422CDDE26720EE4B3A788E89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				416BEA9F23FE86FA00FA9197 /* UIKit.framework */,
+				416BEA9D23FE86F100FA9197 /* Foundation.framework */,
+				416BEA9B23FE86E400FA9197 /* CoreFoundation.framework */,
+				416BEA9923FE86D000FA9197 /* CoreGraphics.framework */,
+				416BEA9223FE402E00FA9197 /* CoreVideo.framework */,
+				416BEA9023FE402100FA9197 /* CoreMedia.framework */,
+				416BEA8E23FE401500FA9197 /* AssetsLibrary.framework */,
 				70473F847578F62E66C7331A /* Pods_tmAzurLane.framework */,
 				C00E4C21DDD45447B75A9AC4 /* Pods_tmAzurLaneTests.framework */,
 				490D3A90E70B4A1D47F56144 /* Pods_tmAzurLaneUITests.framework */,
@@ -339,6 +391,7 @@
 				417916EF23FCE95200D24C08 /* LaunchScreen.storyboard in Resources */,
 				41F740ED23FCEAC4004AAAE9 /* tmSearchTableViewCell.xib in Resources */,
 				41F740EB23FCEAC4004AAAE9 /* tmSearchViewController.xib in Resources */,
+				416BEAA223FE89E700FA9197 /* tmAL.db in Resources */,
 				417916EC23FCE95200D24C08 /* Preview Assets.xcassets in Resources */,
 				417916E923FCE95200D24C08 /* Assets.xcassets in Resources */,
 			);
@@ -452,10 +505,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				41F740EE23FCEAC4004AAAE9 /* tmSearchViewController.swift in Sources */,
+				416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */,
+				41F740F023FCF1F0004AAAE9 /* tmDataBase.swift in Sources */,
 				41F740EC23FCEAC4004AAAE9 /* tmSearchTableViewCell.swift in Sources */,
 				417916E323FCE94E00D24C08 /* AppDelegate.swift in Sources */,
 				417916E523FCE94E00D24C08 /* SceneDelegate.swift in Sources */,
 				417916E723FCE94E00D24C08 /* ContentView.swift in Sources */,
+				416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +688,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tumao.tmAzurLane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = tmAzurLane/Bridge/bridging.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -653,6 +710,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tumao.tmAzurLane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = tmAzurLane/Bridge/bridging.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

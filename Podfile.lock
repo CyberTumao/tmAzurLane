@@ -2,17 +2,25 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - OOB (1.0.0):
+    - OpenCV2 (~> 4.1.0)
+  - OpenCV2 (4.1.1)
 
 DEPENDENCIES:
   - FMDB
+  - OOB (~> 1.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FMDB
+    - OOB
+    - OpenCV2
 
 SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  OOB: 01143da884b2761165ebe22921d937a46f6fcb96
+  OpenCV2: 3d576089a3ecd29721be44221100917b86a59e2f
 
-PODFILE CHECKSUM: eac2b5f2ec624f9c249b5b1c69e19d4776914f59
+PODFILE CHECKSUM: 29273bd903edb6cb2fae8dc2b6d84afe59ef4068
 
 COCOAPODS: 1.7.3
