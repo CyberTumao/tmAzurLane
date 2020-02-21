@@ -12,6 +12,10 @@ import UIKit
 class tmSearchViewController: UIViewController {
     
     let cellId = "tmSearchTableViewCell"
+    lazy var shArray: [Bool] = {
+        let temp = [true, true]
+        return temp
+    }()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,21 +37,44 @@ extension tmSearchViewController:UITableViewDelegate {
 }
 
 extension tmSearchViewController:UITableViewDataSource {
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let text = tmDataBaseManager.shareInstance.selectFromTech(withNumber: section+1)
+        let headView = tmHeadView()
+        headView.tag = section
+        headView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showOrHide(tap:))))
+        headView.isUserInteractionEnabled = true
+        headView.label.text = text
+        return headView
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return shArray[section] ? 2 : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         return cell
+    }
+}
+
+extension tmSearchViewController:UIGestureRecognizerDelegate {
+    @objc fileprivate func showOrHide(tap sender:UITapGestureRecognizer) -> Void {
+        guard sender.view!.tag >= 0 && sender.view!.tag<shArray.count else {
+            return
+        }
+        let temp = shArray[sender.view!.tag]
+        shArray[sender.view!.tag] = !temp
+        tableView.reloadSections(IndexSet(integer: sender.view!.tag), with: UITableView.RowAnimation.fade)
     }
 }
 

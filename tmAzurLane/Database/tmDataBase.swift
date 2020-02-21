@@ -31,11 +31,6 @@ class tmDataBaseManager: NSObject {
             return
         }
         
-//        guard createTable() else {
-//            NSLog("\(#file) create table fail")
-//            return
-//        }
-        
         NSLog("\(#file) create table successfully")
         
     }
@@ -48,6 +43,17 @@ class tmDataBaseManager: NSObject {
             "age INTEGER \n" +
         ");"
         return db.executeUpdate(sql, withArgumentsIn: [])
+    }
+    
+    func selectFromTech(withNumber number:Int) -> String? {
+        let sql = "SELECT * FROM Tech WHERE number=?"
+//        let result = db.executeQuery(sql, withArgumentsIn: [number])
+        guard let result = db.executeQuery(sql, withArgumentsIn: [number]) else { return nil }
+        while result.next() {
+            let name = result.string(forColumn: "name")
+            return name
+        }
+        return nil
     }
 }
 
