@@ -8,10 +8,13 @@
 
 #import <opencv2/opencv.hpp>
 #import <opencv2/imgcodecs/ios.h>
+#import <opencv2/highgui/highgui.hpp>
+#import <opencv2/imgproc/imgproc.hpp>
 #import "OpenCVMethods.h"
 
 #include "iostream"
 using namespace std;
+using namespace cv;
 
 @implementation OpenCVMethods
 
@@ -41,69 +44,42 @@ using namespace std;
 + (void)matchImag {
     UIImage *temp = [UIImage imageNamed:@"temp"];
     UIImage *exp = [UIImage imageNamed:@"exp"];
-    
     cv::Mat image_source = [OpenCVMethods cvMatFromUIImage:temp];
     cv::Mat image_template = [OpenCVMethods cvMatFromUIImage:exp];
-    
-//    cv::Mat originalImg = Imgcodecs.imread(originalImgPath, 0);
-//        Mat templateImg = Imgcodecs.imread(templateImgPath, 0);
- 
     cv::Mat result = image_source.clone();
-
-        //CV_TM_CCOEFF_NORMED 值越大越匹配    
+    //CV_TM_CCOEFF_NORMED 值越大越匹配
     cv::matchTemplate(image_source, image_template, result, cv::TM_CCOEFF_NORMED);
- double minVal, maxVal;
-     cv::Point minLoc, maxLoc;
-     //寻找最佳匹配位置
-     cv::minMaxLoc(result, &minVal, &maxVal, &minLoc, &maxLoc);
+    double minVal, maxVal;
+    cv::Point minLoc, maxLoc;
+    //寻找最佳匹配位置
+    cv::minMaxLoc(result, &minVal, &maxVal, &minLoc, &maxLoc);
+    cv::Mat image_color;
+    cv::waitKey(0);
+}
 
-     cv::Mat image_color;
-//    cv::cvtColor(image_source, image_color, COLOR_GRAY2BGR);
-//     cv::circle(image_color,
-//                cv::Point(maxLoc.x + image_template.cols/2, maxLoc.y + image_template.rows/2),
-//                20,
-//                cv::Scalar(0, 0, 255),
-//                2,
-//                8,
-//                0);
-  
-//     cv::imshow("source image", image_source);
-//     cv::imshow("match result", result);
-//     cv::imshow("target", image_color);
-     cv::waitKey(0);
++ (void)fff {
+//    let path:String = Bundle.main.path(forResource: "2", ofType: "png")!
+//    let exp:UIImage = UIImage(contentsOfFile: path)!
+//    let path_temp:String = Bundle.main.path(forResource: "IMG_0008", ofType: "png")!
+//    let temp:UIImage = UIImage(contentsOfFile: path_temp)!
+    NSString *path = [NSBundle.mainBundle pathForResource:@"9" ofType:@"png"];
+    UIImage *temp = [UIImage imageNamed:@"temp"];
+    UIImage *exp = [UIImage imageNamed:@"exp"];
     
+//    cv::Mat image_source = [OpenCVMethods cvMatFromUIImage:temp];
+//    cv::Mat image_template = [OpenCVMethods cvMatFromUIImage:exp];
+//    cv::Mat result = image_source.clone();
+//    cv::matchTemplate(image_source, image_template, result, cv::TM_CCOEFF_NORMED);
     
+
+    cv::Mat image = imread([path UTF8String], cv::IMREAD_COLOR );
+    cv::Mat templateImage = imread([[NSBundle.mainBundle pathForResource:@"IMG_0014" ofType:@"png"] UTF8String], cv::IMREAD_COLOR);
+    cv::Mat result = templateImage.clone();
+    cv::matchTemplate(templateImage, image, result, cv::TM_CCOEFF_NORMED);
     
-    
-    
-    
-        //获得最匹配矩阵
-//    cv::minMaxLoc(<#const SparseMat &a#>, <#double *minVal#>, <#double *maxVal#>)
-//    cv::MinMaxLocResult mmlr = cv::minMaxLoc(result);
-//        //最大为1
-////        System.out.println(mmlr.maxVal);
-//
-//
-//        //归一化匹配结果
-//    cv::normalize(result, result, 0, 1, Core.NORM_MINMAX, -1, new Mat());
-//
-//        //获取矩阵左上角坐标
-//        Point matchLocation = mmlr.maxLoc;
-//        System.out.println(matchLocation.toString());
-//
-//        //画出匹配到的边界矩形
-//        //矩形的右下角坐标 x+该矩阵的列，y+矩阵的行
-//        Imgproc.rectangle(originalImg, matchLocation,
-//                new Point(matchLocation.x + templateImg.cols(), matchLocation.y + templateImg.rows()),
-//                new Scalar(0, 0, 0, 0), 2);
-//
-//        Imgcodecs.imwrite("/Users/wuxi/Pictures/originalImg.jpg", originalImg);
-//
-//        if (mmlr.maxVal >= 0.9) {
-//            System.out.println("匹配成功");
-//        } else {
-//            System.out.println("匹配失败");
-//        }
+    double minVal, maxVal;
+    cv::Point minLoc, maxLoc;
+    cv::minMaxLoc( result, &minVal, &maxVal, &minLoc, &maxLoc );
 }
 
 @end

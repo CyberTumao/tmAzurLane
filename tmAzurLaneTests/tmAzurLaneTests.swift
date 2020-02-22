@@ -23,7 +23,8 @@ class tmAzurLaneTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 //        tmOOB.imageMatch()
-        tmDataBaseManager.shareInstance.openDB(name: "")
+//        tmDataBaseManager.shareInstance.openDB(name: "")
+        OpenCVMethods.fff()
     }
 
     func testPerformanceExample() {

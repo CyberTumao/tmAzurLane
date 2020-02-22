@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void) test;
 + (void) matchImag;
++ (void) fff;
 
 @end
 
