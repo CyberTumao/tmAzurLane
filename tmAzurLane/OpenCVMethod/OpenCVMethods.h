@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OpenCVMethods : NSObject
 
-+ (void) test;
-+ (void) matchImag;
-+ (void) fff;
++ (void)test;
++ (void)matchImag;
++ (BOOL)matchImgWith:(NSString*)path type:(NSString*)type tempPath:(NSString*)temp_path tempType:(NSString*)temp_type matchMode:(NSInteger)mode;
 
 @end
 

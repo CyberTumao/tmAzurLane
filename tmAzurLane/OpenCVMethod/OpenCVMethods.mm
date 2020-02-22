@@ -57,29 +57,24 @@ using namespace cv;
     cv::waitKey(0);
 }
 
-+ (void)fff {
-//    let path:String = Bundle.main.path(forResource: "2", ofType: "png")!
-//    let exp:UIImage = UIImage(contentsOfFile: path)!
-//    let path_temp:String = Bundle.main.path(forResource: "IMG_0008", ofType: "png")!
-//    let temp:UIImage = UIImage(contentsOfFile: path_temp)!
-    NSString *path = [NSBundle.mainBundle pathForResource:@"9" ofType:@"png"];
-    UIImage *temp = [UIImage imageNamed:@"temp"];
-    UIImage *exp = [UIImage imageNamed:@"exp"];
-    
-//    cv::Mat image_source = [OpenCVMethods cvMatFromUIImage:temp];
-//    cv::Mat image_template = [OpenCVMethods cvMatFromUIImage:exp];
-//    cv::Mat result = image_source.clone();
-//    cv::matchTemplate(image_source, image_template, result, cv::TM_CCOEFF_NORMED);
++ (BOOL)matchImgWith:(NSString *)path type:(NSString *)type tempPath:(NSString *)temp_path tempType:(NSString *)temp_type matchMode:(NSInteger)mode {
+    NSString *tm_path = [NSBundle.mainBundle pathForResource:path ofType:type];
+    NSString *tm_temp_path = [NSBundle.mainBundle pathForResource:temp_path ofType:temp_type];
     
 
-    cv::Mat image = imread([path UTF8String], cv::IMREAD_COLOR );
-    cv::Mat templateImage = imread([[NSBundle.mainBundle pathForResource:@"IMG_0014" ofType:@"png"] UTF8String], cv::IMREAD_COLOR);
+    cv::Mat image = imread([tm_path UTF8String], cv::IMREAD_COLOR );
+    cv::Mat templateImage = imread([tm_temp_path UTF8String], cv::IMREAD_COLOR);
     cv::Mat result = templateImage.clone();
     cv::matchTemplate(templateImage, image, result, cv::TM_CCOEFF_NORMED);
     
     double minVal, maxVal;
     cv::Point minLoc, maxLoc;
     cv::minMaxLoc( result, &minVal, &maxVal, &minLoc, &maxLoc );
+    if (maxVal> 0.8) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 @end

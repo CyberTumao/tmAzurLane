@@ -24,7 +24,6 @@ class tmAzurLaneTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 //        tmOOB.imageMatch()
 //        tmDataBaseManager.shareInstance.openDB(name: "")
-        OpenCVMethods.fff()
     }
 
     func testPerformanceExample() {

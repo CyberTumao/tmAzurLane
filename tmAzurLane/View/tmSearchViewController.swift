@@ -26,18 +26,15 @@ class tmSearchViewController: UIViewController {
         initData()
     }
     
-    
-    func initData() -> Void {
-        tableView.register(UINib.init(nibName: cellId, bundle:.main), forCellReuseIdentifier: cellId)
-    }
 }
 
 extension tmSearchViewController:UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.popToViewController(tmEquipmentBlueprintCategoryViewController(), animated:true)
+    }
 }
 
 extension tmSearchViewController:UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let text = tmDataBaseManager.shareInstance.selectFromTech(withNumber: section+1)
         let headView = tmHeadView()
@@ -75,6 +72,12 @@ extension tmSearchViewController:UIGestureRecognizerDelegate {
         let temp = shArray[sender.view!.tag]
         shArray[sender.view!.tag] = !temp
         tableView.reloadSections(IndexSet(integer: sender.view!.tag), with: UITableView.RowAnimation.fade)
+    }
+}
+
+extension tmSearchViewController {
+    func initData() -> Void {
+        tableView.register(UINib.init(nibName: cellId, bundle:.main), forCellReuseIdentifier: cellId)
     }
 }
 
