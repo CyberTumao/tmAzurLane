@@ -8,30 +8,30 @@
 
 import UIKit
 
-let databaseName = "AzurLaneTech"
+let databaseName = "tmAL"
 
 class tmDataBaseManager: NSObject {
     
     static let shareInstance: tmDataBaseManager = tmDataBaseManager()
     
     lazy var db : FMDatabase = {
-        let path = Bundle.main.path(forResource: "tmAL", ofType: "db")
+        let path = Bundle.main.path(forResource: databaseName, ofType: "db")
         let db = FMDatabase(path: path)
         return db
     }()
     
     override init() {
         super.init()
-        openDB(name: databaseName)
+        openDB()
     }
     
-    func openDB(name: String) {
+    func openDB() {
         guard db.open() else {
             NSLog("\(#file) open database fail")
             return
         }
         
-        NSLog("\(#file) create table successfully")
+        NSLog("\(#file) open database successfully")
         
     }
     
@@ -47,10 +47,25 @@ class tmDataBaseManager: NSObject {
     
     func selectFromTech(withNumber number:Int) -> String? {
         let sql = "SELECT * FROM Tech WHERE number=?"
-//        let result = db.executeQuery(sql, withArgumentsIn: [number])
         guard let result = db.executeQuery(sql, withArgumentsIn: [number]) else { return nil }
         while result.next() {
             let name = result.string(forColumn: "name")
+            return name
+        }
+        return nil
+    }
+    
+    func selectFromProfitMaterial(withTechNumber number:Int) -> FMResultSet? {
+        let sql = "SELECT * FROM ProfitMaterial WHERE category = ?"
+        guard let result = db.executeQuery(sql, withArgumentsIn: [number]) else { return nil }
+        return result
+    }
+    
+    func countForProfitMaterial(withTechNumber number:Int) -> Int? {
+        let sql = "SELECT count(*) FROM ProfitMaterial WHERE category = ?"
+        guard let result = db.executeQuery(sql, withArgumentsIn: [number]) else { return nil }
+        while result.next() {
+            let name = result.long(forColumn: "count(*)")
             return name
         }
         return nil

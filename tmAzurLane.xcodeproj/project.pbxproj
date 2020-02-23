@@ -41,6 +41,9 @@
 		417916EF23FCE95200D24C08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417916ED23FCE95200D24C08 /* LaunchScreen.storyboard */; };
 		417916FA23FCE95200D24C08 /* tmAzurLaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417916F923FCE95200D24C08 /* tmAzurLaneTests.swift */; };
 		4179170523FCE95200D24C08 /* tmAzurLaneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4179170423FCE95200D24C08 /* tmAzurLaneUITests.swift */; };
+		41B14374240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B14373240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift */; };
+		41B14376240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B14375240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift */; };
+		41B14378240210F20091AFE7 /* tmEquipmentBlueprintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B14377240210F20091AFE7 /* tmEquipmentBlueprintModel.swift */; };
 		41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED9B8723FFBB5700C40034 /* tmHeadView.swift */; };
 		41ED9B8C23FFC02E00C40034 /* tmHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED9B8B23FFC02E00C40034 /* tmHeadView.xib */; };
 		41F740EB23FCEAC4004AAAE9 /* tmSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F740E523FCEAC4004AAAE9 /* tmSearchViewController.xib */; };
@@ -115,6 +118,9 @@
 		4179170023FCE95200D24C08 /* tmAzurLaneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tmAzurLaneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4179170423FCE95200D24C08 /* tmAzurLaneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmAzurLaneUITests.swift; sourceTree = "<group>"; };
 		4179170623FCE95200D24C08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41B14373240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintPresenter.swift; sourceTree = "<group>"; };
+		41B14375240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintDelegate.swift; sourceTree = "<group>"; };
+		41B14377240210F20091AFE7 /* tmEquipmentBlueprintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintModel.swift; sourceTree = "<group>"; };
 		41ED9B8723FFBB5700C40034 /* tmHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmHeadView.swift; sourceTree = "<group>"; };
 		41ED9B8B23FFC02E00C40034 /* tmHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmHeadView.xib; sourceTree = "<group>"; };
 		41F740E523FCEAC4004AAAE9 /* tmSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tmSearchViewController.xib; sourceTree = "<group>"; };
@@ -213,6 +219,9 @@
 		416429AA2401765B006535DC /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				41B14372240210070091AFE7 /* Protocol */,
+				41B1437124020FFB0091AFE7 /* Presenter */,
+				41B1437024020FF30091AFE7 /* Model */,
 				416429AF2401791F006535DC /* CustomViewCell */,
 				416429AB24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift */,
 				416429AC24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib */,
@@ -269,6 +278,8 @@
 				416BEA8B23FE3DB200FA9197 /* OpenCVMethod */,
 				41F740F223FD02EC004AAAE9 /* Bridge */,
 				41F740EA23FCEAC4004AAAE9 /* Database */,
+				41B1436E2402080B0091AFE7 /* Protocol */,
+				41B1436F24020F960091AFE7 /* Presenter */,
 				41F740E223FCEAC4004AAAE9 /* Model */,
 				41F740E423FCEAC4004AAAE9 /* View */,
 				417916E223FCE94E00D24C08 /* AppDelegate.swift */,
@@ -306,6 +317,44 @@
 				4179170623FCE95200D24C08 /* Info.plist */,
 			);
 			path = tmAzurLaneUITests;
+			sourceTree = "<group>";
+		};
+		41B1436E2402080B0091AFE7 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		41B1436F24020F960091AFE7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		41B1437024020FF30091AFE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41B14377240210F20091AFE7 /* tmEquipmentBlueprintModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		41B1437124020FFB0091AFE7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				41B14373240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		41B14372240210070091AFE7 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				41B14375240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		41ED9B8623FFBB2300C40034 /* HeadView */ = {
@@ -642,9 +691,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				416429AD24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift in Sources */,
+				41B14378240210F20091AFE7 /* tmEquipmentBlueprintModel.swift in Sources */,
 				41F740EE23FCEAC4004AAAE9 /* tmSearchViewController.swift in Sources */,
 				416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */,
+				41B14376240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift in Sources */,
 				41F740F023FCF1F0004AAAE9 /* tmDataBase.swift in Sources */,
+				41B14374240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift in Sources */,
 				41F740EC23FCEAC4004AAAE9 /* tmSearchTableViewCell.swift in Sources */,
 				417916E323FCE94E00D24C08 /* AppDelegate.swift in Sources */,
 				417916E523FCE94E00D24C08 /* SceneDelegate.swift in Sources */,
