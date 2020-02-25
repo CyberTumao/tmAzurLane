@@ -27,6 +27,7 @@
 		416429AE24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416429AC24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib */; };
 		416429B224017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416429B024017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift */; };
 		416429B324017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416429B124017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib */; };
+		41647C252404EF850096F30D /* blueprint_1_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 41647C242404EF850096F30D /* blueprint_1_10.png */; };
 		416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */ = {isa = PBXBuildFile; fileRef = 416BEA9523FE417700FA9197 /* OpenCVMethods.mm */; };
 		416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BEA9723FE805B00FA9197 /* tmOOB.swift */; };
 		416BEA9A23FE86D000FA9197 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9923FE86D000FA9197 /* CoreGraphics.framework */; };
@@ -93,6 +94,7 @@
 		416429AC24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmEquipmentBlueprintCategoryViewController.xib; sourceTree = "<group>"; };
 		416429B024017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintCollectionViewCell.swift; sourceTree = "<group>"; };
 		416429B124017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmEquipmentBlueprintCollectionViewCell.xib; sourceTree = "<group>"; };
+		41647C242404EF850096F30D /* blueprint_1_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_10.png; sourceTree = "<group>"; };
 		416BEA8E23FE401500FA9197 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		416BEA9023FE402100FA9197 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		416BEA9223FE402E00FA9197 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -202,6 +204,7 @@
 		4164298F24017443006535DC /* EquipmentBluePrint */ = {
 			isa = PBXGroup;
 			children = (
+				41647C242404EF850096F30D /* blueprint_1_10.png */,
 				4164299724017443006535DC /* blueprint_1_01.png */,
 				4164299924017443006535DC /* blueprint_1_02.png */,
 				4164299824017443006535DC /* blueprint_1_03.png */,
@@ -459,7 +462,7 @@
 				417916DB23FCE94E00D24C08 /* Sources */,
 				417916DC23FCE94E00D24C08 /* Frameworks */,
 				417916DD23FCE94E00D24C08 /* Resources */,
-				E7705C4C4DBCF9EA32116B0E /* [CP] Embed Pods Frameworks */,
+				AED91BF63BD7A640D01DFD03 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -560,6 +563,7 @@
 				4164299B24017443006535DC /* IMG_0014.png in Resources */,
 				416429A524017443006535DC /* blueprint_1_04.png in Resources */,
 				416429A424017443006535DC /* blueprint_1_11.png in Resources */,
+				41647C252404EF850096F30D /* blueprint_1_10.png in Resources */,
 				416429A724017443006535DC /* blueprint_1_03.png in Resources */,
 				417916EF23FCE95200D24C08 /* LaunchScreen.storyboard in Resources */,
 				4164299F24017443006535DC /* blueprint_1_09.png in Resources */,
@@ -622,6 +626,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AED91BF63BD7A640D01DFD03 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tmAzurLane/Pods-tmAzurLane-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tmAzurLane/Pods-tmAzurLane-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tmAzurLane/Pods-tmAzurLane-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CAD9C79CE9FED917DAF792C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -642,23 +663,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7705C4C4DBCF9EA32116B0E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tmAzurLane/Pods-tmAzurLane-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tmAzurLane/Pods-tmAzurLane-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tmAzurLane/Pods-tmAzurLane-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F504534530790FDE3568C949 /* [CP] Check Pods Manifest.lock */ = {
@@ -878,11 +882,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tumao.tmAzurLane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = tmAzurLane/Bridge/bridging.h;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -900,11 +905,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tumao.tmAzurLane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = tmAzurLane/Bridge/bridging.h;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
