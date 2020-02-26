@@ -28,6 +28,8 @@
 		416429B224017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416429B024017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift */; };
 		416429B324017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416429B124017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib */; };
 		41647C252404EF850096F30D /* blueprint_1_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 41647C242404EF850096F30D /* blueprint_1_10.png */; };
+		41647C272404F8020096F30D /* Pictures.zip in Resources */ = {isa = PBXBuildFile; fileRef = 41647C262404F8020096F30D /* Pictures.zip */; };
+		41647C2A2404F9AC0096F30D /* tmZipArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41647C292404F9AC0096F30D /* tmZipArchive.swift */; };
 		416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */ = {isa = PBXBuildFile; fileRef = 416BEA9523FE417700FA9197 /* OpenCVMethods.mm */; };
 		416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BEA9723FE805B00FA9197 /* tmOOB.swift */; };
 		416BEA9A23FE86D000FA9197 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9923FE86D000FA9197 /* CoreGraphics.framework */; };
@@ -95,6 +97,8 @@
 		416429B024017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintCollectionViewCell.swift; sourceTree = "<group>"; };
 		416429B124017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmEquipmentBlueprintCollectionViewCell.xib; sourceTree = "<group>"; };
 		41647C242404EF850096F30D /* blueprint_1_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_10.png; sourceTree = "<group>"; };
+		41647C262404F8020096F30D /* Pictures.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Pictures.zip; sourceTree = "<group>"; };
+		41647C292404F9AC0096F30D /* tmZipArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmZipArchive.swift; sourceTree = "<group>"; };
 		416BEA8E23FE401500FA9197 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		416BEA9023FE402100FA9197 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		416BEA9223FE402E00FA9197 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -241,6 +245,14 @@
 			path = CustomViewCell;
 			sourceTree = "<group>";
 		};
+		41647C282404F9910096F30D /* ZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				41647C292404F9AC0096F30D /* tmZipArchive.swift */,
+			);
+			path = ZipArchive;
+			sourceTree = "<group>";
+		};
 		416BEA8B23FE3DB200FA9197 /* OpenCVMethod */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +266,7 @@
 		417916D623FCE94E00D24C08 = {
 			isa = PBXGroup;
 			children = (
+				41647C262404F8020096F30D /* Pictures.zip */,
 				4164298824017443006535DC /* Pictures */,
 				416BEAA123FE89E700FA9197 /* tmAL.db */,
 				417916E123FCE94E00D24C08 /* tmAzurLane */,
@@ -278,6 +291,7 @@
 		417916E123FCE94E00D24C08 /* tmAzurLane */ = {
 			isa = PBXGroup;
 			children = (
+				41647C282404F9910096F30D /* ZipArchive */,
 				416BEA8B23FE3DB200FA9197 /* OpenCVMethod */,
 				41F740F223FD02EC004AAAE9 /* Bridge */,
 				41F740EA23FCEAC4004AAAE9 /* Database */,
@@ -561,6 +575,7 @@
 			files = (
 				416429A624017443006535DC /* blueprint_1_01.png in Resources */,
 				4164299B24017443006535DC /* IMG_0014.png in Resources */,
+				41647C272404F8020096F30D /* Pictures.zip in Resources */,
 				416429A524017443006535DC /* blueprint_1_04.png in Resources */,
 				416429A424017443006535DC /* blueprint_1_11.png in Resources */,
 				41647C252404EF850096F30D /* blueprint_1_10.png in Resources */,
@@ -708,6 +723,7 @@
 				41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */,
 				416429B224017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift in Sources */,
 				416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */,
+				41647C2A2404F9AC0096F30D /* tmZipArchive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

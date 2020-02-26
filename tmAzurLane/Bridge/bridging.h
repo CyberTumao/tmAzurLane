@@ -13,6 +13,7 @@
 
 #import "FMDB.h"
 #import "OpenCVMethods.h"
+#import "ZipArchive.h"
 //
 //#import <Foundation/Foundation.h>
 //#import <UIKit/UIKit.h>

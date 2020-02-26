@@ -8,7 +8,8 @@ target 'tmAzurLane' do
   # Pods for tmAzurLane
   pod 'FMDB'
 #  pod 'OpenCV', '~> 4.1.0'
-pod 'OpenCV2', '~> 4.1.1'
+  pod 'OpenCV2', '~> 4.1.1'
+  pod 'SSZipArchive'
 #  pod 'OOB', '~> 1.0.0'
   
 
