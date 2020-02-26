@@ -16,6 +16,9 @@ class tmSearchViewController: UIViewController {
         let temp = [true, true]
         return temp
     }()
+    lazy var presenter:tmSearchViewControllerPresenter? = {
+        return tmSearchViewControllerPresenter(self)
+    }()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,7 +33,7 @@ class tmSearchViewController: UIViewController {
 
 extension tmSearchViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.popToViewController(tmEquipmentBlueprintCategoryViewController(), animated:true)
+        self.navigationController?.pushViewController(tmEquipmentBlueprintCategoryViewController(), animated: true)
     }
 }
 
@@ -46,20 +49,28 @@ extension tmSearchViewController:UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return 90
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shArray[section] ? 2 : 0
+        guard let count = presenter?.getProfitMaterialListNumber(section+1) else { return 0 }
+        return shArray[section] ? count : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! tmSearchTableViewCell
+        cell.contentView.backgroundColor = presenter?.getColor(withSection: indexPath.section, andRow: indexPath.row)
+        cell.numberLabel.attributedText? = NSAttributedString(string: presenter!.getNumber(withSection: indexPath.section, andRow: indexPath.row))
+        cell.nameLabel.text = presenter?.getName(withSection: indexPath.section, andRow: indexPath.row)
+        cell.scaleLabel.text = presenter?.getScale(withSection: indexPath.section, andRow: indexPath.row)
         return cell
     }
 }
@@ -75,9 +86,14 @@ extension tmSearchViewController:UIGestureRecognizerDelegate {
     }
 }
 
+extension tmSearchViewController:tmSearchDelegate {
+    
+}
+
 extension tmSearchViewController {
     func initData() -> Void {
         tableView.register(UINib.init(nibName: cellId, bundle:.main), forCellReuseIdentifier: cellId)
+        presenter?.getProfitMaterialData()
     }
 }
 

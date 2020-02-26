@@ -8,26 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1D43E27CE248724A04C445E7 /* Pods_tmAzurLane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70473F847578F62E66C7331A /* Pods_tmAzurLane.framework */; };
-		4164299B24017443006535DC /* IMG_0014.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164298924017443006535DC /* IMG_0014.png */; };
-		4164299C24017443006535DC /* blueprint_1_09_ps.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164298B24017443006535DC /* blueprint_1_09_ps.png */; };
-		4164299D24017443006535DC /* IMG_0010.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164298C24017443006535DC /* IMG_0010.png */; };
-		4164299E24017443006535DC /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164298D24017443006535DC /* 12.png */; };
-		4164299F24017443006535DC /* blueprint_1_09.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299024017443006535DC /* blueprint_1_09.png */; };
-		416429A024017443006535DC /* blueprint_1_08.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299124017443006535DC /* blueprint_1_08.png */; };
-		416429A124017443006535DC /* blueprint_1_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299224017443006535DC /* blueprint_1_06.png */; };
-		416429A224017443006535DC /* blueprint_1_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299324017443006535DC /* blueprint_1_07.png */; };
-		416429A324017443006535DC /* blueprint_1_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299424017443006535DC /* blueprint_1_05.png */; };
-		416429A424017443006535DC /* blueprint_1_11.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299524017443006535DC /* blueprint_1_11.png */; };
-		416429A524017443006535DC /* blueprint_1_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299624017443006535DC /* blueprint_1_04.png */; };
-		416429A624017443006535DC /* blueprint_1_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299724017443006535DC /* blueprint_1_01.png */; };
-		416429A724017443006535DC /* blueprint_1_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299824017443006535DC /* blueprint_1_03.png */; };
-		416429A824017443006535DC /* blueprint_1_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299924017443006535DC /* blueprint_1_02.png */; };
-		416429A924017443006535DC /* IMG_0008.png in Resources */ = {isa = PBXBuildFile; fileRef = 4164299A24017443006535DC /* IMG_0008.png */; };
 		416429AD24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416429AB24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift */; };
 		416429AE24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416429AC24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib */; };
 		416429B224017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416429B024017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift */; };
 		416429B324017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416429B124017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib */; };
-		41647C252404EF850096F30D /* blueprint_1_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 41647C242404EF850096F30D /* blueprint_1_10.png */; };
+		41642EC824062ABF00F0E05A /* tmDefineFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41642EC724062ABF00F0E05A /* tmDefineFile.swift */; };
+		41642ECD240631E000F0E05A /* tmSearchViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41642ECC240631E000F0E05A /* tmSearchViewControllerPresenter.swift */; };
+		41642ECF2406325400F0E05A /* tmSearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41642ECE2406325400F0E05A /* tmSearchDelegate.swift */; };
+		41642ED12406326200F0E05A /* tmSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41642ED02406326200F0E05A /* tmSearchModel.swift */; };
 		41647C272404F8020096F30D /* Pictures.zip in Resources */ = {isa = PBXBuildFile; fileRef = 41647C262404F8020096F30D /* Pictures.zip */; };
 		41647C2A2404F9AC0096F30D /* tmZipArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41647C292404F9AC0096F30D /* tmZipArchive.swift */; };
 		416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */ = {isa = PBXBuildFile; fileRef = 416BEA9523FE417700FA9197 /* OpenCVMethods.mm */; };
@@ -77,26 +65,14 @@
 
 /* Begin PBXFileReference section */
 		2875070EDB5D8F884DDB5573 /* Pods-tmAzurLaneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmAzurLaneTests.release.xcconfig"; path = "Target Support Files/Pods-tmAzurLaneTests/Pods-tmAzurLaneTests.release.xcconfig"; sourceTree = "<group>"; };
-		4164298924017443006535DC /* IMG_0014.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0014.png; sourceTree = "<group>"; };
-		4164298B24017443006535DC /* blueprint_1_09_ps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_09_ps.png; sourceTree = "<group>"; };
-		4164298C24017443006535DC /* IMG_0010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0010.png; sourceTree = "<group>"; };
-		4164298D24017443006535DC /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
-		4164299024017443006535DC /* blueprint_1_09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_09.png; sourceTree = "<group>"; };
-		4164299124017443006535DC /* blueprint_1_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_08.png; sourceTree = "<group>"; };
-		4164299224017443006535DC /* blueprint_1_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_06.png; sourceTree = "<group>"; };
-		4164299324017443006535DC /* blueprint_1_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_07.png; sourceTree = "<group>"; };
-		4164299424017443006535DC /* blueprint_1_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_05.png; sourceTree = "<group>"; };
-		4164299524017443006535DC /* blueprint_1_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_11.png; sourceTree = "<group>"; };
-		4164299624017443006535DC /* blueprint_1_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_04.png; sourceTree = "<group>"; };
-		4164299724017443006535DC /* blueprint_1_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_01.png; sourceTree = "<group>"; };
-		4164299824017443006535DC /* blueprint_1_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_03.png; sourceTree = "<group>"; };
-		4164299924017443006535DC /* blueprint_1_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_02.png; sourceTree = "<group>"; };
-		4164299A24017443006535DC /* IMG_0008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0008.png; sourceTree = "<group>"; };
 		416429AB24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintCategoryViewController.swift; sourceTree = "<group>"; };
 		416429AC24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmEquipmentBlueprintCategoryViewController.xib; sourceTree = "<group>"; };
 		416429B024017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintCollectionViewCell.swift; sourceTree = "<group>"; };
 		416429B124017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmEquipmentBlueprintCollectionViewCell.xib; sourceTree = "<group>"; };
-		41647C242404EF850096F30D /* blueprint_1_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueprint_1_10.png; sourceTree = "<group>"; };
+		41642EC724062ABF00F0E05A /* tmDefineFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmDefineFile.swift; sourceTree = "<group>"; };
+		41642ECC240631E000F0E05A /* tmSearchViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmSearchViewControllerPresenter.swift; sourceTree = "<group>"; };
+		41642ECE2406325400F0E05A /* tmSearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmSearchDelegate.swift; sourceTree = "<group>"; };
+		41642ED02406326200F0E05A /* tmSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmSearchModel.swift; sourceTree = "<group>"; };
 		41647C262404F8020096F30D /* Pictures.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Pictures.zip; sourceTree = "<group>"; };
 		41647C292404F9AC0096F30D /* tmZipArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmZipArchive.swift; sourceTree = "<group>"; };
 		416BEA8E23FE401500FA9197 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -176,53 +152,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4164298824017443006535DC /* Pictures */ = {
-			isa = PBXGroup;
-			children = (
-				4164298D24017443006535DC /* 12.png */,
-				4164298F24017443006535DC /* EquipmentBluePrint */,
-				4164298A24017443006535DC /* EquipmentBluePrintPS */,
-				4164299A24017443006535DC /* IMG_0008.png */,
-				4164298C24017443006535DC /* IMG_0010.png */,
-				4164298924017443006535DC /* IMG_0014.png */,
-				4164298E24017443006535DC /* ShipBluePrint */,
-			);
-			path = Pictures;
-			sourceTree = "<group>";
-		};
-		4164298A24017443006535DC /* EquipmentBluePrintPS */ = {
-			isa = PBXGroup;
-			children = (
-				4164298B24017443006535DC /* blueprint_1_09_ps.png */,
-			);
-			path = EquipmentBluePrintPS;
-			sourceTree = "<group>";
-		};
-		4164298E24017443006535DC /* ShipBluePrint */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ShipBluePrint;
-			sourceTree = "<group>";
-		};
-		4164298F24017443006535DC /* EquipmentBluePrint */ = {
-			isa = PBXGroup;
-			children = (
-				41647C242404EF850096F30D /* blueprint_1_10.png */,
-				4164299724017443006535DC /* blueprint_1_01.png */,
-				4164299924017443006535DC /* blueprint_1_02.png */,
-				4164299824017443006535DC /* blueprint_1_03.png */,
-				4164299624017443006535DC /* blueprint_1_04.png */,
-				4164299424017443006535DC /* blueprint_1_05.png */,
-				4164299224017443006535DC /* blueprint_1_06.png */,
-				4164299324017443006535DC /* blueprint_1_07.png */,
-				4164299124017443006535DC /* blueprint_1_08.png */,
-				4164299024017443006535DC /* blueprint_1_09.png */,
-				4164299524017443006535DC /* blueprint_1_11.png */,
-			);
-			path = EquipmentBluePrint;
-			sourceTree = "<group>";
-		};
 		416429AA2401765B006535DC /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +172,38 @@
 				416429B124017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib */,
 			);
 			path = CustomViewCell;
+			sourceTree = "<group>";
+		};
+		41642EC624062A9200F0E05A /* DefineFile */ = {
+			isa = PBXGroup;
+			children = (
+				41642EC724062ABF00F0E05A /* tmDefineFile.swift */,
+			);
+			path = DefineFile;
+			sourceTree = "<group>";
+		};
+		41642EC92406319600F0E05A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				41642ECC240631E000F0E05A /* tmSearchViewControllerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		41642ECA240631A200F0E05A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				41642ECE2406325400F0E05A /* tmSearchDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		41642ECB240631AE00F0E05A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41642ED02406326200F0E05A /* tmSearchModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		41647C282404F9910096F30D /* ZipArchive */ = {
@@ -267,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				41647C262404F8020096F30D /* Pictures.zip */,
-				4164298824017443006535DC /* Pictures */,
 				416BEAA123FE89E700FA9197 /* tmAL.db */,
 				417916E123FCE94E00D24C08 /* tmAzurLane */,
 				417916F823FCE95200D24C08 /* tmAzurLaneTests */,
@@ -291,13 +251,11 @@
 		417916E123FCE94E00D24C08 /* tmAzurLane */ = {
 			isa = PBXGroup;
 			children = (
+				41642EC624062A9200F0E05A /* DefineFile */,
 				41647C282404F9910096F30D /* ZipArchive */,
 				416BEA8B23FE3DB200FA9197 /* OpenCVMethod */,
 				41F740F223FD02EC004AAAE9 /* Bridge */,
 				41F740EA23FCEAC4004AAAE9 /* Database */,
-				41B1436E2402080B0091AFE7 /* Protocol */,
-				41B1436F24020F960091AFE7 /* Presenter */,
-				41F740E223FCEAC4004AAAE9 /* Model */,
 				41F740E423FCEAC4004AAAE9 /* View */,
 				417916E223FCE94E00D24C08 /* AppDelegate.swift */,
 				417916E423FCE94E00D24C08 /* SceneDelegate.swift */,
@@ -336,20 +294,6 @@
 			path = tmAzurLaneUITests;
 			sourceTree = "<group>";
 		};
-		41B1436E2402080B0091AFE7 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		41B1436F24020F960091AFE7 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		41B1437024020FF30091AFE7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,24 +327,12 @@
 			path = HeadView;
 			sourceTree = "<group>";
 		};
-		41F740E223FCEAC4004AAAE9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				41F740E323FCEAC4004AAAE9 /* New Group */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		41F740E323FCEAC4004AAAE9 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		41F740E423FCEAC4004AAAE9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				41642ECB240631AE00F0E05A /* Model */,
+				41642ECA240631A200F0E05A /* Protocol */,
+				41642EC92406319600F0E05A /* Presenter */,
 				416429AA2401765B006535DC /* Category */,
 				41F740E623FCEAC4004AAAE9 /* CustomViewCell */,
 				41ED9B8623FFBB2300C40034 /* HeadView */,
@@ -573,31 +505,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				416429A624017443006535DC /* blueprint_1_01.png in Resources */,
-				4164299B24017443006535DC /* IMG_0014.png in Resources */,
 				41647C272404F8020096F30D /* Pictures.zip in Resources */,
-				416429A524017443006535DC /* blueprint_1_04.png in Resources */,
-				416429A424017443006535DC /* blueprint_1_11.png in Resources */,
-				41647C252404EF850096F30D /* blueprint_1_10.png in Resources */,
-				416429A724017443006535DC /* blueprint_1_03.png in Resources */,
 				417916EF23FCE95200D24C08 /* LaunchScreen.storyboard in Resources */,
-				4164299F24017443006535DC /* blueprint_1_09.png in Resources */,
 				41F740ED23FCEAC4004AAAE9 /* tmSearchTableViewCell.xib in Resources */,
 				416429B324017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib in Resources */,
 				416429AE24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib in Resources */,
-				416429A224017443006535DC /* blueprint_1_07.png in Resources */,
-				416429A024017443006535DC /* blueprint_1_08.png in Resources */,
-				4164299C24017443006535DC /* blueprint_1_09_ps.png in Resources */,
 				41F740EB23FCEAC4004AAAE9 /* tmSearchViewController.xib in Resources */,
-				416429A824017443006535DC /* blueprint_1_02.png in Resources */,
-				416429A124017443006535DC /* blueprint_1_06.png in Resources */,
 				416BEAA223FE89E700FA9197 /* tmAL.db in Resources */,
-				416429A924017443006535DC /* IMG_0008.png in Resources */,
-				4164299D24017443006535DC /* IMG_0010.png in Resources */,
 				41ED9B8C23FFC02E00C40034 /* tmHeadView.xib in Resources */,
-				4164299E24017443006535DC /* 12.png in Resources */,
 				417916EC23FCE95200D24C08 /* Preview Assets.xcassets in Resources */,
-				416429A324017443006535DC /* blueprint_1_05.png in Resources */,
 				417916E923FCE95200D24C08 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,16 +629,20 @@
 				41B14378240210F20091AFE7 /* tmEquipmentBlueprintModel.swift in Sources */,
 				41F740EE23FCEAC4004AAAE9 /* tmSearchViewController.swift in Sources */,
 				416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */,
+				41642ED12406326200F0E05A /* tmSearchModel.swift in Sources */,
 				41B14376240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift in Sources */,
 				41F740F023FCF1F0004AAAE9 /* tmDataBase.swift in Sources */,
 				41B14374240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift in Sources */,
 				41F740EC23FCEAC4004AAAE9 /* tmSearchTableViewCell.swift in Sources */,
 				417916E323FCE94E00D24C08 /* AppDelegate.swift in Sources */,
+				41642EC824062ABF00F0E05A /* tmDefineFile.swift in Sources */,
 				417916E523FCE94E00D24C08 /* SceneDelegate.swift in Sources */,
 				417916E723FCE94E00D24C08 /* ContentView.swift in Sources */,
 				41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */,
 				416429B224017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift in Sources */,
 				416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */,
+				41642ECF2406325400F0E05A /* tmSearchDelegate.swift in Sources */,
+				41642ECD240631E000F0E05A /* tmSearchViewControllerPresenter.swift in Sources */,
 				41647C2A2404F9AC0096F30D /* tmZipArchive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

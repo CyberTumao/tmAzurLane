@@ -9,7 +9,10 @@
 import UIKit
 
 class tmSearchTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var scaleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

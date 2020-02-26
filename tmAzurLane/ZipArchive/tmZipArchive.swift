@@ -10,15 +10,13 @@ import Foundation
 
 class tmZipArchive {
     
-    
-//    SSZipArchive.unzipFileAtPath(zipPath, toDestination: tempDestPath())
     func tmArchvieAndSave() {
         guard let zipPath  = Bundle.main.path(forResource: "Pictures", ofType: "zip") else {
             return
         }
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        let docDir = paths[0]
-        
+        guard let docDir = kBundleDocumentPath() else {
+            return
+        }
         try! SSZipArchive.unzipFile(atPath: zipPath, toDestination: docDir, overwrite: false, password: nil)
     }
 }

@@ -35,16 +35,6 @@ class tmDataBaseManager: NSObject {
         
     }
     
-    func createTable() ->Bool {
-        // 1.编写SQL语句
-        let sql = "CREATE TABLE IF NOT EXISTS T_Person( \n" +
-            "id INTEGER PRIMARY KEY AUTOINCREMENT, \n" +
-            "name TEXT, \n" +
-            "age INTEGER \n" +
-        ");"
-        return db.executeUpdate(sql, withArgumentsIn: [])
-    }
-    
     func selectFromTech(withNumber number:Int) -> String? {
         let sql = "SELECT * FROM Tech WHERE number=?"
         guard let result = db.executeQuery(sql, withArgumentsIn: [number]) else { return nil }
@@ -55,10 +45,14 @@ class tmDataBaseManager: NSObject {
         return nil
     }
     
+    func selectFromTechDetailedInfo(withNumber number:Int) -> FMResultSet? {
+        let sql = "SELECT * FROM TechDetailedInfo WHERE tech_number=? ORDER by quality,scale,number"
+        return db.executeQuery(sql, withArgumentsIn: [number])
+    }
+    
     func selectFromProfitMaterial(withTechNumber number:Int) -> FMResultSet? {
         let sql = "SELECT * FROM ProfitMaterial WHERE category = ?"
-        guard let result = db.executeQuery(sql, withArgumentsIn: [number]) else { return nil }
-        return result
+        return db.executeQuery(sql, withArgumentsIn: [number])
     }
     
     func countForProfitMaterial(withTechNumber number:Int) -> Int? {

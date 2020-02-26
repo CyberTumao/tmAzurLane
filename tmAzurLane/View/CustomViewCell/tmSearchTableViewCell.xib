@@ -1,24 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tmSearchTableViewCell" id="KGk-i7-Jjw" customClass="tmSearchTableViewCell" customModule="tmAzurLane" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tmSearchTableViewCell" rowHeight="104" id="KGk-i7-Jjw" customClass="tmSearchTableViewCell" customModule="tmAzurLane" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="104"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="315" height="104"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <color key="backgroundColor" red="0.34497986809999998" green="0.96078431369999995" blue="0.90245011990000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大型项目" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm8-L2-iUK">
+                        <rect key="frame" x="156.5" y="26" width="70" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj4-Md-QpO">
+                        <rect key="frame" x="20" y="38.5" width="96.5" height="27"/>
+                        <attributedString key="attributedText">
+                            <fragment content="D-792-MI">
+                                <attributes>
+                                    <font key="NSFont" size="23" name="Trebuchet-BoldItalic"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6in-QC-8Tj">
+                        <rect key="frame" x="150" y="47" width="133" height="10"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="Pp7-be-OW1"/>
+                            <constraint firstAttribute="width" constant="133" id="qtQ-oc-6z2"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定向研发" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Orh-3T-04d">
+                        <rect key="frame" x="156.5" y="57" width="70" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.52941176470588236" green="0.49803921568627452" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstItem="Yj4-Md-QpO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="D3o-2Q-xyj"/>
+                    <constraint firstItem="Yj4-Md-QpO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PrC-RE-4ks"/>
+                    <constraint firstItem="6in-QC-8Tj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Y4r-wu-xFX"/>
+                    <constraint firstItem="6in-QC-8Tj" firstAttribute="top" secondItem="Fm8-L2-iUK" secondAttribute="bottom" id="YDa-nI-1cd"/>
+                    <constraint firstItem="Orh-3T-04d" firstAttribute="top" secondItem="6in-QC-8Tj" secondAttribute="bottom" id="a9c-Rx-paq"/>
+                    <constraint firstItem="Orh-3T-04d" firstAttribute="leading" secondItem="Fm8-L2-iUK" secondAttribute="leading" id="cH7-NA-GeB"/>
+                    <constraint firstItem="6in-QC-8Tj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="150" id="feb-of-nbP"/>
+                    <constraint firstItem="Fm8-L2-iUK" firstAttribute="leading" secondItem="Yj4-Md-QpO" secondAttribute="trailing" constant="40" id="gfl-EV-bkr"/>
+                </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="139" y="125"/>
+            <connections>
+                <outlet property="nameLabel" destination="Orh-3T-04d" id="PyW-Hs-H34"/>
+                <outlet property="numberLabel" destination="Yj4-Md-QpO" id="ldy-Zy-gUo"/>
+                <outlet property="scaleLabel" destination="Fm8-L2-iUK" id="ZFs-6P-Zwt"/>
+            </connections>
+            <point key="canvasLocation" x="132.60869565217394" y="144.64285714285714"/>
         </tableViewCell>
     </objects>
 </document>
