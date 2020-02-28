@@ -9,11 +9,10 @@
 import Foundation
 
 class tmProfitPresenter {
-    var model:tmSearchModel
-//    var tmProtocol:tmSearchDelegate
+    var model:tmProfitModel
     
     init() {
-        model = tmSearchModel()
+        model = tmProfitModel()
     }
     
     func getCellNumber(_ number:Int) -> Int {
@@ -21,5 +20,23 @@ class tmProfitPresenter {
             return 0
         }
         return count
+    }
+    
+    func getData(_ techInfoId:Int) -> Void {
+        guard let result = tmDataBaseManager.shareInstance.selectFromHistoryAdd(withTechInfoId: techInfoId) else {return}
+        while result.next() {
+            guard let date = result.string(forColumn: "date") else {break}
+            model.appendData(result.long(forColumn: "historyId"), date)
+        }
+    }
+    
+    func getDate(atRow:Int) -> String {
+        let profit = model.profitArray[atRow] as! Profit
+        return profit.date
+    }
+    
+    func getHistoryId(atRow:Int) -> Int {
+        let profit = model.profitArray[atRow] as! Profit
+        return profit.historyId
     }
 }

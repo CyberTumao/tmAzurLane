@@ -22,6 +22,14 @@
 		416A2F192408E84000D6C3A8 /* tmProfitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A2F182408E84000D6C3A8 /* tmProfitModel.swift */; };
 		416A2F1C2408EF4B00D6C3A8 /* tmProfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A2F1A2408EF4B00D6C3A8 /* tmProfitViewController.swift */; };
 		416A2F1D2408EF4B00D6C3A8 /* tmProfitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416A2F1B2408EF4B00D6C3A8 /* tmProfitViewController.xib */; };
+		416A2F222408F48700D6C3A8 /* tmProfitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A2F202408F48700D6C3A8 /* tmProfitTableViewCell.swift */; };
+		416A2F232408F48700D6C3A8 /* tmProfitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416A2F212408F48700D6C3A8 /* tmProfitTableViewCell.xib */; };
+		416A2F272408FB0000D6C3A8 /* tmProfitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A2F252408FB0000D6C3A8 /* tmProfitDetailViewController.swift */; };
+		416A2F282408FB0000D6C3A8 /* tmProfitDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416A2F262408FB0000D6C3A8 /* tmProfitDetailViewController.xib */; };
+		416A2F2D2408FD3600D6C3A8 /* tmProfitDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A2F2C2408FD3600D6C3A8 /* tmProfitDetailPresenter.swift */; };
+		416A2F312408FF1300D6C3A8 /* tmProfitDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A2F2F2408FF1300D6C3A8 /* tmProfitDetailTableViewCell.swift */; };
+		416A2F322408FF1300D6C3A8 /* tmProfitDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416A2F302408FF1300D6C3A8 /* tmProfitDetailTableViewCell.xib */; };
+		416A2F34240922B600D6C3A8 /* tmProfitDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A2F33240922B600D6C3A8 /* tmProfitDetailModel.swift */; };
 		416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */ = {isa = PBXBuildFile; fileRef = 416BEA9523FE417700FA9197 /* OpenCVMethods.mm */; };
 		416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416BEA9723FE805B00FA9197 /* tmOOB.swift */; };
 		416BEA9A23FE86D000FA9197 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9923FE86D000FA9197 /* CoreGraphics.framework */; };
@@ -83,6 +91,14 @@
 		416A2F182408E84000D6C3A8 /* tmProfitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitModel.swift; sourceTree = "<group>"; };
 		416A2F1A2408EF4B00D6C3A8 /* tmProfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitViewController.swift; sourceTree = "<group>"; };
 		416A2F1B2408EF4B00D6C3A8 /* tmProfitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmProfitViewController.xib; sourceTree = "<group>"; };
+		416A2F202408F48700D6C3A8 /* tmProfitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitTableViewCell.swift; sourceTree = "<group>"; };
+		416A2F212408F48700D6C3A8 /* tmProfitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmProfitTableViewCell.xib; sourceTree = "<group>"; };
+		416A2F252408FB0000D6C3A8 /* tmProfitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitDetailViewController.swift; sourceTree = "<group>"; };
+		416A2F262408FB0000D6C3A8 /* tmProfitDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmProfitDetailViewController.xib; sourceTree = "<group>"; };
+		416A2F2C2408FD3600D6C3A8 /* tmProfitDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitDetailPresenter.swift; sourceTree = "<group>"; };
+		416A2F2F2408FF1300D6C3A8 /* tmProfitDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitDetailTableViewCell.swift; sourceTree = "<group>"; };
+		416A2F302408FF1300D6C3A8 /* tmProfitDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmProfitDetailTableViewCell.xib; sourceTree = "<group>"; };
+		416A2F33240922B600D6C3A8 /* tmProfitDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitDetailModel.swift; sourceTree = "<group>"; };
 		416BEA8E23FE401500FA9197 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		416BEA9023FE402100FA9197 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		416BEA9223FE402E00FA9197 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -241,6 +257,8 @@
 		416A2F1E2408F21C00D6C3A8 /* ViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				416A2F202408F48700D6C3A8 /* tmProfitTableViewCell.swift */,
+				416A2F212408F48700D6C3A8 /* tmProfitTableViewCell.xib */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -248,8 +266,54 @@
 		416A2F1F2408F28400D6C3A8 /* ProfitDetail */ = {
 			isa = PBXGroup;
 			children = (
+				416A2F2E2408FEF500D6C3A8 /* ViewCell */,
+				416A2F2B2408FCDB00D6C3A8 /* Delegate */,
+				416A2F2A2408FCD700D6C3A8 /* Model */,
+				416A2F292408FCCD00D6C3A8 /* Presenter */,
+				416A2F242408FAE800D6C3A8 /* View */,
 			);
 			path = ProfitDetail;
+			sourceTree = "<group>";
+		};
+		416A2F242408FAE800D6C3A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				416A2F252408FB0000D6C3A8 /* tmProfitDetailViewController.swift */,
+				416A2F262408FB0000D6C3A8 /* tmProfitDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		416A2F292408FCCD00D6C3A8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				416A2F2C2408FD3600D6C3A8 /* tmProfitDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		416A2F2A2408FCD700D6C3A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				416A2F33240922B600D6C3A8 /* tmProfitDetailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		416A2F2B2408FCDB00D6C3A8 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		416A2F2E2408FEF500D6C3A8 /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				416A2F2F2408FF1300D6C3A8 /* tmProfitDetailTableViewCell.swift */,
+				416A2F302408FF1300D6C3A8 /* tmProfitDetailTableViewCell.xib */,
+			);
+			path = ViewCell;
 			sourceTree = "<group>";
 		};
 		416BEA8B23FE3DB200FA9197 /* OpenCVMethod */ = {
@@ -565,12 +629,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				416A2F282408FB0000D6C3A8 /* tmProfitDetailViewController.xib in Resources */,
 				41647C272404F8020096F30D /* Pictures.zip in Resources */,
 				417916EF23FCE95200D24C08 /* LaunchScreen.storyboard in Resources */,
+				416A2F322408FF1300D6C3A8 /* tmProfitDetailTableViewCell.xib in Resources */,
 				41F740ED23FCEAC4004AAAE9 /* tmSearchTableViewCell.xib in Resources */,
 				416429B324017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib in Resources */,
 				416429AE24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib in Resources */,
 				41F740EB23FCEAC4004AAAE9 /* tmSearchViewController.xib in Resources */,
+				416A2F232408F48700D6C3A8 /* tmProfitTableViewCell.xib in Resources */,
 				416A2F1D2408EF4B00D6C3A8 /* tmProfitViewController.xib in Resources */,
 				416BEAA223FE89E700FA9197 /* tmAL.db in Resources */,
 				41ED9B8C23FFC02E00C40034 /* tmHeadView.xib in Resources */,
@@ -688,16 +755,21 @@
 			files = (
 				416429AD24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift in Sources */,
 				41B14378240210F20091AFE7 /* tmEquipmentBlueprintModel.swift in Sources */,
+				416A2F2D2408FD3600D6C3A8 /* tmProfitDetailPresenter.swift in Sources */,
 				41F740EE23FCEAC4004AAAE9 /* tmSearchViewController.swift in Sources */,
 				416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */,
+				416A2F272408FB0000D6C3A8 /* tmProfitDetailViewController.swift in Sources */,
 				41642ED12406326200F0E05A /* tmSearchModel.swift in Sources */,
 				41B14376240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift in Sources */,
 				41F740F023FCF1F0004AAAE9 /* tmDataBase.swift in Sources */,
+				416A2F312408FF1300D6C3A8 /* tmProfitDetailTableViewCell.swift in Sources */,
 				41B14374240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift in Sources */,
 				41F740EC23FCEAC4004AAAE9 /* tmSearchTableViewCell.swift in Sources */,
+				416A2F222408F48700D6C3A8 /* tmProfitTableViewCell.swift in Sources */,
 				416A2F172408E82E00D6C3A8 /* tmProfitPresenter.swift in Sources */,
 				417916E323FCE94E00D24C08 /* AppDelegate.swift in Sources */,
 				41642EC824062ABF00F0E05A /* tmDefineFile.swift in Sources */,
+				416A2F34240922B600D6C3A8 /* tmProfitDetailModel.swift in Sources */,
 				417916E523FCE94E00D24C08 /* SceneDelegate.swift in Sources */,
 				417916E723FCE94E00D24C08 /* ContentView.swift in Sources */,
 				41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */,

@@ -45,6 +45,7 @@ class tmDataBaseManager: NSObject {
         return nil
     }
     
+    // MARK: -TechDetailedInfo
     func selectFromTechDetailedInfo(withNumber number:Int) -> FMResultSet? {
         let sql = "SELECT * FROM TechDetailedInfo WHERE tech_number=? ORDER by quality,scale,number"
         return db.executeQuery(sql, withArgumentsIn: [number])
@@ -56,30 +57,45 @@ class tmDataBaseManager: NSObject {
         return db.executeQuery(sql, withArgumentsIn: [number])
     }
     
+    func selectFromProfitMaterial(withId number:Int) -> FMResultSet? {
+        let sql = "SELECT * FROM ProfitMaterial WHERE id = ?"
+        return db.executeQuery(sql, withArgumentsIn: [number])
+    }
+    
     func countForProfitMaterial(withTechNumber number:Int) -> Int? {
-        let sql = "SELECT count(*) FROM ProfitMaterial WHERE category = ?"
-        guard let result = db.executeQuery(sql, withArgumentsIn: [number]) else { return nil }
-        while result.next() {
-            let name = result.long(forColumn: "count(*)")
-            return name
-        }
-        return nil
+        return getCount(table: "ProfitMaterial", condition: "category = \(number)")
     }
     
     // MARK: - historyAdd
     func countForHistoryAdd(withTechInfoId number:Int) -> Int? {
-        let sql = "SELECT count(*) FROM historyAdd WHERE techInfoId = ?"
-        guard let result = db.executeQuery(sql, withArgumentsIn: [number]) else { return nil }
-        while result.next() {
-            let name = result.long(forColumn: "count(*)")
-            return name
-        }
-        return nil
+        return getCount(table: "historyAdd", condition: "techInfoId = \(number)")
     }
     
     func selectFromHistoryAdd(withTechInfoId number:Int) -> FMResultSet? {
         let sql = "SELECT * FROM historyAdd WHERE techInfoId = ?"
         return db.executeQuery(sql, withArgumentsIn: [number])
+    }
+    
+    // MARK: - history
+    func countForHistory(ofHistoryId number:Int) -> Int? {
+        return getCount(table: "history", condition: "number = \(number)")
+    }
+    
+    func selectFromHistory(withHistoryId number:Int) -> FMResultSet? {
+        let sql = "SELECT * FROM history WHERE number = ?"
+        return db.executeQuery(sql, withArgumentsIn: [number])
+    }
+    
+    
+    
+    func getCount(table:String, condition:String) -> Int? {
+        let sql = "SELECT count(*) FROM \(table) WHERE \(condition)"
+        guard let result = db.executeQuery(sql, withArgumentsIn: []) else { return nil }
+        while result.next() {
+            let name = result.long(forColumn: "count(*)")
+            return name
+        }
+        return nil
     }
 }
 

@@ -21,15 +21,21 @@ class tmProfitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initData()
     }
     
     func initData() -> Void {
+        presenter?.getData(techInfoId)
         tableView.register(UINib.init(nibName: cellId, bundle:.main), forCellReuseIdentifier: cellId)
     }
 }
 
 extension tmProfitViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = tmProfitDetailViewController()
+        viewController.historyId = presenter?.getHistoryId(atRow: indexPath.row)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 extension tmProfitViewController: UITableViewDataSource {
@@ -39,7 +45,7 @@ extension tmProfitViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.backgroundColor = .black
+        cell.textLabel?.text = presenter?.getDate(atRow: indexPath.row)
         return cell
     }
 
