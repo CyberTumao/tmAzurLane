@@ -50,6 +50,7 @@ class tmDataBaseManager: NSObject {
         return db.executeQuery(sql, withArgumentsIn: [number])
     }
     
+    // MARK: - ProfitMaterial
     func selectFromProfitMaterial(withTechNumber number:Int) -> FMResultSet? {
         let sql = "SELECT * FROM ProfitMaterial WHERE category = ?"
         return db.executeQuery(sql, withArgumentsIn: [number])
@@ -63,6 +64,22 @@ class tmDataBaseManager: NSObject {
             return name
         }
         return nil
+    }
+    
+    // MARK: - historyAdd
+    func countForHistoryAdd(withTechInfoId number:Int) -> Int? {
+        let sql = "SELECT count(*) FROM historyAdd WHERE techInfoId = ?"
+        guard let result = db.executeQuery(sql, withArgumentsIn: [number]) else { return nil }
+        while result.next() {
+            let name = result.long(forColumn: "count(*)")
+            return name
+        }
+        return nil
+    }
+    
+    func selectFromHistoryAdd(withTechInfoId number:Int) -> FMResultSet? {
+        let sql = "SELECT * FROM historyAdd WHERE techInfoId = ?"
+        return db.executeQuery(sql, withArgumentsIn: [number])
     }
 }
 

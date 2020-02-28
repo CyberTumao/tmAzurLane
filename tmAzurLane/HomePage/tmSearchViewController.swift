@@ -33,7 +33,9 @@ class tmSearchViewController: UIViewController {
 
 extension tmSearchViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(tmTableViewController(), animated: true)
+        let viewController = tmProfitViewController()
+        viewController.techInfoId = (presenter?.getTechInfoId(withSection: indexPath.section, row: indexPath.row))!
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

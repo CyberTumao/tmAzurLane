@@ -29,12 +29,13 @@ class tmSearchViewControllerPresenter {
         guard let result = tmDataBaseManager.shareInstance.selectFromTechDetailedInfo(withNumber: techNumber) else { return }
         
         while result.next() {
+            let techInfoId = result.long(forColumn: "id")
             guard let name = result.string(forColumn: "name") else { break }
             guard let number = result.string(forColumn: "number") else { break }
             let quality = result.long(forColumn: "quality")
             let scale = result.long(forColumn: "scale")
             let addition = result.string(forColumn: "addition")
-            model.appendTmTechInfo(toTech:techNumber, name: name, number: number, quality: quality, scale: scale, addition: addition)
+            model.appendTmTechInfo(toTech:techNumber, techInfoId:techInfoId, name: name, number: number, quality: quality, scale: scale, addition: addition)
         }
     }
     
@@ -119,5 +120,21 @@ class tmSearchViewControllerPresenter {
             break
         }
         return techInfo
+    }
+    
+    func getTechInfoId(withSection number:Int, row:Int) -> Int {
+        var techInfo:tmTechInfo?
+        switch number {
+        case 0:
+            techInfo = model.techDetailedInfosFirst[row]
+        case 1:
+            techInfo = model.techDetailedInfosSecond[row]
+        default:
+            break
+        }
+        if techInfo == nil {
+            return 0
+        }
+        return techInfo!.techInfoId
     }
 }

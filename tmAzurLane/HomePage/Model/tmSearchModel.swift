@@ -18,9 +18,9 @@ class tmSearchModel:NSObject {
         return [tmTechInfo]()
     }()
     
-    func appendTmTechInfo(toTech:Int, name:String, number:String, quality:Int, scale:Int, addition:
+    func appendTmTechInfo(toTech:Int, techInfoId:Int, name:String, number:String, quality:Int, scale:Int, addition:
     String?) -> Void {
-        let techInfo = tmTechInfo(name: name, number: number, quality: quality, scale: scale, addition: addition)
+        let techInfo = tmTechInfo(techInfoId:techInfoId, name: name, number: number, quality: quality, scale: scale, addition: addition)
         switch toTech {
         case 1:
             techDetailedInfosFirst.append(techInfo)
@@ -33,6 +33,7 @@ class tmSearchModel:NSObject {
 }
 
 class tmTechInfo:NSObject {
+    var techInfoId:Int
     var name:String
     var number:String
     var quality:Int
@@ -41,14 +42,15 @@ class tmTechInfo:NSObject {
         return nil
     }()
     
-    init(_ name:String, _ number:String, _ quality:Int, _ scale:Int) {
+    init(_ techInfoId:Int, _ name:String, _ number:String, _ quality:Int, _ scale:Int) {
+        self.techInfoId = techInfoId
         self.name = name
         self.number = number
         self.quality = quality
         self.scale = scale
     }
-    convenience init(name:String, number:String, quality:Int, scale:Int, addition:String?) {
-        self.init(name, number, quality, scale)
+    convenience init(techInfoId:Int, name:String, number:String, quality:Int, scale:Int, addition:String?) {
+        self.init(techInfoId, name, number, quality, scale)
         self.addition = addition
     }
 }
