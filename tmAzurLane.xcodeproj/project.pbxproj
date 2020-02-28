@@ -24,6 +24,8 @@
 		416BEA9E23FE86F100FA9197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9D23FE86F100FA9197 /* Foundation.framework */; };
 		416BEAA023FE86FA00FA9197 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9F23FE86FA00FA9197 /* UIKit.framework */; };
 		416BEAA223FE89E700FA9197 /* tmAL.db in Resources */ = {isa = PBXBuildFile; fileRef = 416BEAA123FE89E700FA9197 /* tmAL.db */; };
+		416D188B2407BC29004981C1 /* tmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D18892407BC29004981C1 /* tmTableViewController.swift */; };
+		416D188C2407BC29004981C1 /* tmTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416D188A2407BC29004981C1 /* tmTableViewController.xib */; };
 		417916E323FCE94E00D24C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417916E223FCE94E00D24C08 /* AppDelegate.swift */; };
 		417916E523FCE94E00D24C08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417916E423FCE94E00D24C08 /* SceneDelegate.swift */; };
 		417916E723FCE94E00D24C08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417916E623FCE94E00D24C08 /* ContentView.swift */; };
@@ -86,6 +88,8 @@
 		416BEA9D23FE86F100FA9197 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		416BEA9F23FE86FA00FA9197 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		416BEAA123FE89E700FA9197 /* tmAL.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = tmAL.db; sourceTree = "<group>"; };
+		416D18892407BC29004981C1 /* tmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmTableViewController.swift; sourceTree = "<group>"; };
+		416D188A2407BC29004981C1 /* tmTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmTableViewController.xib; sourceTree = "<group>"; };
 		417916DF23FCE94E00D24C08 /* tmAzurLane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tmAzurLane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		417916E223FCE94E00D24C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		417916E423FCE94E00D24C08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +228,23 @@
 			path = OpenCVMethod;
 			sourceTree = "<group>";
 		};
+		416D18872407BBE7004981C1 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				416D18882407BC0A004981C1 /* view */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		416D18882407BC0A004981C1 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				416D18892407BC29004981C1 /* tmTableViewController.swift */,
+				416D188A2407BC29004981C1 /* tmTableViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		417916D623FCE94E00D24C08 = {
 			isa = PBXGroup;
 			children = (
@@ -256,7 +277,9 @@
 				416BEA8B23FE3DB200FA9197 /* OpenCVMethod */,
 				41F740F223FD02EC004AAAE9 /* Bridge */,
 				41F740EA23FCEAC4004AAAE9 /* Database */,
-				41F740E423FCEAC4004AAAE9 /* View */,
+				416429AA2401765B006535DC /* Category */,
+				41F740E423FCEAC4004AAAE9 /* HomePage */,
+				416D18872407BBE7004981C1 /* New Group */,
 				417916E223FCE94E00D24C08 /* AppDelegate.swift */,
 				417916E423FCE94E00D24C08 /* SceneDelegate.swift */,
 				417916E623FCE94E00D24C08 /* ContentView.swift */,
@@ -327,19 +350,18 @@
 			path = HeadView;
 			sourceTree = "<group>";
 		};
-		41F740E423FCEAC4004AAAE9 /* View */ = {
+		41F740E423FCEAC4004AAAE9 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
 				41642ECB240631AE00F0E05A /* Model */,
 				41642ECA240631A200F0E05A /* Protocol */,
 				41642EC92406319600F0E05A /* Presenter */,
-				416429AA2401765B006535DC /* Category */,
 				41F740E623FCEAC4004AAAE9 /* CustomViewCell */,
 				41ED9B8623FFBB2300C40034 /* HeadView */,
 				41F740E923FCEAC4004AAAE9 /* tmSearchViewController.swift */,
 				41F740E523FCEAC4004AAAE9 /* tmSearchViewController.xib */,
 			);
-			path = View;
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 		41F740E623FCEAC4004AAAE9 /* CustomViewCell */ = {
@@ -505,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				416D188C2407BC29004981C1 /* tmTableViewController.xib in Resources */,
 				41647C272404F8020096F30D /* Pictures.zip in Resources */,
 				417916EF23FCE95200D24C08 /* LaunchScreen.storyboard in Resources */,
 				41F740ED23FCEAC4004AAAE9 /* tmSearchTableViewCell.xib in Resources */,
@@ -639,6 +662,7 @@
 				417916E523FCE94E00D24C08 /* SceneDelegate.swift in Sources */,
 				417916E723FCE94E00D24C08 /* ContentView.swift in Sources */,
 				41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */,
+				416D188B2407BC29004981C1 /* tmTableViewController.swift in Sources */,
 				416429B224017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift in Sources */,
 				416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */,
 				41642ECF2406325400F0E05A /* tmSearchDelegate.swift in Sources */,

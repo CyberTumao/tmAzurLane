@@ -33,7 +33,7 @@ class tmSearchViewController: UIViewController {
 
 extension tmSearchViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(tmEquipmentBlueprintCategoryViewController(), animated: true)
+        self.navigationController?.pushViewController(tmTableViewController(), animated: true)
     }
 }
 
