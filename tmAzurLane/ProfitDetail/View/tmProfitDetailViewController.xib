@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="tmProfitDetailViewController" customModule="tmAzurLane" customModuleProvider="target">
             <connections>
+                <outlet property="tableview" destination="YCe-Dw-QYZ" id="P49-87-4fi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,7 +16,23 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YCe-Dw-QYZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="0Pr-Gj-ekN"/>
+                        <outlet property="delegate" destination="-1" id="Shn-Pb-Tuq"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="YCe-Dw-QYZ" secondAttribute="trailing" id="I5y-lK-zUD"/>
+                <constraint firstItem="YCe-Dw-QYZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VxB-zG-vD7"/>
+                <constraint firstItem="YCe-Dw-QYZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Wsl-lL-Eyk"/>
+                <constraint firstAttribute="bottom" secondItem="YCe-Dw-QYZ" secondAttribute="bottom" id="sAk-PS-GiS"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="87"/>
         </view>
     </objects>

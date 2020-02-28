@@ -15,18 +15,53 @@ class tmProfitDetailPresenter {
         model = tmProfitDetailModel()
     }
     
-    func getData(_ withHistoryId:Int) {
-        guard let result = tmDataBaseManager.shareInstance.selectFromHistory(withHistoryId: withHistoryId) else {return}
+    func getData(_ withHistoryId:Int?) {
+        var historyId = withHistoryId
+        if withHistoryId == nil {
+            historyId = 0
+        }
+        guard let result = tmDataBaseManager.shareInstance.selectFromHistory(withHistoryId: historyId!) else {return}
         while result.next() {
             let profitMeterialId = result.long(forColumn: "profitMeterialId")
             let profitNumber = result.long(forColumn: "profitNumber")
-            model.appendData(profitMeterialId,profitNumber)
+            let profitMeterialData = getProfitMeterialData(withId: profitMeterialId)
+            model.appendData(profitMeterialId, profitNumber, profitMeterialData.0, profitMeterialData.1)
         }
-        
+    }
+    
+    func getProfitMeterialData(withId id:Int) -> (String?, String?) {
+        guard let result = tmDataBaseManager.shareInstance.selectFromProfitMaterial(withId: id) else {return (nil, nil)}
+        var name:String?
+        var picture:String?
+        while result.next() {
+            name = result.string(forColumn: "name")
+            picture = result.string(forColumn: "picture")
+        }
+        return (name, picture)
+    }
+    
+    func getCount(_ withHistoryId:Int?) ->Int? {
+        if withHistoryId == nil {
+            return nil
+        }
+        return tmDataBaseManager.shareInstance.countForHistory(ofHistoryId: withHistoryId!)
     }
     
     func getIcon(withRow row:Int) -> String {
-        
-        return ""
+        guard let picture = model.profitDetails[row].picture else {
+            return ""
+        }
+        return picture
+    }
+    
+    func getName(withRow row:Int) -> String {
+        guard let name = model.profitDetails[row].name else {
+            return ""
+        }
+        return name
+    }
+    
+    func getNumber(withRow row:Int) -> Int {
+        return model.profitDetails[row].profitNumber
     }
 }
