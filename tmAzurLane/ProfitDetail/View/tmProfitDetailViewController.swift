@@ -46,6 +46,7 @@ extension tmProfitDetailViewController: UITableViewDataSource {
         cell.introduction.text = presenter?.getName(withRow: indexPath.row)
         guard let number = presenter?.getNumber(withRow: indexPath.row) else { return cell }
         cell.number.text = String(number)
+        cell.icon.image = presenter?.getIcon(withRow: indexPath.row)
         return cell
     }
     

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class tmProfitDetailPresenter {
     let model:tmProfitDetailModel
@@ -47,11 +48,14 @@ class tmProfitDetailPresenter {
         return tmDataBaseManager.shareInstance.countForHistory(ofHistoryId: withHistoryId!)
     }
     
-    func getIcon(withRow row:Int) -> String {
+    func getIcon(withRow row:Int) -> UIImage? {
         guard let picture = model.profitDetails[row].picture else {
-            return ""
+            return nil
         }
-        return picture
+        guard let docDir = kBundleDocumentPath() else {
+            return nil
+        }
+        return UIImage(contentsOfFile: docDir+"/Pictures/"+picture+".png")
     }
     
     func getName(withRow row:Int) -> String {
