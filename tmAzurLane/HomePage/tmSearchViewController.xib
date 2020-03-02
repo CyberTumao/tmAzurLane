@@ -19,7 +19,7 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XQc-NV-J2e">
                     <rect key="frame" x="0.0" y="70" width="414" height="826"/>
-                    <color key="backgroundColor" red="0.96130555870000001" green="0.75683416690000005" blue="0.33001968510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="P5b-zw-fOh"/>
                         <outlet property="delegate" destination="-1" id="h0j-b2-Id5"/>

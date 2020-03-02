@@ -47,6 +47,9 @@ extension tmSearchViewController:UITableViewDataSource {
         headView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showOrHide(tap:))))
         headView.isUserInteractionEnabled = true
         headView.label.text = text
+        headView.callBackBlock {(str) in
+            self.navigationController?.present(tmAddTechDetailedViewController(section+1), animated: true, completion: nil)
+        }
         return headView
     }
     
@@ -96,6 +99,7 @@ extension tmSearchViewController {
     func initData() -> Void {
         tableView.register(UINib.init(nibName: cellId, bundle:.main), forCellReuseIdentifier: cellId)
         presenter?.getProfitMaterialData()
+        self.navigationItem.title = "AzurLane"
     }
 }
 

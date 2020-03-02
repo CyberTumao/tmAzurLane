@@ -8,10 +8,16 @@
 
 import UIKit
 
+typealias swiftBlock = (_ str: String) -> Void
+
 class tmHeadView: UIView {
 
     @IBOutlet var bgView: UIView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var edit: UILabel!
+    @IBOutlet weak var headerButton: UIButton!
+    
+    var callBack : swiftBlock?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,5 +37,15 @@ class tmHeadView: UIView {
         let nib = UINib(nibName: String(describing: tmHeadView.self), bundle: Bundle(for: tmHeadView.self))
         let view = nib.instantiate(withOwner: self, options: nil)[0]
         return view as! UIView
+    }
+    
+    @IBAction func editButton(_ sender: Any) {
+        if callBack != nil {
+            callBack!("这里的闭包传递了一个字符串")
+        }
+    }
+    
+    func callBackBlock(_ block: @escaping swiftBlock) {
+        callBack = block
     }
 }

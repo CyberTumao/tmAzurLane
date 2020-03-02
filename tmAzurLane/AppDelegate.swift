@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let hasUnzip = UserDefaults.standard.bool(forKey: "unzip")
+        if !hasUnzip {
+            tmZipArchive().tmArchvieAndSave()
+            UserDefaults.standard.set(true, forKey: "unzip")
+        }
+        setNavigationControllerAppearance()
         return true
     }
 
@@ -32,6 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func setNavigationControllerAppearance() {
+        UINavigationBar.appearance().backgroundColor = .blue
+//        UINavigationBar.appearance().barTintColor = .red
+        
+    }
+    @objc func edit() {
+        print("dhddkdkdk")
+    }
 }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D43E27CE248724A04C445E7 /* Pods_tmAzurLane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70473F847578F62E66C7331A /* Pods_tmAzurLane.framework */; };
+		4163A9F3240BA5410014B643 /* tmAddTechDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4163A9F1240BA5410014B643 /* tmAddTechDetailedViewController.swift */; };
+		4163A9F4240BA5410014B643 /* tmAddTechDetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4163A9F2240BA5410014B643 /* tmAddTechDetailedViewController.xib */; };
 		416429AD24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416429AB24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift */; };
 		416429AE24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 416429AC24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib */; };
 		416429B224017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416429B024017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift */; };
@@ -47,6 +49,9 @@
 		41B14374240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B14373240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift */; };
 		41B14376240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B14375240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift */; };
 		41B14378240210F20091AFE7 /* tmEquipmentBlueprintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B14377240210F20091AFE7 /* tmEquipmentBlueprintModel.swift */; };
+		41B34E69240CB7B300EE817D /* tmAddTechDetailedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B34E68240CB7B300EE817D /* tmAddTechDetailedPresenter.swift */; };
+		41B34E6D240CB9A800EE817D /* tmAddTechDetailedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B34E6C240CB9A800EE817D /* tmAddTechDetailedModel.swift */; };
+		41B34E6F240CB9C100EE817D /* tmAddTechDetailedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B34E6E240CB9C100EE817D /* tmAddTechDetailedDelegate.swift */; };
 		41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED9B8723FFBB5700C40034 /* tmHeadView.swift */; };
 		41ED9B8C23FFC02E00C40034 /* tmHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED9B8B23FFC02E00C40034 /* tmHeadView.xib */; };
 		41F740EB23FCEAC4004AAAE9 /* tmSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F740E523FCEAC4004AAAE9 /* tmSearchViewController.xib */; };
@@ -77,6 +82,8 @@
 
 /* Begin PBXFileReference section */
 		2875070EDB5D8F884DDB5573 /* Pods-tmAzurLaneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmAzurLaneTests.release.xcconfig"; path = "Target Support Files/Pods-tmAzurLaneTests/Pods-tmAzurLaneTests.release.xcconfig"; sourceTree = "<group>"; };
+		4163A9F1240BA5410014B643 /* tmAddTechDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmAddTechDetailedViewController.swift; sourceTree = "<group>"; };
+		4163A9F2240BA5410014B643 /* tmAddTechDetailedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmAddTechDetailedViewController.xib; sourceTree = "<group>"; };
 		416429AB24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintCategoryViewController.swift; sourceTree = "<group>"; };
 		416429AC24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmEquipmentBlueprintCategoryViewController.xib; sourceTree = "<group>"; };
 		416429B024017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +134,9 @@
 		41B14373240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintPresenter.swift; sourceTree = "<group>"; };
 		41B14375240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintDelegate.swift; sourceTree = "<group>"; };
 		41B14377240210F20091AFE7 /* tmEquipmentBlueprintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintModel.swift; sourceTree = "<group>"; };
+		41B34E68240CB7B300EE817D /* tmAddTechDetailedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmAddTechDetailedPresenter.swift; sourceTree = "<group>"; };
+		41B34E6C240CB9A800EE817D /* tmAddTechDetailedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmAddTechDetailedModel.swift; sourceTree = "<group>"; };
+		41B34E6E240CB9C100EE817D /* tmAddTechDetailedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmAddTechDetailedDelegate.swift; sourceTree = "<group>"; };
 		41ED9B8723FFBB5700C40034 /* tmHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmHeadView.swift; sourceTree = "<group>"; };
 		41ED9B8B23FFC02E00C40034 /* tmHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmHeadView.xib; sourceTree = "<group>"; };
 		41F740E523FCEAC4004AAAE9 /* tmSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tmSearchViewController.xib; sourceTree = "<group>"; };
@@ -176,6 +186,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4163A9F0240BA4F90014B643 /* AddTechDetailed */ = {
+			isa = PBXGroup;
+			children = (
+				41B34E6B240CB97F00EE817D /* Protocol */,
+				41B34E6A240CB97C00EE817D /* Model */,
+				4163A9F6240BBD790014B643 /* View */,
+				4163A9F5240BBD5B0014B643 /* Presenter */,
+			);
+			path = AddTechDetailed;
+			sourceTree = "<group>";
+		};
+		4163A9F5240BBD5B0014B643 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				41B34E68240CB7B300EE817D /* tmAddTechDetailedPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4163A9F6240BBD790014B643 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4163A9F1240BA5410014B643 /* tmAddTechDetailedViewController.swift */,
+				4163A9F2240BA5410014B643 /* tmAddTechDetailedViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		416429AA2401765B006535DC /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +481,22 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		41B34E6A240CB97C00EE817D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41B34E6C240CB9A800EE817D /* tmAddTechDetailedModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		41B34E6B240CB97F00EE817D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				41B34E6E240CB9C100EE817D /* tmAddTechDetailedDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		41ED9B8623FFBB2300C40034 /* HeadView */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +509,7 @@
 		41F740E423FCEAC4004AAAE9 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				4163A9F0240BA4F90014B643 /* AddTechDetailed */,
 				41642ECB240631AE00F0E05A /* Model */,
 				41642ECA240631A200F0E05A /* Protocol */,
 				41642EC92406319600F0E05A /* Presenter */,
@@ -640,6 +695,7 @@
 				416A2F232408F48700D6C3A8 /* tmProfitTableViewCell.xib in Resources */,
 				416A2F1D2408EF4B00D6C3A8 /* tmProfitViewController.xib in Resources */,
 				416BEAA223FE89E700FA9197 /* tmAL.db in Resources */,
+				4163A9F4240BA5410014B643 /* tmAddTechDetailedViewController.xib in Resources */,
 				41ED9B8C23FFC02E00C40034 /* tmHeadView.xib in Resources */,
 				417916EC23FCE95200D24C08 /* Preview Assets.xcassets in Resources */,
 				417916E923FCE95200D24C08 /* Assets.xcassets in Resources */,
@@ -767,17 +823,21 @@
 				41F740EC23FCEAC4004AAAE9 /* tmSearchTableViewCell.swift in Sources */,
 				416A2F222408F48700D6C3A8 /* tmProfitTableViewCell.swift in Sources */,
 				416A2F172408E82E00D6C3A8 /* tmProfitPresenter.swift in Sources */,
+				41B34E69240CB7B300EE817D /* tmAddTechDetailedPresenter.swift in Sources */,
 				417916E323FCE94E00D24C08 /* AppDelegate.swift in Sources */,
 				41642EC824062ABF00F0E05A /* tmDefineFile.swift in Sources */,
 				416A2F34240922B600D6C3A8 /* tmProfitDetailModel.swift in Sources */,
 				417916E523FCE94E00D24C08 /* SceneDelegate.swift in Sources */,
 				417916E723FCE94E00D24C08 /* ContentView.swift in Sources */,
+				41B34E6D240CB9A800EE817D /* tmAddTechDetailedModel.swift in Sources */,
+				41B34E6F240CB9C100EE817D /* tmAddTechDetailedDelegate.swift in Sources */,
 				41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */,
 				416429B224017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift in Sources */,
 				416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */,
 				416A2F192408E84000D6C3A8 /* tmProfitModel.swift in Sources */,
 				41642ECF2406325400F0E05A /* tmSearchDelegate.swift in Sources */,
 				41642ECD240631E000F0E05A /* tmSearchViewControllerPresenter.swift in Sources */,
+				4163A9F3240BA5410014B643 /* tmAddTechDetailedViewController.swift in Sources */,
 				416A2F1C2408EF4B00D6C3A8 /* tmProfitViewController.swift in Sources */,
 				41647C2A2404F9AC0096F30D /* tmZipArchive.swift in Sources */,
 			);
@@ -950,6 +1010,7 @@
 				DEVELOPMENT_TEAM = XL6XKUMDT7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = tmAzurLane/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -973,6 +1034,7 @@
 				DEVELOPMENT_TEAM = XL6XKUMDT7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = tmAzurLane/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
