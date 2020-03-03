@@ -80,4 +80,14 @@ extension tmAddTechDetailedPresenter {
     private func getPickerScale() -> [String] {
         return tmAddTechDetailedModel.shareInstance.scaleArray
     }
+    func saveData(withTechNumber:Int) {
+        let number = String(tmAddTechDetailedModel.shareInstance.numberFirstArray[tmAddTechDetailedModel.shareInstance.data[0]])+"-"+String(tmAddTechDetailedModel.shareInstance.data[1])+"-"+String(tmAddTechDetailedModel.shareInstance.numberSecondArray[tmAddTechDetailedModel.shareInstance.data[2]])
+        let name = tmAddTechDetailedModel.shareInstance.nameArray[tmAddTechDetailedModel.shareInstance.data[4]]
+        /// $0 numberFirst $1 numberSecond $2 numberThid $3 scale $4 name $5 quality
+        let quality = tmAddTechDetailedModel.shareInstance.data[5]
+        let scale = tmAddTechDetailedModel.shareInstance.data[3]
+//        let addition
+        tmDataBaseManager.shareInstance.insertIntoTechDetailedInfo(withTechNumber: withTechNumber, name: name, number: number, quality: quality, scale: scale, addition: nil)
+        
+    }
 }

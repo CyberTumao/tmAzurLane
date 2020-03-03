@@ -179,7 +179,7 @@
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="em5-76-y2W">
-                    <rect key="frame" x="0.0" y="500" width="414" height="76"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="576"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqz-5Y-9hp">
@@ -233,7 +233,7 @@
                 <constraint firstItem="g10-II-P3d" firstAttribute="top" secondItem="ZSr-KT-aTu" secondAttribute="bottom" constant="70" id="uCb-2G-fmu"/>
                 <constraint firstItem="ZSr-KT-aTu" firstAttribute="centerX" secondItem="BPh-nf-faD" secondAttribute="centerX" id="uhf-v9-28F"/>
                 <constraint firstItem="saF-vO-10I" firstAttribute="leading" secondItem="XIW-bi-lYv" secondAttribute="trailing" constant="10" id="xiW-rA-yzz"/>
-                <constraint firstItem="em5-76-y2W" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="500" id="yjq-Gq-Mhb"/>
+                <constraint firstItem="em5-76-y2W" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yjq-Gq-Mhb"/>
             </constraints>
             <connections>
                 <action selector="hidekeyboard:" destination="-1" eventType="valueChanged" id="tzR-KZ-Ebr"/>

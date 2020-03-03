@@ -46,7 +46,8 @@ class tmAddTechDetailedViewController: UIViewController,tmAddTechDetailedDelegat
         if !checkNumberSecond() {
             numberSecondAlert()
         } else {
-            
+            presenter?.saveData(withTechNumber: techNumber!)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     @IBAction func name(_ sender: Any) {
@@ -130,6 +131,7 @@ extension tmAddTechDetailedViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - Alert
 extension tmAddTechDetailedViewController {
     func viewControl(_ row:Int) {
         if numberSecond.isFirstResponder {
@@ -156,13 +158,14 @@ extension tmAddTechDetailedViewController {
         let alert = UIAlertController(title: nil, message: "编辑内容未保存", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         let quit = UIAlertAction(title: "直接退出", style: .default) { (UIAlertAction) in
-            
+            self.dismiss(animated: true, completion: nil)
         }
         let sure = UIAlertAction(title: "保存并退出", style: .default) { (UIAlertAction) in
             if !self.checkNumberSecond() {
                 self.numberSecondAlert()
             } else {
-                
+                self.presenter?.saveData(withTechNumber: self.techNumber!)
+                self.dismiss(animated: true, completion: nil)
             }
         }
         alert.addAction(cancel)
@@ -181,14 +184,16 @@ extension tmAddTechDetailedViewController {
             return false
         }
         if text.isEmpty {
+            presenter?.changeData(759, 5)
             return true
         }
         if text.count<3 {
             return false
         }
-        guard Int(text) != nil else {
+        guard let number = Int(text) else {
             return false
         }
+        presenter?.changeData(number, 1)
         return true
     }
 }

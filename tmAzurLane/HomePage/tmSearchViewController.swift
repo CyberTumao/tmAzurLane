@@ -48,7 +48,7 @@ extension tmSearchViewController:UITableViewDataSource {
         headView.isUserInteractionEnabled = true
         headView.label.text = text
         headView.callBackBlock {(str) in
-            self.navigationController?.present(tmAddTechDetailedViewController(section+1), animated: true, completion: nil)
+            self.present(tmAddTechDetailedViewController(section+1), animated: true, completion: nil)
         }
         return headView
     }

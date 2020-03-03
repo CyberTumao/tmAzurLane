@@ -24,10 +24,6 @@ class tmAzurLaneTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 //        tmOOB.imageMatch()
 //        tmDataBaseManager.shareInstance.openDB(name: "")
-let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-let docDir = paths[0]
-        print(docDir)
-        tmZipArchive().tmArchvieAndSave()
     }
 
     func testPerformanceExample() {

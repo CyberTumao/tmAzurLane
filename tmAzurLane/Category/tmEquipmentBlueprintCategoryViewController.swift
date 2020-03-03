@@ -38,8 +38,6 @@ extension tmEquipmentBlueprintCategoryViewController:UICollectionViewDelegate {
             print("tmTempViewCell==nil")
             return
         }
-//        print("\(tempViewCell)")
-//        print("\(cellview)")
         print("tempViewCell.pause")
         tempViewCell.pauseAnimate()
         tmTempViewCell = cellview

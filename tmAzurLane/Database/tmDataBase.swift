@@ -15,7 +15,7 @@ class tmDataBaseManager: NSObject {
     static let shareInstance: tmDataBaseManager = tmDataBaseManager()
     
     lazy var db : FMDatabase = {
-        let path = Bundle.main.path(forResource: databaseName, ofType: "db")
+        let path = kBundleDocumentPath()!+"/Database/"+databaseName+".db"
         let db = FMDatabase(path: path)
         return db
     }()
@@ -49,6 +49,16 @@ class tmDataBaseManager: NSObject {
     func selectFromTechDetailedInfo(withNumber number:Int) -> FMResultSet? {
         let sql = "SELECT * FROM TechDetailedInfo WHERE tech_number=? ORDER by quality,scale,number"
         return db.executeQuery(sql, withArgumentsIn: [number])
+    }
+    
+    func insertIntoTechDetailedInfo(withTechNumber:Int, name:String, number:String, quality:Int, scale:Int, addition:String?) {
+        guard let addition = addition else {
+            let sql = "INSERT INTO TechDetailedInfo(tech_number,name,number,quality,scale) VALUES (?,?,?,?,?)"
+            db.executeUpdate(sql, withArgumentsIn: [withTechNumber, name, number, quality, scale])
+            return
+        }
+        let sql = "INSERT INTO TechDetailedInfo(tech_number,name,number,quality,scale,addition) VALUES (?,?,?,?,?,?)"
+        db.executeUpdate(sql, withArgumentsIn: [withTechNumber, name, number, quality, scale,addition])
     }
     
     // MARK: - ProfitMaterial

@@ -11,8 +11,6 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let hasUnzip = UserDefaults.standard.bool(forKey: "unzip")
@@ -21,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set(true, forKey: "unzip")
         }
         setNavigationControllerAppearance()
+        NSLog(kBundleDocumentPath()!)
         return true
     }
 
