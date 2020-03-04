@@ -39,3 +39,7 @@ func kBundleDocumentPath() -> String? {
 func KCachesPath() -> String? {
     NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
 }
+
+func kTmpPath() -> String {
+    NSTemporaryDirectory()
+}

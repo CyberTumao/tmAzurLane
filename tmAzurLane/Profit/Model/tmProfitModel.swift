@@ -12,6 +12,7 @@ class tmProfitModel {
     lazy var profitArray = {
         return []
     }()
+    var count:Int?
     
     func appendData(_ historyId:Int, _ date:String) {
         let profit = Profit(historyId, date)

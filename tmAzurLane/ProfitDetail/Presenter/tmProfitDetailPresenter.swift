@@ -69,3 +69,25 @@ class tmProfitDetailPresenter {
         return model.profitDetails[row].profitNumber
     }
 }
+
+// MARK: - opencv
+extension tmProfitDetailPresenter {
+    func add(_ imagePath:String) {
+        let manager = FileManager.default
+        guard var paths = manager.subpaths(atPath: kBundleDocumentPath()!+"/Pictures") else {
+            return
+        }
+        for (index, element) in paths.enumerated() {
+            if !element.hasSuffix(".png") {
+                paths.remove(at: index)
+            }
+        }
+        for element in paths {
+            let tempPath = kBundleDocumentPath()!+"/Pictures/"+element
+            let match = OpenCVMethods.matchImg(with: imagePath, tempPath: tempPath, matchMode: 0)
+            if match {
+                print(element)
+            }
+        }
+    }
+}

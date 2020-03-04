@@ -22,8 +22,16 @@ class tmAzurLaneTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-//        tmOOB.imageMatch()
-//        tmDataBaseManager.shareInstance.openDB(name: "")
+        let manager = FileManager.default
+        var paths = manager.subpaths(atPath: kBundleDocumentPath()!+"/Pictures")
+        for (index, element) in (paths?.enumerated())! {
+            if !element.hasSuffix(".png") {
+                paths?.remove(at: index)
+            }
+        }
+        print("contentOfPath:\(paths)")
+//        let contentsOfPath = try? manager.enumerator(atPath: kBundleDocumentPath()!+"/Pictures")
+//        print("contentsOfPath: \(contentsOfPath?.allObjects)")
     }
 
     func testPerformanceExample() {

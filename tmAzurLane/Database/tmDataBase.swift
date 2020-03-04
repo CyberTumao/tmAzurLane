@@ -86,6 +86,26 @@ class tmDataBaseManager: NSObject {
         return db.executeQuery(sql, withArgumentsIn: [number])
     }
     
+    func insertIntoHistoryAdd(withTechInfoId:Int, historyId:Int, date:String) {
+        let sql = "INSERT INTO historyAdd(techInfoId,historyId,date) VALUES (?,?,?)"
+        db.executeUpdate(sql, withArgumentsIn: [withTechInfoId, historyId, date])
+    }
+    
+    func getMaxHistoryId() -> Int {
+        let maxHistoryId = UserDefaults.standard.integer(forKey: "maxHistoryId")
+        if maxHistoryId == 0 {
+            guard let result = db.executeQuery("SELECT * FROM historyAdd ORDER BY historyId DESC", withArgumentsIn: []) else {
+                return 0
+            }
+            while result.next() {
+                let historyId = result.long(forColumn: "historyId")
+                UserDefaults.standard.setValue(historyId, forKey: "maxHistoryId")
+                return historyId+1
+            }
+        }
+        return maxHistoryId+1
+    }
+    
     // MARK: - history
     func countForHistory(ofHistoryId number:Int) -> Int? {
         return getCount(table: "history", condition: "number = \(number)")
@@ -95,8 +115,6 @@ class tmDataBaseManager: NSObject {
         let sql = "SELECT * FROM history WHERE number = ?"
         return db.executeQuery(sql, withArgumentsIn: [number])
     }
-    
-    
     
     func getCount(table:String, condition:String) -> Int? {
         let sql = "SELECT count(*) FROM \(table) WHERE \(condition)"
@@ -111,9 +129,6 @@ class tmDataBaseManager: NSObject {
 
 
 /**
- 
- 
- 
  CREATE TABLE if not EXISTS  Tech (id INTEGER PRIMARY key AUTOINCREMENT,number INTEGER,name TEXT);
  INSERT INTO Tech(number, name) VALUES (1, "一期科研");
  INSERT INTO Tech(number, name) VALUES (2, "二期科研");

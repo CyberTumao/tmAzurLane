@@ -14,8 +14,57 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="394" height="136"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pA5-X5-kqw">
+                        <rect key="frame" x="20" y="57.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="y1g-FC-NlM">
+                        <rect key="frame" x="354.5" y="60.5" width="19.5" height="15"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tu6-6j-xrs">
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="136"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Onc-HM-enc">
+                                <rect key="frame" x="179" y="50" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vAq-mL-3MX"/>
+                                    <constraint firstAttribute="width" secondItem="Onc-HM-enc" secondAttribute="height" multiplier="9:10" id="zt5-Je-mqn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Onc-HM-enc" firstAttribute="centerX" secondItem="Tu6-6j-xrs" secondAttribute="centerX" id="4Sy-fU-WtR"/>
+                            <constraint firstItem="Onc-HM-enc" firstAttribute="centerY" secondItem="Tu6-6j-xrs" secondAttribute="centerY" id="va7-zP-8Wm"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="y1g-FC-NlM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EcO-VI-RZs"/>
+                    <constraint firstAttribute="bottom" secondItem="Tu6-6j-xrs" secondAttribute="bottom" id="Hcn-5S-Tq4"/>
+                    <constraint firstItem="pA5-X5-kqw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IRZ-b0-Prt"/>
+                    <constraint firstItem="pA5-X5-kqw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="blG-Go-soX"/>
+                    <constraint firstItem="Tu6-6j-xrs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="d1Q-Gt-jZW"/>
+                    <constraint firstAttribute="trailing" secondItem="y1g-FC-NlM" secondAttribute="trailing" constant="20" id="dKb-x0-qYO"/>
+                    <constraint firstItem="Tu6-6j-xrs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="f4x-MT-H8m"/>
+                    <constraint firstAttribute="trailing" secondItem="Tu6-6j-xrs" secondAttribute="trailing" id="qzR-vI-4Hp"/>
+                </constraints>
             </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="pA5-X5-kqw" firstAttribute="centerY" secondItem="KGk-i7-Jjw" secondAttribute="centerY" id="DwJ-Kd-NMe"/>
+            </constraints>
+            <connections>
+                <outlet property="addView" destination="Tu6-6j-xrs" id="SyD-wm-wJw"/>
+                <outlet property="dateText" destination="pA5-X5-kqw" id="vFk-6I-NdH"/>
+            </connections>
             <point key="canvasLocation" x="189.85507246376812" y="116.51785714285714"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arrow.right" catalog="system" width="64" height="48"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

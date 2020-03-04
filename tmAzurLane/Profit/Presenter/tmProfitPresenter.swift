@@ -16,10 +16,14 @@ class tmProfitPresenter {
     }
     
     func getCellNumber(_ number:Int) -> Int {
-        guard let count = tmDataBaseManager.shareInstance.countForHistoryAdd(withTechInfoId: number) else {
-            return 0
+        guard let modelCount = model.count else {
+            guard let count = tmDataBaseManager.shareInstance.countForHistoryAdd(withTechInfoId: number) else {
+                return 0
+            }
+            model.count = count
+            return count
         }
-        return count
+        return modelCount
     }
     
     func getData(_ techInfoId:Int) -> Void {
@@ -28,6 +32,11 @@ class tmProfitPresenter {
             guard let date = result.string(forColumn: "date") else {break}
             model.appendData(result.long(forColumn: "historyId"), date)
         }
+    }
+    func reloadData(_ techinfoId:Int) -> Void {
+        model.count = nil
+        model.profitArray.removeAll()
+        getData(techinfoId)
     }
     
     func getDate(atRow:Int) -> String {
@@ -38,5 +47,9 @@ class tmProfitPresenter {
     func getHistoryId(atRow:Int) -> Int {
         let profit = model.profitArray[atRow] as! Profit
         return profit.historyId
+    }
+    
+    func addProfit(withTechInfoId:Int, date:String) {
+        tmDataBaseManager.shareInstance.insertIntoHistoryAdd(withTechInfoId: withTechInfoId, historyId: tmDataBaseManager.shareInstance.getMaxHistoryId()+1, date: date)
     }
 }

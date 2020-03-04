@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)test;
 + (void)matchImag;
 + (BOOL)matchImgWith:(NSString*)path type:(NSString*)type tempPath:(NSString*)temp_path tempType:(NSString*)temp_type matchMode:(NSInteger)mode;
++ (BOOL)matchImgWith:(NSString *)path tempPath:(NSString *)temp_path matchMode:(NSInteger)mode;
 
 @end
 
