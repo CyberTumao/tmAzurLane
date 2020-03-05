@@ -11,18 +11,30 @@ import UIKit
 
 class tmProfitDetailPresenter {
     let model:tmProfitDetailModel
+    lazy var editModel:tmProfitDetailModel = {tmProfitDetailModel()}()
     var tmProtocol:tmProfitDetailedDelegate
-    var tmProgressFlag:Bool = false
+    
+    /// 是否显示进度条
+    lazy var tmProgressFlag = {false}()
+    /// 是否处于编辑状态
+    lazy var editingStatus = {false}()
     
     init(_ tmProtocol:tmProfitDetailedDelegate) {
         model = tmProfitDetailModel()
         self.tmProtocol = tmProtocol
     }
+}
+
+// MARK: - Model & getData
+extension tmProfitDetailPresenter{
     
+    /// 根据history id获取数据，并保存到model中
+    /// - Parameter withHistoryId: history id
     func getData(_ withHistoryId:Int?) {
         var historyId = withHistoryId
         if withHistoryId == nil {
             historyId = 0
+            return
         }
         guard let result = tmDataBaseManager.shareInstance.selectFromHistory(withHistoryId: historyId!) else {return}
         while result.next() {
@@ -48,38 +60,66 @@ class tmProfitDetailPresenter {
         if withHistoryId == nil {
             return nil
         }
-        return tmDataBaseManager.shareInstance.countForHistory(ofHistoryId: withHistoryId!)
+        let count = modelSelect().profitDetails.count
+        return editingStatus ? count+1 : count
+//        return tmDataBaseManager.shareInstance.countForHistory(ofHistoryId: withHistoryId!)
     }
     
     func getIcon(withRow row:Int) -> UIImage? {
-        guard let picture = model.profitDetails[row].picture else {
-            return nil
-        }
+        let picture = getPicture(row)
         guard let docDir = kBundleDocumentPath() else {
             return nil
         }
         return UIImage(contentsOfFile: docDir+"/Pictures/"+picture+".png")
     }
     
+    func getPicture(_ row:Int) -> String {
+        guard let picture = modelSelect().profitDetails[row].picture else {
+            return ""
+        }
+        return picture
+    }
+    
     func getName(withRow row:Int) -> String {
-        guard let name = model.profitDetails[row].name else {
+        guard let name = modelSelect().profitDetails[row].name else {
             return ""
         }
         return name
     }
     
     func getNumber(withRow row:Int) -> Int {
-        return model.profitDetails[row].profitNumber
+        modelSelect().profitDetails[row].profitNumber
+    }
+    
+    func modelSelect() -> tmProfitDetailModel {
+        if editingStatus {
+            return editModel
+        } else {
+            return model
+        }
     }
 }
 
-// MARK: - opencv
+// MARK: - EditModel
 extension tmProfitDetailPresenter {
-    func progress() {
+    func startEdit() {
+        editingStatus = true
+        editModel = model.copy() as! tmProfitDetailModel
+    }
+    
+    func addData() {
         
     }
     
-    func prog(_ count:Int) {
+    func removeData(_ row:Int) {
+        
+    }
+}
+
+// MARK: - OpenCV
+extension tmProfitDetailPresenter {
+    
+    func progress(_ count:Int) {
         let maxCount:Float = 10.0
         var timeCount:Float = maxCount
         var temp = 1
@@ -111,6 +151,8 @@ extension tmProfitDetailPresenter {
             if temp >= count {
                 DispatchQueue.main.sync {
                     self.tmProtocol.setProgress(1)
+                    sleep(1)
+                    self.tmProtocol.hideProgress()
                 }
                 timer.cancel()
             }
@@ -131,7 +173,7 @@ extension tmProfitDetailPresenter {
         
         tmProtocol.showProgress()
         tmProtocol.setProgressText("1/\(paths.count)")
-        prog(paths.count)
+        progress(paths.count)
         
         DispatchQueue.global().async() { () -> Void in
             for element in paths {
@@ -145,4 +187,5 @@ extension tmProfitDetailPresenter {
         }
         
     }
+    
 }

@@ -50,6 +50,6 @@ class tmProfitPresenter {
     }
     
     func addProfit(withTechInfoId:Int, date:String) {
-        tmDataBaseManager.shareInstance.insertIntoHistoryAdd(withTechInfoId: withTechInfoId, historyId: tmDataBaseManager.shareInstance.getMaxHistoryId()+1, date: date)
+        tmDataBaseManager.shareInstance.insertIntoHistoryAdd(withTechInfoId: withTechInfoId, historyId: tmDataBaseManager.shareInstance.getMaxHistoryId(), date: date)
     }
 }

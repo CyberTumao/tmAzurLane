@@ -21,6 +21,8 @@
 		41642ED12406326200F0E05A /* tmSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41642ED02406326200F0E05A /* tmSearchModel.swift */; };
 		41647C272404F8020096F30D /* Pictures.zip in Resources */ = {isa = PBXBuildFile; fileRef = 41647C262404F8020096F30D /* Pictures.zip */; };
 		41647C2A2404F9AC0096F30D /* tmZipArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41647C292404F9AC0096F30D /* tmZipArchive.swift */; };
+		4166C40A241104E500D9E009 /* tmAddProfitDetailedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166C408241104E500D9E009 /* tmAddProfitDetailedTableViewCell.swift */; };
+		4166C40B241104E500D9E009 /* tmAddProfitDetailedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4166C409241104E500D9E009 /* tmAddProfitDetailedTableViewCell.xib */; };
 		416A2F172408E82E00D6C3A8 /* tmProfitPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A2F162408E82E00D6C3A8 /* tmProfitPresenter.swift */; };
 		416A2F192408E84000D6C3A8 /* tmProfitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A2F182408E84000D6C3A8 /* tmProfitModel.swift */; };
 		416A2F1C2408EF4B00D6C3A8 /* tmProfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416A2F1A2408EF4B00D6C3A8 /* tmProfitViewController.swift */; };
@@ -95,6 +97,8 @@
 		41642ED02406326200F0E05A /* tmSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmSearchModel.swift; sourceTree = "<group>"; };
 		41647C262404F8020096F30D /* Pictures.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Pictures.zip; sourceTree = "<group>"; };
 		41647C292404F9AC0096F30D /* tmZipArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmZipArchive.swift; sourceTree = "<group>"; };
+		4166C408241104E500D9E009 /* tmAddProfitDetailedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmAddProfitDetailedTableViewCell.swift; sourceTree = "<group>"; };
+		4166C409241104E500D9E009 /* tmAddProfitDetailedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmAddProfitDetailedTableViewCell.xib; sourceTree = "<group>"; };
 		416A2F162408E82E00D6C3A8 /* tmProfitPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitPresenter.swift; sourceTree = "<group>"; };
 		416A2F182408E84000D6C3A8 /* tmProfitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitModel.swift; sourceTree = "<group>"; };
 		416A2F1A2408EF4B00D6C3A8 /* tmProfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitViewController.swift; sourceTree = "<group>"; };
@@ -351,6 +355,8 @@
 			children = (
 				416A2F2F2408FF1300D6C3A8 /* tmProfitDetailTableViewCell.swift */,
 				416A2F302408FF1300D6C3A8 /* tmProfitDetailTableViewCell.xib */,
+				4166C408241104E500D9E009 /* tmAddProfitDetailedTableViewCell.swift */,
+				4166C409241104E500D9E009 /* tmAddProfitDetailedTableViewCell.xib */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -689,6 +695,7 @@
 				417916EF23FCE95200D24C08 /* LaunchScreen.storyboard in Resources */,
 				416A2F322408FF1300D6C3A8 /* tmProfitDetailTableViewCell.xib in Resources */,
 				41F740ED23FCEAC4004AAAE9 /* tmSearchTableViewCell.xib in Resources */,
+				4166C40B241104E500D9E009 /* tmAddProfitDetailedTableViewCell.xib in Resources */,
 				416429B324017957006535DC /* tmEquipmentBlueprintCollectionViewCell.xib in Resources */,
 				416429AE24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib in Resources */,
 				41F740EB23FCEAC4004AAAE9 /* tmSearchViewController.xib in Resources */,
@@ -832,6 +839,7 @@
 				41B34E6D240CB9A800EE817D /* tmAddTechDetailedModel.swift in Sources */,
 				41B34E6F240CB9C100EE817D /* tmAddTechDetailedDelegate.swift in Sources */,
 				41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */,
+				4166C40A241104E500D9E009 /* tmAddProfitDetailedTableViewCell.swift in Sources */,
 				416429B224017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift in Sources */,
 				416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */,
 				416A2F192408E84000D6C3A8 /* tmProfitModel.swift in Sources */,

@@ -16,14 +16,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ho4-by-oCr">
-                        <rect key="frame" x="20" y="10" width="110" height="110"/>
+                        <rect key="frame" x="10" y="5" width="120" height="120"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ho4-by-oCr" secondAttribute="height" id="AjR-4I-SK2"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgl-s5-BeA">
-                        <rect key="frame" x="155" y="54.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="140" y="55.5" width="39.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -33,23 +33,55 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVt-lW-mAc">
+                        <rect key="frame" x="414.5" y="34.5" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="pVt-lW-mAc" secondAttribute="height" id="i37-zg-w5n"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="plus"/>
+                        <connections>
+                            <action selector="plusClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="V8y-av-Xyq"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR3-Rb-ehe">
+                        <rect key="frame" x="414.5" y="80.5" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="Af9-Yb-4D3"/>
+                            <constraint firstAttribute="width" secondItem="TR3-Rb-ehe" secondAttribute="height" id="a8n-DK-g0z"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="minus"/>
+                        <connections>
+                            <action selector="minusClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DwF-ga-blO"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="pVt-lW-mAc" firstAttribute="centerX" secondItem="TR3-Rb-ehe" secondAttribute="centerX" id="DgC-ZM-Dyo"/>
                     <constraint firstItem="ho4-by-oCr" firstAttribute="centerY" secondItem="Cgl-s5-BeA" secondAttribute="centerY" id="Git-jm-Dps"/>
                     <constraint firstItem="Cgl-s5-BeA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ja6-V5-D91"/>
+                    <constraint firstItem="TR3-Rb-ehe" firstAttribute="top" secondItem="wpM-gb-H9P" secondAttribute="bottom" constant="5" id="LAj-fa-ijP"/>
+                    <constraint firstItem="wpM-gb-H9P" firstAttribute="centerX" secondItem="pVt-lW-mAc" secondAttribute="centerX" id="LJa-ei-I2p"/>
                     <constraint firstAttribute="trailing" secondItem="wpM-gb-H9P" secondAttribute="trailing" constant="20" id="MtN-bs-uEg"/>
                     <constraint firstItem="wpM-gb-H9P" firstAttribute="centerY" secondItem="Cgl-s5-BeA" secondAttribute="centerY" id="ZkC-E2-upi"/>
-                    <constraint firstItem="ho4-by-oCr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="rGt-DO-uE8"/>
-                    <constraint firstItem="ho4-by-oCr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="vdl-3v-pAw"/>
-                    <constraint firstItem="Cgl-s5-BeA" firstAttribute="leading" secondItem="ho4-by-oCr" secondAttribute="trailing" constant="25" id="yfZ-VD-rz8"/>
+                    <constraint firstItem="ho4-by-oCr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="rGt-DO-uE8"/>
+                    <constraint firstItem="pVt-lW-mAc" firstAttribute="width" secondItem="TR3-Rb-ehe" secondAttribute="width" id="snM-LO-dsG"/>
+                    <constraint firstItem="ho4-by-oCr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="vdl-3v-pAw"/>
+                    <constraint firstItem="wpM-gb-H9P" firstAttribute="top" secondItem="pVt-lW-mAc" secondAttribute="bottom" constant="5" id="wYR-m1-DCo"/>
+                    <constraint firstItem="Cgl-s5-BeA" firstAttribute="leading" secondItem="ho4-by-oCr" secondAttribute="trailing" constant="10" id="yfZ-VD-rz8"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="icon" destination="ho4-by-oCr" id="DxG-qC-y2J"/>
                 <outlet property="introduction" destination="Cgl-s5-BeA" id="RLt-H9-Aiw"/>
+                <outlet property="minus" destination="TR3-Rb-ehe" id="BHS-34-YIn"/>
                 <outlet property="number" destination="wpM-gb-H9P" id="09G-fA-AZS"/>
+                <outlet property="plus" destination="pVt-lW-mAc" id="GxG-qJ-JBY"/>
             </connections>
             <point key="canvasLocation" x="116.66666666666667" y="102.45535714285714"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="minus" width="125" height="125"/>
+        <image name="plus" width="125" height="125"/>
+    </resources>
 </document>
