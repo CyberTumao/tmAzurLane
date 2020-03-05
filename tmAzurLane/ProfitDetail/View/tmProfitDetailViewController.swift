@@ -136,6 +136,8 @@ extension tmProfitDetailViewController: tmProfitDetailedDelegate {
         ProgressBackView.isHidden = true
         self.navigationItem.rightBarButtonItem?.isEnabled = true
         self.navigationItem.hidesBackButton = false
+        reloadData()
+        tableview.reloadData()
     }
     
 }

@@ -18,6 +18,7 @@ class tmProfitDetailPresenter {
     lazy var tmProgressFlag = {false}()
     /// 是否处于编辑状态
     lazy var editingStatus = {false}()
+    lazy var pictures:[String] = {[]}()
     
     init(_ tmProtocol:tmProfitDetailedDelegate) {
         model = tmProfitDetailModel()
@@ -174,15 +175,35 @@ extension tmProfitDetailPresenter {
         tmProtocol.showProgress()
         tmProtocol.setProgressText("1/\(paths.count)")
         progress(paths.count)
+//
+//        DispatchQueue.global().async() { [weak self] in
+//            if let strongSelf = self {
+//                for element in paths {
+//                    let tempPath = kBundleDocumentPath()!+"/Pictures/"+element
+//                    let match = OpenCVMethods.matchImg(with: imagePath, tempPath: tempPath, matchMode: 0)
+//                    strongSelf.tmProgressFlag = true
+//                    if match {
+//                        strongSelf.pictures.append(element)
+//                        guard let result = tmDataBaseManager.shareInstance.getInfo(ofProfitMeterial: element) else {break}
+//                        strongSelf.model.appendData(result.0, 1, result.1, element)
+//                    }
+//                    strongSelf.tmProgressFlag = true
+//                }
+//            }
+//        }
         
-        DispatchQueue.global().async() { () -> Void in
+        DispatchQueue.global().async() { () in
             for element in paths {
                 let tempPath = kBundleDocumentPath()!+"/Pictures/"+element
                 let match = OpenCVMethods.matchImg(with: imagePath, tempPath: tempPath, matchMode: 0)
                 self.tmProgressFlag = true
                 if match {
-                    print(element)
+                    self.pictures.append(element)
                 }
+            }
+            for element in self.pictures {
+                guard let result = tmDataBaseManager.shareInstance.getInfo(ofProfitMeterial: element) else {break}
+                self.model.appendData(result.0, 1, result.1, element)
             }
         }
         

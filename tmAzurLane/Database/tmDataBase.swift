@@ -76,6 +76,20 @@ class tmDataBaseManager: NSObject {
         return getCount(table: "ProfitMaterial", condition: "category = \(number)")
     }
     
+    /// 获取ProfitMeterial信息 $0 图片id $1 图片介绍
+    /// - Parameter withPictureName: 图片名称
+    func getInfo(ofProfitMeterial withPictureName:String) -> (Int, String)? {
+        let picture = withPictureName.prefix(withPictureName.count-4)
+        let sql = "SELECT * FROM ProfitMaterial WHERE picture = ?"
+        guard let result = db.executeQuery(sql, withArgumentsIn: [picture]) else {return nil}
+        while result.next() {
+            let number = result.long(forColumn: "id")
+            let name = result.string(forColumn: "name")
+            return (number, name == nil ? "" : name!)
+        }
+        return nil
+    }
+    
     // MARK: - historyAdd
     func countForHistoryAdd(withTechInfoId number:Int) -> Int? {
         return getCount(table: "historyAdd", condition: "techInfoId = \(number)")
