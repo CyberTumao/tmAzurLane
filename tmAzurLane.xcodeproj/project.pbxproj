@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D43E27CE248724A04C445E7 /* Pods_tmAzurLane.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70473F847578F62E66C7331A /* Pods_tmAzurLane.framework */; };
+		4143954D240F969F00D3065B /* tmProfitDetailedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4143954C240F969F00D3065B /* tmProfitDetailedDelegate.swift */; };
 		4163A9F3240BA5410014B643 /* tmAddTechDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4163A9F1240BA5410014B643 /* tmAddTechDetailedViewController.swift */; };
 		4163A9F4240BA5410014B643 /* tmAddTechDetailedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4163A9F2240BA5410014B643 /* tmAddTechDetailedViewController.xib */; };
 		416429AD24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416429AB24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift */; };
@@ -81,6 +82,7 @@
 
 /* Begin PBXFileReference section */
 		2875070EDB5D8F884DDB5573 /* Pods-tmAzurLaneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tmAzurLaneTests.release.xcconfig"; path = "Target Support Files/Pods-tmAzurLaneTests/Pods-tmAzurLaneTests.release.xcconfig"; sourceTree = "<group>"; };
+		4143954C240F969F00D3065B /* tmProfitDetailedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmProfitDetailedDelegate.swift; sourceTree = "<group>"; };
 		4163A9F1240BA5410014B643 /* tmAddTechDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmAddTechDetailedViewController.swift; sourceTree = "<group>"; };
 		4163A9F2240BA5410014B643 /* tmAddTechDetailedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmAddTechDetailedViewController.xib; sourceTree = "<group>"; };
 		416429AB24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmEquipmentBlueprintCategoryViewController.swift; sourceTree = "<group>"; };
@@ -303,7 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				416A2F2E2408FEF500D6C3A8 /* ViewCell */,
-				416A2F2B2408FCDB00D6C3A8 /* Delegate */,
+				416A2F2B2408FCDB00D6C3A8 /* Protocol */,
 				416A2F2A2408FCD700D6C3A8 /* Model */,
 				416A2F292408FCCD00D6C3A8 /* Presenter */,
 				416A2F242408FAE800D6C3A8 /* View */,
@@ -336,11 +338,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		416A2F2B2408FCDB00D6C3A8 /* Delegate */ = {
+		416A2F2B2408FCDB00D6C3A8 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				4143954C240F969F00D3065B /* tmProfitDetailedDelegate.swift */,
 			);
-			path = Delegate;
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		416A2F2E2408FEF500D6C3A8 /* ViewCell */ = {
@@ -810,6 +813,7 @@
 				416A2F2D2408FD3600D6C3A8 /* tmProfitDetailPresenter.swift in Sources */,
 				41F740EE23FCEAC4004AAAE9 /* tmSearchViewController.swift in Sources */,
 				416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */,
+				4143954D240F969F00D3065B /* tmProfitDetailedDelegate.swift in Sources */,
 				416A2F272408FB0000D6C3A8 /* tmProfitDetailViewController.swift in Sources */,
 				41642ED12406326200F0E05A /* tmSearchModel.swift in Sources */,
 				41B14376240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift in Sources */,

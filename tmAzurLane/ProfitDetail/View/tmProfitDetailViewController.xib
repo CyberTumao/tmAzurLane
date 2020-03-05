@@ -8,6 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="tmProfitDetailViewController" customModule="tmAzurLane" customModuleProvider="target">
             <connections>
+                <outlet property="ProgressBackView" destination="cOF-BH-3ZV" id="K5K-Ru-BE0"/>
+                <outlet property="progress" destination="cNW-lB-OCt" id="aqa-37-Sb9"/>
+                <outlet property="progressLabel" destination="0wI-pc-Wmj" id="mJ8-2s-Rs4"/>
                 <outlet property="tableview" destination="YCe-Dw-QYZ" id="P49-87-4fi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,15 +28,43 @@
                         <outlet property="delegate" destination="-1" id="Shn-Pb-Tuq"/>
                     </connections>
                 </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOF-BH-3ZV">
+                    <rect key="frame" x="77" y="376.5" width="260" height="73"/>
+                    <subviews>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cNW-lB-OCt">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="2"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="260" id="oRz-7H-Beb"/>
+                            </constraints>
+                        </progressView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wI-pc-Wmj">
+                            <rect key="frame" x="113" y="52" width="34" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="cNW-lB-OCt" firstAttribute="centerX" secondItem="cOF-BH-3ZV" secondAttribute="centerX" id="AgC-ln-zdT"/>
+                        <constraint firstItem="cNW-lB-OCt" firstAttribute="top" secondItem="cOF-BH-3ZV" secondAttribute="top" id="J9d-qL-wDz"/>
+                        <constraint firstItem="0wI-pc-Wmj" firstAttribute="centerX" secondItem="cNW-lB-OCt" secondAttribute="centerX" id="TGt-BU-o9w"/>
+                        <constraint firstAttribute="bottom" secondItem="0wI-pc-Wmj" secondAttribute="bottom" id="eiq-x6-agd"/>
+                        <constraint firstItem="cNW-lB-OCt" firstAttribute="leading" secondItem="cOF-BH-3ZV" secondAttribute="leading" id="iXI-qq-1l5"/>
+                        <constraint firstItem="0wI-pc-Wmj" firstAttribute="top" secondItem="cNW-lB-OCt" secondAttribute="bottom" constant="50" id="z46-hk-jUg"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="cOF-BH-3ZV" firstAttribute="centerY" secondItem="YCe-Dw-QYZ" secondAttribute="centerY" constant="-35" id="2dG-ZI-mLx"/>
+                <constraint firstItem="cOF-BH-3ZV" firstAttribute="centerX" secondItem="YCe-Dw-QYZ" secondAttribute="centerX" id="7Gc-77-cuU"/>
                 <constraint firstAttribute="trailing" secondItem="YCe-Dw-QYZ" secondAttribute="trailing" id="I5y-lK-zUD"/>
                 <constraint firstItem="YCe-Dw-QYZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VxB-zG-vD7"/>
                 <constraint firstItem="YCe-Dw-QYZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Wsl-lL-Eyk"/>
                 <constraint firstAttribute="bottom" secondItem="YCe-Dw-QYZ" secondAttribute="bottom" id="sAk-PS-GiS"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="87"/>
+            <point key="canvasLocation" x="137.68115942028987" y="86.383928571428569"/>
         </view>
     </objects>
 </document>
