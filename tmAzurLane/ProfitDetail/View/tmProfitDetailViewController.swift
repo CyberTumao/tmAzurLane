@@ -60,8 +60,16 @@ extension tmProfitDetailViewController: UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! tmProfitDetailTableViewCell
             cell.introduction.text = presenter?.getName(withRow: indexPath.row)
+            if !presenter!.editingStatus {
+                cell.plus.isHidden = true
+                cell.minus.isHidden = true
+            } else {
+                cell.plus.isHidden = false
+                cell.minus.isHidden = false
+            }
             guard let number = presenter?.getNumber(withRow: indexPath.row) else { return cell }
             cell.number.text = String(number)
+            cell.setCount(number)
             cell.icon.image = presenter?.getIcon(withRow: indexPath.row)
             return cell
         }
@@ -77,7 +85,10 @@ extension tmProfitDetailViewController:UIImagePickerControllerDelegate,UINavigat
             saveEditedData()
         } else if addButton?.title == edit_string {
             presenter?.startEdit()
+            buttonChange()
+            tableview.reloadData()
         } else {
+            presenter?.startEdit()
             let fileArray = FileManager.default.subpaths(atPath: kTmpPath())
             for fn in fileArray!{
                 try! FileManager.default.removeItem(atPath: kTmpPath() + "\(fn)")
@@ -158,12 +169,21 @@ extension tmProfitDetailViewController {
     
     func reloadData() {
         presenter?.getData(historyId)
+        buttonChange()
+
+    }
+    
+    func buttonChange() {
         if getNumber() {
-            addButton?.title = edit_string
+            if presenter!.editingStatus {
+                addButton?.title = save_string
+            } else {
+                addButton?.title = edit_string
+            }
         } else {
             addButton?.title = add_string
         }
-
+        
     }
     
     /// 查询结果是否大于0
@@ -175,23 +195,24 @@ extension tmProfitDetailViewController {
             return false
         }
         return true
+        
     }
     
     func saveEditedData() {
+        var profitNumbers:[Int] = []
         let numberOfRows = tableview.numberOfRows(inSection: 0)
-        if numberOfRows <= 0 {
+        if numberOfRows <= 1 {
             return
         }
-        for i in 1...numberOfRows {
-            
+        for i in 1...numberOfRows-1 {
+            profitNumbers.append(Int((tableview.cellForRow(at: IndexPath(row: i-1, section: 0)) as! tmProfitDetailTableViewCell).number!.text!)!)
         }
         
-        
-        
-        
+        presenter?.saveData(historyId, profitNumbers)
         
         presenter?.editingStatus = false
-        
+        reloadData()
+        tableview.reloadData()
     }
     
 }

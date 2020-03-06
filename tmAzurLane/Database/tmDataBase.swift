@@ -106,18 +106,14 @@ class tmDataBaseManager: NSObject {
     }
     
     func getMaxHistoryId() -> Int {
-        let maxHistoryId = UserDefaults.standard.integer(forKey: "maxHistoryId")
-        if maxHistoryId == 0 {
-            guard let result = db.executeQuery("SELECT * FROM historyAdd ORDER BY historyId DESC", withArgumentsIn: []) else {
-                return 0
-            }
-            while result.next() {
-                let historyId = result.long(forColumn: "historyId")
-                UserDefaults.standard.setValue(historyId, forKey: "maxHistoryId")
-                return historyId+1
-            }
+        guard let result = db.executeQuery("SELECT * FROM historyAdd ORDER BY historyId DESC", withArgumentsIn: []) else {
+            return 1
         }
-        return maxHistoryId+1
+        while result.next() {
+            let historyId = result.long(forColumn: "historyId")
+            return historyId+1
+        }
+        return 1
     }
     
     // MARK: - history
@@ -138,6 +134,44 @@ class tmDataBaseManager: NSObject {
             return name
         }
         return nil
+    }
+    
+    /// 从history中删除数据，不需要检测是否存在
+    /// - Parameters:
+    ///   - number: historyId
+    ///   - profitMeterialId: <#profitMeterialId description#>
+    func removeData(inHistoryWith number:Int, profitMeterialId:Int) {
+        let sql = "DELETE FROM history WHERE number = ? and profitMeterialId = ?"
+        db.executeUpdate(sql, withArgumentsIn: [number, profitMeterialId])
+    }
+    
+    /// 向history中插入数据，如果存在则更新
+    /// - Parameters:
+    ///   - number: historyId
+    ///   - profitMeterialId: <#profitMeterialId description#>
+    ///   - profitNumber: 数量
+    ///   - result: 插入结果，true成功，false失败
+    func insertData(inHistoryWith number:Int, profitMeterialId:Int, profitNumber:Int, result:(Bool)->Void) {
+        var sql = "SELECT * FROM history WHERE number = ? and profitMeterialId = ?"
+        guard let sqlResult = db.executeQuery(sql, withArgumentsIn: [number, profitMeterialId]) else {
+            result(false)
+            return
+        }
+        if sqlResult.next() {
+            sql = "UPDATE history SET profitNumber = ? WHERE number = ? and profitMeterialId = ?"
+            if db.executeUpdate(sql, withArgumentsIn: [profitNumber, number, profitMeterialId]) {
+                result(true)
+            } else {
+                result(false)
+            }
+        } else {
+            sql = "INSERT INTO history(number, profitMeterialId, profitNumber) VALUES (?,?,?)"
+            if db.executeUpdate(sql, withArgumentsIn: [number, profitMeterialId, profitNumber]) {
+                result(true)
+            } else {
+                result(false)
+            }
+        }
     }
 }
 

@@ -38,6 +38,7 @@ extension tmProfitDetailPresenter{
             return
         }
         guard let result = tmDataBaseManager.shareInstance.selectFromHistory(withHistoryId: historyId!) else {return}
+        model.removeAllData()
         while result.next() {
             let profitMeterialId = result.long(forColumn: "profitMeterialId")
             let profitNumber = result.long(forColumn: "profitNumber")
@@ -103,6 +104,7 @@ extension tmProfitDetailPresenter{
 
 // MARK: - EditModel
 extension tmProfitDetailPresenter {
+    
     func startEdit() {
         editingStatus = true
         editModel = model.copy() as! tmProfitDetailModel
@@ -115,6 +117,21 @@ extension tmProfitDetailPresenter {
     func removeData(_ row:Int) {
         
     }
+    
+    func saveData(_ historyId:Int?, _ profitNumbers:[Int]) {
+        guard let historyId = historyId else { return }
+        for profit in editModel.profitDetails.enumerated() {
+            if profitNumbers[profit.offset] == 0 {
+                tmDataBaseManager.shareInstance.removeData(inHistoryWith: historyId, profitMeterialId: profit.element.profitMeterialId)
+            } else {
+                tmDataBaseManager.shareInstance.insertData(inHistoryWith: historyId, profitMeterialId: profit.element.profitMeterialId, profitNumber: profitNumbers[profit.offset]) { (result) in
+                    
+                }
+            }
+        }
+        editModel.removeAllData()
+    }
+    
 }
 
 // MARK: - OpenCV
@@ -138,8 +155,6 @@ extension tmProfitDetailPresenter {
                 temp += 1
                 DispatchQueue.main.sync {
                     self.tmProtocol.setProgress(1)
-//                    usleep(300000)
-//                    self.tmProtocol.setProgress(0)
                     self.tmProtocol.setProgressText("\(temp)/\(count)")
                     timeCount = maxCount
                 }
@@ -175,22 +190,6 @@ extension tmProfitDetailPresenter {
         tmProtocol.showProgress()
         tmProtocol.setProgressText("1/\(paths.count)")
         progress(paths.count)
-//
-//        DispatchQueue.global().async() { [weak self] in
-//            if let strongSelf = self {
-//                for element in paths {
-//                    let tempPath = kBundleDocumentPath()!+"/Pictures/"+element
-//                    let match = OpenCVMethods.matchImg(with: imagePath, tempPath: tempPath, matchMode: 0)
-//                    strongSelf.tmProgressFlag = true
-//                    if match {
-//                        strongSelf.pictures.append(element)
-//                        guard let result = tmDataBaseManager.shareInstance.getInfo(ofProfitMeterial: element) else {break}
-//                        strongSelf.model.appendData(result.0, 1, result.1, element)
-//                    }
-//                    strongSelf.tmProgressFlag = true
-//                }
-//            }
-//        }
         
         DispatchQueue.global().async() { () in
             for element in paths {
@@ -203,7 +202,7 @@ extension tmProfitDetailPresenter {
             }
             for element in self.pictures {
                 guard let result = tmDataBaseManager.shareInstance.getInfo(ofProfitMeterial: element) else {break}
-                self.model.appendData(result.0, 1, result.1, element)
+                self.editModel.appendData(result.0, 1, result.1, element)
             }
         }
         

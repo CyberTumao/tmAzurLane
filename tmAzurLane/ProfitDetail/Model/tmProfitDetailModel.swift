@@ -46,6 +46,10 @@ class tmProfitDetailModel: NSObject,NSCopying {
         profitDetails.append(data)
     }
     
+    func removeAllData() {
+        profitDetails.removeAll()
+    }
+    
 }
 
 class ProfitDetail {
