@@ -158,11 +158,16 @@ class tmDataBaseManager: NSObject {
             return
         }
         if sqlResult.next() {
-            sql = "UPDATE history SET profitNumber = ? WHERE number = ? and profitMeterialId = ?"
-            if db.executeUpdate(sql, withArgumentsIn: [profitNumber, number, profitMeterialId]) {
+            let sqlResultProfitNumber = sqlResult.long(forColumn: "profitNumber")
+            if sqlResultProfitNumber == profitNumber {
                 result(true)
             } else {
-                result(false)
+                sql = "UPDATE history SET profitNumber = ? WHERE number = ? and profitMeterialId = ?"
+                if db.executeUpdate(sql, withArgumentsIn: [profitNumber, number, profitMeterialId]) {
+                    result(true)
+                } else {
+                    result(false)
+                }
             }
         } else {
             sql = "INSERT INTO history(number, profitMeterialId, profitNumber) VALUES (?,?,?)"

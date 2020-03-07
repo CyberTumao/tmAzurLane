@@ -20,6 +20,11 @@ class tmProfitDetailViewController: UIViewController {
     private let add_string = "添加"
     private let edit_string = "编辑"
     private let save_string = "保存"
+    private let action_design_diagram_1 = "科研一期设计图"
+    private let action_design_diagram_2 = "科研二期设计图"
+    private let action_blueprint1 = "科研一期蓝图"
+    private let action_blueprint2 = "科研二期蓝图"
+    private let action_other = "其它"
     
     var historyId:Int?
     lazy var presenter:tmProfitDetailPresenter? = {
@@ -38,7 +43,11 @@ class tmProfitDetailViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension tmProfitDetailViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == tableView.numberOfRows(inSection: 0)-1 && presenter!.editingStatus {
+            showAlert()
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -213,6 +222,41 @@ extension tmProfitDetailViewController {
         presenter?.editingStatus = false
         reloadData()
         tableview.reloadData()
+    }
+    
+    func showAlert() -> Void {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let action1 = UIAlertAction(title: action_design_diagram_1, style: .default) { (action) in
+            self.pushToView(1)
+        }
+        let action2 = UIAlertAction(title: action_design_diagram_2, style: .default) { (action) in
+            self.pushToView(2)
+        }
+        let action3 = UIAlertAction(title: action_blueprint1, style: .default) { (action) in
+            self.pushToView(3)
+        }
+        let action4 = UIAlertAction(title: action_blueprint2, style: .default) { (action) in
+            self.pushToView(4)
+        }
+        let action5 = UIAlertAction(title: action_other, style: .default) { (action) in
+            self.pushToView(5)
+        }
+        let action6 = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alert.addAction(action1)
+        alert.addAction(action2)
+        alert.addAction(action3)
+        alert.addAction(action4)
+        alert.addAction(action5)
+        alert.addAction(action6)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func pushToView(_ number:Int) -> Void {
+        let viewController = tmEquipmentBlueprintCategoryViewController(number: number)
+        viewController.chosenElement = {(name) in
+            
+        }
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

@@ -42,14 +42,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chosen" translatesAutoresizingMaskIntoConstraints="NO" id="iDf-68-lhF">
+                                <rect key="frame" x="195" y="0.0" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iDf-68-lhF" secondAttribute="height" id="2Rn-NA-ubD"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="udj-OC-76K" firstAttribute="leading" secondItem="XOu-Gv-exh" secondAttribute="leading" id="3ne-lj-TXp"/>
+                            <constraint firstAttribute="trailing" secondItem="iDf-68-lhF" secondAttribute="trailing" id="80e-qF-fc6"/>
                             <constraint firstItem="udj-OC-76K" firstAttribute="top" secondItem="XOu-Gv-exh" secondAttribute="top" id="Aoc-aR-fND"/>
                             <constraint firstItem="8YM-OY-3jg" firstAttribute="top" secondItem="udj-OC-76K" secondAttribute="bottom" constant="10" id="B5W-l1-z02"/>
                             <constraint firstItem="E4q-L8-LSB" firstAttribute="centerX" secondItem="XOu-Gv-exh" secondAttribute="centerX" id="c9w-12-Eat"/>
                             <constraint firstItem="udj-OC-76K" firstAttribute="centerX" secondItem="XOu-Gv-exh" secondAttribute="centerX" id="imO-h4-eUv"/>
+                            <constraint firstItem="iDf-68-lhF" firstAttribute="top" secondItem="XOu-Gv-exh" secondAttribute="top" id="kaa-Fh-1C5"/>
+                            <constraint firstItem="iDf-68-lhF" firstAttribute="width" secondItem="udj-OC-76K" secondAttribute="height" multiplier="2:9" id="o30-sK-sCx"/>
                             <constraint firstItem="8YM-OY-3jg" firstAttribute="leading" secondItem="XOu-Gv-exh" secondAttribute="leading" id="rG6-ve-zUN"/>
                             <constraint firstAttribute="bottom" secondItem="8YM-OY-3jg" secondAttribute="bottom" id="s9r-4L-8h2"/>
                             <constraint firstItem="E4q-L8-LSB" firstAttribute="top" secondItem="udj-OC-76K" secondAttribute="bottom" constant="10" id="xT1-PU-wfy"/>
@@ -64,6 +73,7 @@
             </constraints>
             <size key="customSize" width="251" height="376"/>
             <connections>
+                <outlet property="chosenImage" destination="iDf-68-lhF" id="e1H-rt-hG5"/>
                 <outlet property="imageView" destination="udj-OC-76K" id="8fO-bG-eCP"/>
                 <outlet property="introduction" destination="8YM-OY-3jg" id="f1V-HM-A2D"/>
                 <outlet property="introductionMiddle" destination="E4q-L8-LSB" id="Z61-Yw-adP"/>
@@ -71,4 +81,7 @@
             <point key="canvasLocation" x="68.840579710144937" y="162.72321428571428"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="chosen" width="202" height="202"/>
+    </resources>
 </document>

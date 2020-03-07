@@ -8,48 +8,67 @@
 
 import UIKit
 
+typealias chosen = (_ name:String) -> Void
+
 class tmEquipmentBlueprintCategoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
+    /// 上一个点击的cell
     var tmTempViewCell:tmEquipmentBlueprintCollectionViewCell? = nil
-    
+    var clickIndex:Int?
     lazy var presenter:tmEquipmentBlueprintPresenter? = {
         return tmEquipmentBlueprintPresenter(self)
     }()
     let cellId = "tmEquipmentBlueprintCollectionViewCell"
-    let viewCellWidth = (UIScreen.main.bounds.size.width-30)/3
+    let bounds:CGFloat = 6
+    var viewCellWidth:CGFloat = 0
+    /// 根据techNumber选择显示内容
+    lazy var techNumber:Int = {0}()
+    var chosenElement:chosen? = nil
+    
+    convenience init(number:Int) {
+        self.init()
+        techNumber = number
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initData()
     }
+    
 }
 
-extension tmEquipmentBlueprintCategoryViewController:UICollectionViewDelegate {
+// MARK: - UICollectionViewDelegate
+extension tmEquipmentBlueprintCategoryViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        clickIndex = indexPath.row
         let cellview = collectionView.cellForItem(at: indexPath) as! tmEquipmentBlueprintCollectionViewCell
+        cellview.chosenImage.isHidden = !cellview.chosenImage.isHidden
         if tmTempViewCell == cellview {
-            print("tmTempViewCell==cellview")
             return
         }
         cellview.startAnimate(width: cellview.bounds.width)
         guard let tempViewCell = tmTempViewCell else {
             tmTempViewCell = cellview
-            print("tmTempViewCell==nil")
             return
         }
-        print("tempViewCell.pause")
         tempViewCell.pauseAnimate()
+        tempViewCell.chosenImage.isHidden = true
         tmTempViewCell = cellview
     }
+    
 }
 
-extension tmEquipmentBlueprintCategoryViewController:UICollectionViewDataSource {
+// MARK: - UICollectionViewDataSource
+extension tmEquipmentBlueprintCategoryViewController: UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let number = presenter?.getNumberOfProfitMaterial(withTechNumber: 1) else { return 0 }
+        guard let number = presenter?.getNumberOfProfitMaterial(withTechNumber: techNumber) else { return 0 }
         return number
     }
     
@@ -60,33 +79,66 @@ extension tmEquipmentBlueprintCategoryViewController:UICollectionViewDataSource 
             return cell
         }
         cell.setIntroductionText(text, width: viewCellWidth)
-        guard let path = Bundle.main.path(forResource: presenter?.getPicture(withRow: indexPath.row), ofType: "png") else {
-            return cell
-        }
-        let image = UIImage(contentsOfFile: path)
+        guard let picturePath = presenter?.getPicture(withRow: indexPath.row) else { return cell }
+        let tempPath = kBundleDocumentPath()!+"/Pictures/"+picturePath
+        let image = UIImage(contentsOfFile: tempPath)
         cell.imageView.image = image
         return cell
     }
     
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension tmEquipmentBlueprintCategoryViewController:UICollectionViewDelegateFlowLayout{
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let singleWidth = viewCellWidth
         return CGSize(width: singleWidth, height: singleWidth*5/4)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        return UIEdgeInsets(top: bounds, left: bounds, bottom: bounds, right: bounds)
     }
+    
 }
 
+// MARK: - tmEquipmentBlueprintDelegate
 extension tmEquipmentBlueprintCategoryViewController:tmEquipmentBlueprintDelegate {
     
 }
 
+// MARK: - Private Method
 extension tmEquipmentBlueprintCategoryViewController {
+    
     func initData() {
-        presenter?.getFMResultSetFromProfitMaterial(withTechNumber: 1)
+        let addButton = UIBarButtonItem(title: "完成", style: UIBarButtonItem.Style.plain, target: self, action: #selector(buttonClick))
+        self.navigationItem.rightBarButtonItem = addButton
+        self.navigationItem.backBarButtonItem?.action = #selector(buttonClick)
+        presenter?.getFMResultSetFromProfitMaterial(withTechNumber: techNumber)
         collectionView.register(UINib.init(nibName: cellId, bundle:.main), forCellWithReuseIdentifier: cellId)
+        viewCellWidth = (UIScreen.main.bounds.size.width-bounds*6)/3
     }
+    
+    func getSelectedRow() -> Int? {
+        if (tmTempViewCell?.chosenImage.isHidden)! {
+            return nil
+        } else {
+            return clickIndex
+        }
+    }
+    
+    @objc func buttonClick() {
+        guard let row = getSelectedRow() else {return}
+        guard let pictureName = presenter?.getPicture(withRow: row) else {
+            if (chosenElement != nil){
+                chosenElement!("")
+            }
+            return
+        }
+        if (chosenElement != nil){
+            chosenElement!(pictureName)
+        }
+        
+    }
+    
 }

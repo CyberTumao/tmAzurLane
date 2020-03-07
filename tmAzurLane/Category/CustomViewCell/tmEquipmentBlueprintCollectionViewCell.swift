@@ -12,6 +12,7 @@ class tmEquipmentBlueprintCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var introduction: UILabel!
     @IBOutlet weak var introductionMiddle: UILabel!
+    @IBOutlet weak var chosenImage: UIImageView!
     
     lazy var hasClicked = {
         return false
