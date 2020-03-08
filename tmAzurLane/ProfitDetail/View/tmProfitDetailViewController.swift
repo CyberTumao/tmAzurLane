@@ -253,8 +253,10 @@ extension tmProfitDetailViewController {
     
     func pushToView(_ number:Int) -> Void {
         let viewController = tmEquipmentBlueprintCategoryViewController(number: number)
-        viewController.chosenElement = {(name) in
-            
+        viewController.chosenElement = {(data) in
+            guard let data = data else { return }
+            self.presenter?.addData(id: data.0, name: data.2, picture: data.1)
+            self.tableview.reloadData()
         }
         self.navigationController?.pushViewController(viewController, animated: true)
     }

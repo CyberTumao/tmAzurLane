@@ -8,7 +8,8 @@
 
 import UIKit
 
-typealias chosen = (_ name:String) -> Void
+typealias blockData = (Int, String, String)
+typealias chosen = (_ name:blockData?) -> Void
 
 class tmEquipmentBlueprintCategoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -113,32 +114,43 @@ extension tmEquipmentBlueprintCategoryViewController {
     func initData() {
         let addButton = UIBarButtonItem(title: "完成", style: UIBarButtonItem.Style.plain, target: self, action: #selector(buttonClick))
         self.navigationItem.rightBarButtonItem = addButton
-        self.navigationItem.backBarButtonItem?.action = #selector(buttonClick)
+        self.navigationItem.hidesBackButton = true
         presenter?.getFMResultSetFromProfitMaterial(withTechNumber: techNumber)
         collectionView.register(UINib.init(nibName: cellId, bundle:.main), forCellWithReuseIdentifier: cellId)
         viewCellWidth = (UIScreen.main.bounds.size.width-bounds*6)/3
     }
     
     func getSelectedRow() -> Int? {
-        if (tmTempViewCell?.chosenImage.isHidden)! {
+        guard let temp = tmTempViewCell else { return nil }
+        if temp.chosenImage.isHidden {
             return nil
         } else {
             return clickIndex
         }
+        
     }
     
     @objc func buttonClick() {
-        guard let row = getSelectedRow() else {return}
-        guard let pictureName = presenter?.getPicture(withRow: row) else {
-            if (chosenElement != nil){
-                chosenElement!("")
-            }
+        guard let row = getSelectedRow() else {
+            alert()
             return
         }
-        if (chosenElement != nil){
-            chosenElement!(pictureName)
+        if chosenElement != nil {
+            chosenElement!(presenter?.getBlockData(row))
         }
+        self.navigationController?.popViewController(animated: true)
         
+    }
+    
+    func alert() {
+        let alert = UIAlertController(title: nil, message: "未选择，是否直接退出", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "确定", style: .default) { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        let action2 = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alert.addAction(action1)
+        alert.addAction(action2)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

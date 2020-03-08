@@ -17,6 +17,8 @@ class tmEquipmentBlueprintModel: NSObject {
         return []
     }()
     
+    lazy var ProfitIds:[Int] = {[]}()
+    
     override init() {
         
     }

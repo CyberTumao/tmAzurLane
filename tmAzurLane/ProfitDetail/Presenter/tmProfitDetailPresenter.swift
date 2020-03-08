@@ -110,15 +110,20 @@ extension tmProfitDetailPresenter {
         editModel = model.copy() as! tmProfitDetailModel
     }
     
-    func addData() {
+    func addData(id: Int, name: String?, picture: String?) {
+        for item in editModel.profitDetails {
+            if item.profitMeterialId == id {
+                return
+            }
+        }
+        self.editModel.appendData(id, 1, name, picture)
+    }
+    
+    func removeData(_ row: Int) {
         
     }
     
-    func removeData(_ row:Int) {
-        
-    }
-    
-    func saveData(_ historyId:Int?, _ profitNumbers:[Int]) {
+    func saveData(_ historyId: Int?, _ profitNumbers: [Int]) {
         guard let historyId = historyId else { return }
         for profit in editModel.profitDetails.enumerated() {
             if profitNumbers[profit.offset] == 0 {
