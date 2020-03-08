@@ -81,7 +81,7 @@ extension tmEquipmentBlueprintCategoryViewController: UICollectionViewDataSource
         }
         cell.setIntroductionText(text, width: viewCellWidth)
         guard let picturePath = presenter?.getPicture(withRow: indexPath.row) else { return cell }
-        let tempPath = kBundleDocumentPath()!+"/Pictures/"+picturePath
+        let tempPath = kBundleDocumentPath()!+"/ShowPictures/"+picturePath
         let image = UIImage(contentsOfFile: tempPath)
         cell.imageView.image = image
         return cell

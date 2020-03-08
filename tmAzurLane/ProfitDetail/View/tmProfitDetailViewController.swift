@@ -79,7 +79,15 @@ extension tmProfitDetailViewController: UITableViewDataSource {
             guard let number = presenter?.getNumber(withRow: indexPath.row) else { return cell }
             cell.number.text = String(number)
             cell.setCount(number)
-            cell.icon.image = presenter?.getIcon(withRow: indexPath.row)
+            if presenter!.isBluePrint(withRow: indexPath.row) {
+                cell.bpIcon.isHidden = false
+                cell.icon.isHidden = true
+                cell.bpIcon.image = presenter?.getIcon(withRow: indexPath.row)
+            } else {
+                cell.bpIcon.isHidden = true
+                cell.icon.isHidden = false
+                cell.icon.image = presenter?.getIcon(withRow: indexPath.row)
+            }
             return cell
         }
     }

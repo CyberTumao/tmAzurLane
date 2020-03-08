@@ -14,6 +14,7 @@ class tmProfitDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var minus: UIButton!
     @IBOutlet weak var plus: UIButton!
+    @IBOutlet weak var bpIcon: UIImageView!
     
     var count:Int = 0
     

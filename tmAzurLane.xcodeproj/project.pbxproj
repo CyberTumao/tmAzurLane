@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -54,6 +54,32 @@
 		41B34E69240CB7B300EE817D /* tmAddTechDetailedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B34E68240CB7B300EE817D /* tmAddTechDetailedPresenter.swift */; };
 		41B34E6D240CB9A800EE817D /* tmAddTechDetailedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B34E6C240CB9A800EE817D /* tmAddTechDetailedModel.swift */; };
 		41B34E6F240CB9C100EE817D /* tmAddTechDetailedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B34E6E240CB9C100EE817D /* tmAddTechDetailedDelegate.swift */; };
+		41BFCB57241481EB0080466C /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB4D241481EB0080466C /* FMDatabaseQueue.m */; };
+		41BFCB58241481EB0080466C /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB50241481EB0080466C /* FMDatabaseAdditions.m */; };
+		41BFCB59241481EB0080466C /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB51241481EB0080466C /* FMDatabase.m */; };
+		41BFCB5A241481EB0080466C /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB55241481EB0080466C /* FMDatabasePool.m */; };
+		41BFCB5B241481EB0080466C /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB56241481EB0080466C /* FMResultSet.m */; };
+		41BFCB5D241482140080466C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BFCB5C241482050080466C /* libsqlite3.0.tbd */; };
+		41BFCB82241483FB0080466C /* mz_strm_os_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB61241483FB0080466C /* mz_strm_os_posix.c */; };
+		41BFCB83241483FC0080466C /* mz_strm_pkcrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB62241483FB0080466C /* mz_strm_pkcrypt.c */; };
+		41BFCB84241483FC0080466C /* mz_strm_zlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB65241483FB0080466C /* mz_strm_zlib.c */; };
+		41BFCB85241483FC0080466C /* mz_zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB66241483FB0080466C /* mz_zip.c */; };
+		41BFCB86241483FC0080466C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 41BFCB68241483FB0080466C /* LICENSE */; };
+		41BFCB87241483FC0080466C /* mz_zip_rw.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB69241483FB0080466C /* mz_zip_rw.c */; };
+		41BFCB88241483FC0080466C /* mz_crypt_apple.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB6C241483FB0080466C /* mz_crypt_apple.c */; };
+		41BFCB89241483FC0080466C /* mz_strm_mem.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB6E241483FB0080466C /* mz_strm_mem.c */; };
+		41BFCB8A241483FC0080466C /* mz_crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB6F241483FB0080466C /* mz_crypt.c */; };
+		41BFCB8B241483FC0080466C /* mz_strm_wzaes.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB70241483FB0080466C /* mz_strm_wzaes.c */; };
+		41BFCB8C241483FC0080466C /* mz_compat.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB72241483FB0080466C /* mz_compat.c */; };
+		41BFCB8D241483FC0080466C /* mz_os.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB75241483FB0080466C /* mz_os.c */; };
+		41BFCB8E241483FC0080466C /* mz_os_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB77241483FB0080466C /* mz_os_posix.c */; };
+		41BFCB8F241483FC0080466C /* mz_strm_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB79241483FB0080466C /* mz_strm_buf.c */; };
+		41BFCB90241483FC0080466C /* mz_strm_split.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB7A241483FB0080466C /* mz_strm_split.c */; };
+		41BFCB91241483FC0080466C /* mz_strm.c in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB7D241483FB0080466C /* mz_strm.c */; };
+		41BFCB92241483FC0080466C /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BFCB81241483FB0080466C /* SSZipArchive.m */; };
+		41BFCB94241484540080466C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BFCB932414844B0080466C /* libz.tbd */; };
+		41BFCB96241484790080466C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BFCB95241484620080466C /* libiconv.tbd */; };
+		41BFCB98241485100080466C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BFCB97241485100080466C /* Security.framework */; };
 		41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED9B8723FFBB5700C40034 /* tmHeadView.swift */; };
 		41ED9B8C23FFC02E00C40034 /* tmHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED9B8B23FFC02E00C40034 /* tmHeadView.xib */; };
 		41F740EB23FCEAC4004AAAE9 /* tmSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F740E523FCEAC4004AAAE9 /* tmSearchViewController.xib */; };
@@ -141,6 +167,55 @@
 		41B34E68240CB7B300EE817D /* tmAddTechDetailedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmAddTechDetailedPresenter.swift; sourceTree = "<group>"; };
 		41B34E6C240CB9A800EE817D /* tmAddTechDetailedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmAddTechDetailedModel.swift; sourceTree = "<group>"; };
 		41B34E6E240CB9C100EE817D /* tmAddTechDetailedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmAddTechDetailedDelegate.swift; sourceTree = "<group>"; };
+		41BFCB4C241481EB0080466C /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		41BFCB4D241481EB0080466C /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		41BFCB4E241481EB0080466C /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		41BFCB4F241481EB0080466C /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		41BFCB50241481EB0080466C /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		41BFCB51241481EB0080466C /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		41BFCB52241481EB0080466C /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		41BFCB53241481EB0080466C /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		41BFCB54241481EB0080466C /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		41BFCB55241481EB0080466C /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		41BFCB56241481EB0080466C /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		41BFCB5C241482050080466C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		41BFCB5F241483FB0080466C /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		41BFCB61241483FB0080466C /* mz_strm_os_posix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_os_posix.c; sourceTree = "<group>"; };
+		41BFCB62241483FB0080466C /* mz_strm_pkcrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_pkcrypt.c; sourceTree = "<group>"; };
+		41BFCB63241483FB0080466C /* mz_strm_wzaes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_wzaes.h; sourceTree = "<group>"; };
+		41BFCB64241483FB0080466C /* mz_compat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_compat.h; sourceTree = "<group>"; };
+		41BFCB65241483FB0080466C /* mz_strm_zlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_zlib.c; sourceTree = "<group>"; };
+		41BFCB66241483FB0080466C /* mz_zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_zip.c; sourceTree = "<group>"; };
+		41BFCB67241483FB0080466C /* mz_os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_os.h; sourceTree = "<group>"; };
+		41BFCB68241483FB0080466C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		41BFCB69241483FB0080466C /* mz_zip_rw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_zip_rw.c; sourceTree = "<group>"; };
+		41BFCB6A241483FB0080466C /* mz_strm_split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_split.h; sourceTree = "<group>"; };
+		41BFCB6B241483FB0080466C /* mz_strm_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_buf.h; sourceTree = "<group>"; };
+		41BFCB6C241483FB0080466C /* mz_crypt_apple.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_crypt_apple.c; sourceTree = "<group>"; };
+		41BFCB6D241483FB0080466C /* mz_strm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm.h; sourceTree = "<group>"; };
+		41BFCB6E241483FB0080466C /* mz_strm_mem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_mem.c; sourceTree = "<group>"; };
+		41BFCB6F241483FB0080466C /* mz_crypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_crypt.c; sourceTree = "<group>"; };
+		41BFCB70241483FB0080466C /* mz_strm_wzaes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_wzaes.c; sourceTree = "<group>"; };
+		41BFCB71241483FB0080466C /* mz_strm_zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_zlib.h; sourceTree = "<group>"; };
+		41BFCB72241483FB0080466C /* mz_compat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_compat.c; sourceTree = "<group>"; };
+		41BFCB73241483FB0080466C /* mz_strm_pkcrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_pkcrypt.h; sourceTree = "<group>"; };
+		41BFCB74241483FB0080466C /* mz_zip_rw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_zip_rw.h; sourceTree = "<group>"; };
+		41BFCB75241483FB0080466C /* mz_os.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_os.c; sourceTree = "<group>"; };
+		41BFCB76241483FB0080466C /* mz_zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_zip.h; sourceTree = "<group>"; };
+		41BFCB77241483FB0080466C /* mz_os_posix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_os_posix.c; sourceTree = "<group>"; };
+		41BFCB78241483FB0080466C /* mz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz.h; sourceTree = "<group>"; };
+		41BFCB79241483FB0080466C /* mz_strm_buf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_buf.c; sourceTree = "<group>"; };
+		41BFCB7A241483FB0080466C /* mz_strm_split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_split.c; sourceTree = "<group>"; };
+		41BFCB7B241483FB0080466C /* mz_crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_crypt.h; sourceTree = "<group>"; };
+		41BFCB7C241483FB0080466C /* mz_strm_mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_mem.h; sourceTree = "<group>"; };
+		41BFCB7D241483FB0080466C /* mz_strm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm.c; sourceTree = "<group>"; };
+		41BFCB7E241483FB0080466C /* mz_strm_os.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mz_strm_os.h; sourceTree = "<group>"; };
+		41BFCB7F241483FB0080466C /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		41BFCB80241483FB0080466C /* SSZipCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCommon.h; sourceTree = "<group>"; };
+		41BFCB81241483FB0080466C /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		41BFCB932414844B0080466C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		41BFCB95241484620080466C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		41BFCB97241485100080466C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		41ED9B8723FFBB5700C40034 /* tmHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmHeadView.swift; sourceTree = "<group>"; };
 		41ED9B8B23FFC02E00C40034 /* tmHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmHeadView.xib; sourceTree = "<group>"; };
 		41F740E523FCEAC4004AAAE9 /* tmSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tmSearchViewController.xib; sourceTree = "<group>"; };
@@ -165,8 +240,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				416BEAA023FE86FA00FA9197 /* UIKit.framework in Frameworks */,
+				41BFCB94241484540080466C /* libz.tbd in Frameworks */,
 				416BEA9E23FE86F100FA9197 /* Foundation.framework in Frameworks */,
 				416BEA9A23FE86D000FA9197 /* CoreGraphics.framework in Frameworks */,
+				41BFCB96241484790080466C /* libiconv.tbd in Frameworks */,
+				41BFCB5D241482140080466C /* libsqlite3.0.tbd in Frameworks */,
+				41BFCB98241485100080466C /* Security.framework in Frameworks */,
 				1D43E27CE248724A04C445E7 /* Pods_tmAzurLane.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +496,8 @@
 		417916E123FCE94E00D24C08 /* tmAzurLane */ = {
 			isa = PBXGroup;
 			children = (
+				41BFCB5E241483FB0080466C /* SSZipArchive */,
+				41BFCB4B241481EB0080466C /* FMDB */,
 				41642EC624062A9200F0E05A /* DefineFile */,
 				41647C282404F9910096F30D /* ZipArchive */,
 				416BEA8B23FE3DB200FA9197 /* OpenCVMethod */,
@@ -503,6 +584,73 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		41BFCB4B241481EB0080466C /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				41BFCB4C241481EB0080466C /* FMDatabase.h */,
+				41BFCB4D241481EB0080466C /* FMDatabaseQueue.m */,
+				41BFCB4E241481EB0080466C /* FMResultSet.h */,
+				41BFCB4F241481EB0080466C /* FMDatabasePool.h */,
+				41BFCB50241481EB0080466C /* FMDatabaseAdditions.m */,
+				41BFCB51241481EB0080466C /* FMDatabase.m */,
+				41BFCB52241481EB0080466C /* FMDatabaseQueue.h */,
+				41BFCB53241481EB0080466C /* FMDB.h */,
+				41BFCB54241481EB0080466C /* FMDatabaseAdditions.h */,
+				41BFCB55241481EB0080466C /* FMDatabasePool.m */,
+				41BFCB56241481EB0080466C /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		41BFCB5E241483FB0080466C /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				41BFCB5F241483FB0080466C /* ZipArchive.h */,
+				41BFCB60241483FB0080466C /* minizip */,
+				41BFCB7F241483FB0080466C /* SSZipArchive.h */,
+				41BFCB80241483FB0080466C /* SSZipCommon.h */,
+				41BFCB81241483FB0080466C /* SSZipArchive.m */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		41BFCB60241483FB0080466C /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				41BFCB61241483FB0080466C /* mz_strm_os_posix.c */,
+				41BFCB62241483FB0080466C /* mz_strm_pkcrypt.c */,
+				41BFCB63241483FB0080466C /* mz_strm_wzaes.h */,
+				41BFCB64241483FB0080466C /* mz_compat.h */,
+				41BFCB65241483FB0080466C /* mz_strm_zlib.c */,
+				41BFCB66241483FB0080466C /* mz_zip.c */,
+				41BFCB67241483FB0080466C /* mz_os.h */,
+				41BFCB68241483FB0080466C /* LICENSE */,
+				41BFCB69241483FB0080466C /* mz_zip_rw.c */,
+				41BFCB6A241483FB0080466C /* mz_strm_split.h */,
+				41BFCB6B241483FB0080466C /* mz_strm_buf.h */,
+				41BFCB6C241483FB0080466C /* mz_crypt_apple.c */,
+				41BFCB6D241483FB0080466C /* mz_strm.h */,
+				41BFCB6E241483FB0080466C /* mz_strm_mem.c */,
+				41BFCB6F241483FB0080466C /* mz_crypt.c */,
+				41BFCB70241483FB0080466C /* mz_strm_wzaes.c */,
+				41BFCB71241483FB0080466C /* mz_strm_zlib.h */,
+				41BFCB72241483FB0080466C /* mz_compat.c */,
+				41BFCB73241483FB0080466C /* mz_strm_pkcrypt.h */,
+				41BFCB74241483FB0080466C /* mz_zip_rw.h */,
+				41BFCB75241483FB0080466C /* mz_os.c */,
+				41BFCB76241483FB0080466C /* mz_zip.h */,
+				41BFCB77241483FB0080466C /* mz_os_posix.c */,
+				41BFCB78241483FB0080466C /* mz.h */,
+				41BFCB79241483FB0080466C /* mz_strm_buf.c */,
+				41BFCB7A241483FB0080466C /* mz_strm_split.c */,
+				41BFCB7B241483FB0080466C /* mz_crypt.h */,
+				41BFCB7C241483FB0080466C /* mz_strm_mem.h */,
+				41BFCB7D241483FB0080466C /* mz_strm.c */,
+				41BFCB7E241483FB0080466C /* mz_strm_os.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
 		41ED9B8623FFBB2300C40034 /* HeadView */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +703,10 @@
 		422CDDE26720EE4B3A788E89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41BFCB97241485100080466C /* Security.framework */,
+				41BFCB95241484620080466C /* libiconv.tbd */,
+				41BFCB932414844B0080466C /* libz.tbd */,
+				41BFCB5C241482050080466C /* libsqlite3.0.tbd */,
 				416BEA9F23FE86FA00FA9197 /* UIKit.framework */,
 				416BEA9D23FE86F100FA9197 /* Foundation.framework */,
 				416BEA9B23FE86E400FA9197 /* CoreFoundation.framework */,
@@ -593,7 +745,6 @@
 				417916DB23FCE94E00D24C08 /* Sources */,
 				417916DC23FCE94E00D24C08 /* Frameworks */,
 				417916DD23FCE94E00D24C08 /* Resources */,
-				AED91BF63BD7A640D01DFD03 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -700,6 +851,7 @@
 				416429AE24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib in Resources */,
 				41F740EB23FCEAC4004AAAE9 /* tmSearchViewController.xib in Resources */,
 				416A2F232408F48700D6C3A8 /* tmProfitTableViewCell.xib in Resources */,
+				41BFCB86241483FC0080466C /* LICENSE in Resources */,
 				416A2F1D2408EF4B00D6C3A8 /* tmProfitViewController.xib in Resources */,
 				4163A9F4240BA5410014B643 /* tmAddTechDetailedViewController.xib in Resources */,
 				41ED9B8C23FFC02E00C40034 /* tmHeadView.xib in Resources */,
@@ -745,23 +897,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AED91BF63BD7A640D01DFD03 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tmAzurLane/Pods-tmAzurLane-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tmAzurLane/Pods-tmAzurLane-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tmAzurLane/Pods-tmAzurLane-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CAD9C79CE9FED917DAF792C3 /* [CP] Check Pods Manifest.lock */ = {
@@ -816,14 +951,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				416429AD24017734006535DC /* tmEquipmentBlueprintCategoryViewController.swift in Sources */,
+				41BFCB82241483FB0080466C /* mz_strm_os_posix.c in Sources */,
 				41B14378240210F20091AFE7 /* tmEquipmentBlueprintModel.swift in Sources */,
 				416A2F2D2408FD3600D6C3A8 /* tmProfitDetailPresenter.swift in Sources */,
+				41BFCB59241481EB0080466C /* FMDatabase.m in Sources */,
 				41F740EE23FCEAC4004AAAE9 /* tmSearchViewController.swift in Sources */,
+				41BFCB91241483FC0080466C /* mz_strm.c in Sources */,
 				416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */,
 				4143954D240F969F00D3065B /* tmProfitDetailedDelegate.swift in Sources */,
+				41BFCB8F241483FC0080466C /* mz_strm_buf.c in Sources */,
+				41BFCB89241483FC0080466C /* mz_strm_mem.c in Sources */,
 				416A2F272408FB0000D6C3A8 /* tmProfitDetailViewController.swift in Sources */,
+				41BFCB90241483FC0080466C /* mz_strm_split.c in Sources */,
 				41642ED12406326200F0E05A /* tmSearchModel.swift in Sources */,
+				41BFCB8D241483FC0080466C /* mz_os.c in Sources */,
 				41B14376240210D50091AFE7 /* tmEquipmentBlueprintDelegate.swift in Sources */,
+				41BFCB87241483FC0080466C /* mz_zip_rw.c in Sources */,
 				41F740F023FCF1F0004AAAE9 /* tmDataBase.swift in Sources */,
 				416A2F312408FF1300D6C3A8 /* tmProfitDetailTableViewCell.swift in Sources */,
 				41B14374240210B90091AFE7 /* tmEquipmentBlueprintPresenter.swift in Sources */,
@@ -833,21 +976,34 @@
 				41B34E69240CB7B300EE817D /* tmAddTechDetailedPresenter.swift in Sources */,
 				417916E323FCE94E00D24C08 /* AppDelegate.swift in Sources */,
 				41642EC824062ABF00F0E05A /* tmDefineFile.swift in Sources */,
+				41BFCB8C241483FC0080466C /* mz_compat.c in Sources */,
 				416A2F34240922B600D6C3A8 /* tmProfitDetailModel.swift in Sources */,
+				41BFCB58241481EB0080466C /* FMDatabaseAdditions.m in Sources */,
 				417916E523FCE94E00D24C08 /* SceneDelegate.swift in Sources */,
 				417916E723FCE94E00D24C08 /* ContentView.swift in Sources */,
 				41B34E6D240CB9A800EE817D /* tmAddTechDetailedModel.swift in Sources */,
+				41BFCB5B241481EB0080466C /* FMResultSet.m in Sources */,
+				41BFCB8E241483FC0080466C /* mz_os_posix.c in Sources */,
+				41BFCB83241483FC0080466C /* mz_strm_pkcrypt.c in Sources */,
+				41BFCB84241483FC0080466C /* mz_strm_zlib.c in Sources */,
+				41BFCB85241483FC0080466C /* mz_zip.c in Sources */,
+				41BFCB8B241483FC0080466C /* mz_strm_wzaes.c in Sources */,
+				41BFCB92241483FC0080466C /* SSZipArchive.m in Sources */,
 				41B34E6F240CB9C100EE817D /* tmAddTechDetailedDelegate.swift in Sources */,
 				41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */,
 				4166C40A241104E500D9E009 /* tmAddProfitDetailedTableViewCell.swift in Sources */,
 				416429B224017957006535DC /* tmEquipmentBlueprintCollectionViewCell.swift in Sources */,
+				41BFCB8A241483FC0080466C /* mz_crypt.c in Sources */,
 				416BEA9823FE805B00FA9197 /* tmOOB.swift in Sources */,
 				416A2F192408E84000D6C3A8 /* tmProfitModel.swift in Sources */,
 				41642ECF2406325400F0E05A /* tmSearchDelegate.swift in Sources */,
 				41642ECD240631E000F0E05A /* tmSearchViewControllerPresenter.swift in Sources */,
+				41BFCB88241483FC0080466C /* mz_crypt_apple.c in Sources */,
 				4163A9F3240BA5410014B643 /* tmAddTechDetailedViewController.swift in Sources */,
+				41BFCB57241481EB0080466C /* FMDatabaseQueue.m in Sources */,
 				416A2F1C2408EF4B00D6C3A8 /* tmProfitViewController.swift in Sources */,
 				41647C2A2404F9AC0096F30D /* tmZipArchive.swift in Sources */,
+				41BFCB5A241481EB0080466C /* FMDatabasePool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1017,6 +1173,15 @@
 				DEVELOPMENT_ASSET_PATHS = "\"tmAzurLane/Preview Content\"";
 				DEVELOPMENT_TEAM = XL6XKUMDT7;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					HAVE_INTTYPES_H,
+					HAVE_PKCRYPT,
+					HAVE_STDINT_H,
+					HAVE_WZAES,
+					HAVE_ZLIB,
+				);
 				INFOPLIST_FILE = tmAzurLane/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1041,6 +1206,15 @@
 				DEVELOPMENT_ASSET_PATHS = "\"tmAzurLane/Preview Content\"";
 				DEVELOPMENT_TEAM = XL6XKUMDT7;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					HAVE_INTTYPES_H,
+					HAVE_PKCRYPT,
+					HAVE_STDINT_H,
+					HAVE_WZAES,
+					HAVE_ZLIB,
+				);
 				INFOPLIST_FILE = tmAzurLane/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

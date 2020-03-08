@@ -72,10 +72,15 @@ extension tmProfitDetailPresenter{
         guard let docDir = kBundleDocumentPath() else {
             return nil
         }
-        return UIImage(contentsOfFile: docDir+"/Pictures/"+picture+".png")
+        return UIImage(contentsOfFile: docDir+"/ShowPictures/"+picture+".png")
     }
     
-    func getPicture(_ row:Int) -> String {
+    func isBluePrint(withRow row:Int) -> Bool {
+        return getPicture(row).contains("blueprint")
+        
+    }
+    
+    private func getPicture(_ row:Int) -> String {
         guard let picture = modelSelect().profitDetails[row].picture else {
             return ""
         }
@@ -182,14 +187,19 @@ extension tmProfitDetailPresenter {
     }
     
     func add(_ imagePath:String) {
-        let manager = FileManager.default
-        guard var paths = manager.subpaths(atPath: kBundleDocumentPath()!+"/Pictures") else {
-            return
-        }
-        for (index, element) in paths.enumerated() {
-            if !element.hasSuffix(".png") {
-                paths.remove(at: index)
-            }
+//        let manager = FileManager.default
+//        guard var paths = manager.subpaths(atPath: kBundleDocumentPath()!+"/Pictures") else {
+//            return
+//        }
+//        for (index, element) in paths.enumerated() {
+//            if !element.hasSuffix(".png") {
+//                paths.remove(at: index)
+//            }
+//        }
+        var paths:[String] = []
+        let pictures = tmDataBaseManager.shareInstance.selectFromProfitMeterialToUseOpenCV()
+        for item in pictures {
+            paths.append(kBundleDocumentPath()!+"/Pictures/"+item+".png")
         }
         
         tmProtocol.showProgress()

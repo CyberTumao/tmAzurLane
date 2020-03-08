@@ -45,7 +45,7 @@ class tmDataBaseManager: NSObject {
         return nil
     }
     
-    // MARK: -TechDetailedInfo
+    // MARK: - TechDetailedInfo
     func selectFromTechDetailedInfo(withNumber number:Int) -> FMResultSet? {
         let sql = "SELECT * FROM TechDetailedInfo WHERE tech_number=? ORDER by quality,scale,number"
         return db.executeQuery(sql, withArgumentsIn: [number])
@@ -74,6 +74,18 @@ class tmDataBaseManager: NSObject {
     
     func countForProfitMaterial(withTechNumber number:Int) -> Int? {
         return getCount(table: "ProfitMaterial", condition: "category = \(number)")
+    }
+    
+    /// 选择要检测的图片，通用装备太多，且一般，考虑到运算时间，不予考虑
+    func selectFromProfitMeterialToUseOpenCV() -> [String] {
+        let sql = "SELECT (picture) FROM ProfitMaterial WHERE category=1 OR category=2 OR category=3 OR category=4"
+        guard let result = db.executeQuery(sql, withArgumentsIn: []) else { return [] }
+        var pictures:[String] = []
+        while result.next() {
+            guard let picture = result.string(forColumn: "picture") else { continue }
+            pictures.append(picture)
+        }
+        return pictures
     }
     
     /// 获取ProfitMeterial信息 $0 图片id $1 图片介绍
