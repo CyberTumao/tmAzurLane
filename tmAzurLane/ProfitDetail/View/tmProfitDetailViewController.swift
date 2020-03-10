@@ -45,7 +45,7 @@ class tmProfitDetailViewController: UIViewController {
 extension tmProfitDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == tableView.numberOfRows(inSection: 0)-1 && presenter!.editingStatus {
-            showAlert()
+            showAlert(indexPath)
         }
     }
 }
@@ -232,7 +232,7 @@ extension tmProfitDetailViewController {
         tableview.reloadData()
     }
     
-    func showAlert() -> Void {
+    func showAlert(_ indexPath: IndexPath) -> Void {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let action1 = UIAlertAction(title: action_design_diagram_1, style: .default) { (action) in
             self.pushToView(1)
@@ -256,6 +256,12 @@ extension tmProfitDetailViewController {
         alert.addAction(action4)
         alert.addAction(action5)
         alert.addAction(action6)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let popover = alert.popoverPresentationController
+            popover?.sourceView = self.tableview
+            popover?.sourceRect = self.tableview.cellForRow(at: indexPath)!.frame
+            popover?.permittedArrowDirections = .any
+        }
         self.present(alert, animated: true, completion: nil)
     }
     

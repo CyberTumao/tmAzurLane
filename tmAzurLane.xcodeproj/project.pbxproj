@@ -1190,7 +1190,7 @@
 				);
 				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tumao.tmAzurLane;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = tmAzurLane;
 				SWIFT_OBJC_BRIDGING_HEADER = tmAzurLane/Bridge/bridging.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1223,7 +1223,7 @@
 				);
 				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tumao.tmAzurLane;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = tmAzurLane;
 				SWIFT_OBJC_BRIDGING_HEADER = tmAzurLane/Bridge/bridging.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

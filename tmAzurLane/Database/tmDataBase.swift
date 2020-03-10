@@ -134,7 +134,7 @@ class tmDataBaseManager: NSObject {
     }
     
     func selectFromHistory(withHistoryId number:Int) -> FMResultSet? {
-        let sql = "SELECT * FROM history WHERE number = ?"
+        let sql = "SELECT * FROM history WHERE number = ? ORDER BY profitMeterialId"
         return db.executeQuery(sql, withArgumentsIn: [number])
     }
     

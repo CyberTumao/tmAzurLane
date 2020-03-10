@@ -29,10 +29,11 @@ class tmProfitPresenter {
     func getData(_ techInfoId:Int) -> Void {
         guard let result = tmDataBaseManager.shareInstance.selectFromHistoryAdd(withTechInfoId: techInfoId) else {return}
         while result.next() {
-            guard let date = result.string(forColumn: "date") else {break}
+            guard let date = result.string(forColumn: "date") else {continue}
             model.appendData(result.long(forColumn: "historyId"), date)
         }
     }
+    
     func reloadData(_ techinfoId:Int) -> Void {
         model.count = nil
         model.profitArray.removeAll()

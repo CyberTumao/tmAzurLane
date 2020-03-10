@@ -187,20 +187,20 @@ extension tmProfitDetailPresenter {
     }
     
     func add(_ imagePath:String) {
-//        let manager = FileManager.default
-//        guard var paths = manager.subpaths(atPath: kBundleDocumentPath()!+"/Pictures") else {
-//            return
-//        }
-//        for (index, element) in paths.enumerated() {
-//            if !element.hasSuffix(".png") {
-//                paths.remove(at: index)
-//            }
-//        }
-        var paths:[String] = []
-        let pictures = tmDataBaseManager.shareInstance.selectFromProfitMeterialToUseOpenCV()
-        for item in pictures {
-            paths.append(kBundleDocumentPath()!+"/Pictures/"+item+".png")
+        let manager = FileManager.default
+        guard var paths = manager.subpaths(atPath: kBundleDocumentPath()!+"/Pictures") else {
+            return
         }
+        for (index, element) in paths.enumerated() {
+            if !element.hasSuffix(".png") {
+                paths.remove(at: index)
+            }
+        }
+//        var paths:[String] = []
+//        let pictures = tmDataBaseManager.shareInstance.selectFromProfitMeterialToUseOpenCV()
+//        for item in pictures {
+//            paths.append(kBundleDocumentPath()!+"/Pictures/"+item+".png")
+//        }
         
         tmProtocol.showProgress()
         tmProtocol.setProgressText("1/\(paths.count)")
