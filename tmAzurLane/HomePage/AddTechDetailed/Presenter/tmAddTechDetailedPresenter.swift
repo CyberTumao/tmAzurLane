@@ -14,6 +14,7 @@ enum tmAddTech {
     case quality
     case scale
     case name
+    case addition
 }
 
 class tmAddTechDetailedPresenter {
@@ -35,9 +36,9 @@ extension tmAddTechDetailedPresenter {
         tmAddTechDetailedModel.shareInstance.data[row] = data
     }
     func getData(_ row:Int) -> Int {
-        return tmAddTechDetailedModel.shareInstance.data[row]
+        tmAddTechDetailedModel.shareInstance.data[row]
     }
-    func getPickerArray() -> [String] {
+    func getPickerArray(_ techNumber:Int) -> [String] {
         switch value {
         case .name:
             return getPickerName()
@@ -49,9 +50,11 @@ extension tmAddTechDetailedPresenter {
             return getPickerQuailty()
         case .scale:
             return getPickerScale()
+        case .addition:
+            return getPickerAddition(techNumber)
         }
     }
-    func getPickerArrayCount() -> Int {
+    func getPickerArrayCount(_ techNumber:Int) -> Int {
         switch value {
         case .name:
             return getPickerName().count
@@ -63,22 +66,27 @@ extension tmAddTechDetailedPresenter {
             return getPickerQuailty().count
         case .scale:
             return getPickerScale().count
+        case .addition:
+            return getPickerAddition(techNumber).count
         }
     }
     private func getPickerName() -> [String] {
-        return tmAddTechDetailedModel.shareInstance.nameArray
+        tmAddTechDetailedModel.shareInstance.nameArray
     }
     private func getPickerNumberFirst() -> [String] {
-        return tmAddTechDetailedModel.shareInstance.numberFirstArray
+        tmAddTechDetailedModel.shareInstance.numberFirstArray
     }
     private func getPickerNumberThird() -> [String] {
-        return tmAddTechDetailedModel.shareInstance.numberSecondArray
+        tmAddTechDetailedModel.shareInstance.numberSecondArray
     }
     private func getPickerQuailty() -> [String] {
-        return tmAddTechDetailedModel.shareInstance.qualityArray
+        tmAddTechDetailedModel.shareInstance.qualityArray
     }
     private func getPickerScale() -> [String] {
-        return tmAddTechDetailedModel.shareInstance.scaleArray
+        tmAddTechDetailedModel.shareInstance.scaleArray
+    }
+    private func getPickerAddition(_ techNumber:Int) -> [String] {
+        techNumber == 1 ? tmAddTechDetailedModel.shareInstance.additionTech1st : tmAddTechDetailedModel.shareInstance.additionTech2nd
     }
     func saveData(withTechNumber:Int) {
         let number = String(tmAddTechDetailedModel.shareInstance.numberFirstArray[tmAddTechDetailedModel.shareInstance.data[0]])+"-"+String(tmAddTechDetailedModel.shareInstance.data[1])+"-"+String(tmAddTechDetailedModel.shareInstance.numberSecondArray[tmAddTechDetailedModel.shareInstance.data[2]])
@@ -87,7 +95,12 @@ extension tmAddTechDetailedPresenter {
         let quality = tmAddTechDetailedModel.shareInstance.data[5]
         let scale = tmAddTechDetailedModel.shareInstance.data[3]
 //        let addition
-        tmDataBaseManager.shareInstance.insertIntoTechDetailedInfo(withTechNumber: withTechNumber, name: name, number: number, quality: quality, scale: scale, addition: nil)
-        
+        var addition:String?
+        if tmAddTechDetailedModel.shareInstance.numberFirstArray[tmAddTechDetailedModel.shareInstance.data[0]] == "D" {
+            addition = withTechNumber == 1 ? tmAddTechDetailedModel.shareInstance.additionTech1st[tmAddTechDetailedModel.shareInstance.data[6]] : tmAddTechDetailedModel.shareInstance.additionTech2nd[tmAddTechDetailedModel.shareInstance.data[6]]
+        }
+        tmDataBaseManager.shareInstance.checkExist(withTechNumber: withTechNumber, name: name, number: number, quality: quality, scale: scale) {
+            tmDataBaseManager.shareInstance.insertIntoTechDetailedInfo(withTechNumber: withTechNumber, name: name, number: number, quality: quality, scale: scale, addition: addition)
+        }
     }
 }

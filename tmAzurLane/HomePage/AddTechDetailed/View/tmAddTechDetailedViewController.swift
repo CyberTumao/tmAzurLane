@@ -18,6 +18,8 @@ class tmAddTechDetailedViewController: UIViewController,tmAddTechDetailedDelegat
     @IBOutlet weak var quality: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var pickBar: UIView!
+    @IBOutlet weak var additionLabel: UILabel!
+    @IBOutlet weak var additionButton: UIButton!
     
     var visiablePicker = false
     lazy var presenter:tmAddTechDetailedPresenter? = {
@@ -56,7 +58,7 @@ class tmAddTechDetailedViewController: UIViewController,tmAddTechDetailedDelegat
     }
     @IBAction func numberFirstClick(_ sender: Any) {
         presenter?.setAddTechValue(.numberFirst)
-            viewControl(0)
+        viewControl(0)
     }
     @IBAction func quliatyClick(_ sender: Any) {
         presenter?.setAddTechValue(.quality)
@@ -65,26 +67,40 @@ class tmAddTechDetailedViewController: UIViewController,tmAddTechDetailedDelegat
     @IBAction func numberThirdClick(_ sender: Any) {
         presenter?.setAddTechValue(.numberThird)
         viewControl(2)
+    }    
+    @IBAction func additionButtonClick(_ sender: Any) {
+        presenter?.setAddTechValue(.addition)
+        viewControl(6)
     }
     @IBAction func selectSure(_ sender: Any) {
         switch presenter?.value {
         case .name:
             presenter?.changeData(pickerView.selectedRow(inComponent: 0), 4)
-            name.setTitle(presenter?.getPickerArray()[pickerView.selectedRow(inComponent: 0)], for: .normal)
+            name.setTitle(presenter?.getPickerArray(techNumber!)[pickerView.selectedRow(inComponent: 0)], for: .normal)
         case .numberFirst:
             presenter?.changeData(pickerView.selectedRow(inComponent: 0), 0)
-            numberFirst.setAttributedTitle(NSAttributedString(string: presenter!.getPickerArray()[pickerView.selectedRow(inComponent: 0)]), for: .normal)
+            numberFirst.setAttributedTitle(NSAttributedString(string: presenter!.getPickerArray(techNumber!)[pickerView.selectedRow(inComponent: 0)]), for: .normal)
+            if pickerView.selectedRow(inComponent: 0) == 1 {
+                additionLabel.isHidden = false
+                additionButton.isHidden = false
+            } else {
+                additionLabel.isHidden = true
+                additionButton.isHidden = true
+            }
         case .numberThird:
             presenter?.changeData(pickerView.selectedRow(inComponent: 0), 2)
-            numberThird.setAttributedTitle(NSAttributedString(string: presenter!.getPickerArray()[pickerView.selectedRow(inComponent: 0)]), for: .normal)
+            numberThird.setAttributedTitle(NSAttributedString(string: presenter!.getPickerArray(techNumber!)[pickerView.selectedRow(inComponent: 0)]), for: .normal)
         case .quality:
             presenter?.changeData(pickerView.selectedRow(inComponent: 0), 5)
-            quality.setTitle(presenter?.getPickerArray()[pickerView.selectedRow(inComponent: 0)], for: .normal)
+            quality.setTitle(presenter?.getPickerArray(techNumber!)[pickerView.selectedRow(inComponent: 0)], for: .normal)
         case .scale:
             presenter?.changeData(pickerView.selectedRow(inComponent: 0), 3)
-            scale.setTitle(presenter?.getPickerArray()[pickerView.selectedRow(inComponent: 0)], for: .normal)
-        default:
-            break
+            scale.setTitle(presenter?.getPickerArray(techNumber!)[pickerView.selectedRow(inComponent: 0)], for: .normal)
+        case .addition:
+            presenter?.changeData(pickerView.selectedRow(inComponent: 0), 6)
+            additionButton.setTitle(presenter?.getPickerArray(techNumber!)[pickerView.selectedRow(inComponent: 0)], for: .normal)
+        case .none:
+            return
         }
         visiablePickerView()
     }
@@ -101,7 +117,7 @@ class tmAddTechDetailedViewController: UIViewController,tmAddTechDetailedDelegat
 // MARK: - UIPickerViewDelegate
 extension tmAddTechDetailedViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return presenter?.getPickerArray()[row]
+        return presenter?.getPickerArray(techNumber!)[row]
     }
 }
 
@@ -112,7 +128,7 @@ extension tmAddTechDetailedViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return presenter!.getPickerArrayCount()
+        return presenter!.getPickerArrayCount(techNumber!)
     }
 }
 
@@ -184,7 +200,7 @@ extension tmAddTechDetailedViewController {
             return false
         }
         if text.isEmpty {
-            presenter?.changeData(759, 5)
+            presenter?.changeData(759, 1)
             return true
         }
         if text.count<3 {

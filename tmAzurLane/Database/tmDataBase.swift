@@ -51,6 +51,14 @@ class tmDataBaseManager: NSObject {
         return db.executeQuery(sql, withArgumentsIn: [number])
     }
     
+    func checkExist(withTechNumber:Int, name:String, number:String, quality:Int, scale:Int, noExist:() -> Void) {
+        let sql = "SELECT * FROM TechDetailedInfo WHERE tech_number=? AND name=? AND number=? AND quality=? AND scale=?"
+        guard let result = db.executeQuery(sql, withArgumentsIn: [withTechNumber, name, number, quality, scale]) else { return }
+        if !result.next() {
+            noExist()
+        }
+    }
+    
     func insertIntoTechDetailedInfo(withTechNumber:Int, name:String, number:String, quality:Int, scale:Int, addition:String?) {
         guard let addition = addition else {
             let sql = "INSERT INTO TechDetailedInfo(tech_number,name,number,quality,scale) VALUES (?,?,?,?,?)"

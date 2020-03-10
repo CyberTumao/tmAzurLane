@@ -16,7 +16,7 @@ class tmAddTechDetailedModel {
         ["C", "D", "E", "G", "H", "Q", "T"]
     }()
     lazy var numberSecondArray:[String] = {
-        ["MI", "RF"]
+        ["MI", "RF", "UL"]
     }()
     lazy var qualityArray = {
         ["蓝", "紫", "金"]
@@ -27,8 +27,14 @@ class tmAddTechDetailedModel {
     lazy var nameArray = {
         ["定向研发", "基础研究", "舰装解析", "魔方解析", "试验品募集", "研究委托", "资金募集"]
     }()
-    /// $0 numberFirst $1 numberSecond $2 numberThid $3 scale $4 name $5 quality
+    lazy var additionTech1st = {
+        ["海王星", "君主", "伊吹", "出云", "罗恩", "路易九世"]
+    }()
+    lazy var additionTech2nd = {
+        ["西雅图", "佐治亚", "北风", "吾妻", "腓特烈大帝", "加斯科涅"]
+    }()
+    /// $0 numberFirst $1 numberSecond $2 numberThid $3 scale $4 name $5 quality $6 addition
     lazy var data = {
-        [0, 0, 0, 0, 0, 0]
+        [0, 0, 0, 0, 0, 0, 0]
     }()
 }
