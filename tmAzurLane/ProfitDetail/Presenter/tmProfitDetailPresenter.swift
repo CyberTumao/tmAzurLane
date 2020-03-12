@@ -124,6 +124,12 @@ extension tmProfitDetailPresenter {
         self.editModel.appendData(id, 1, name, picture)
     }
     
+    func changeNumber(_ count:Int, _ row:Int) {
+        let tempProfit = self.editModel.profitDetails[row]
+        tempProfit.profitNumber = count
+        self.editModel.profitDetails[row] = tempProfit
+    }
+    
     func removeData(_ row: Int) {
         
     }

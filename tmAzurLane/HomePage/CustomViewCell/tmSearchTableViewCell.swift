@@ -12,6 +12,8 @@ class tmSearchTableViewCell: UITableViewCell {
     @IBOutlet weak var scaleLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var background: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

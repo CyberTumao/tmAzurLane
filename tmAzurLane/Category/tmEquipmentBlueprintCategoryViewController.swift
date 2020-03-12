@@ -9,7 +9,7 @@
 import UIKit
 
 typealias blockData = (Int, String, String)
-typealias chosen = (_ name:blockData?) -> Void
+typealias chosen = (_ name:[blockData]?) -> Void
 
 class tmEquipmentBlueprintCategoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,6 +23,8 @@ class tmEquipmentBlueprintCategoryViewController: UIViewController {
     let cellId = "tmEquipmentBlueprintCollectionViewCell"
     let bounds:CGFloat = 6
     var viewCellWidth:CGFloat = 0
+    /// 每行显示的个数
+    var rowNumber:Int = 3
     /// 根据techNumber选择显示内容
     lazy var techNumber:Int = {0}()
     var chosenElement:chosen? = nil
@@ -55,7 +57,7 @@ extension tmEquipmentBlueprintCategoryViewController: UICollectionViewDelegate {
             return
         }
         tempViewCell.pauseAnimate()
-        tempViewCell.chosenImage.isHidden = true
+//        tempViewCell.chosenImage.isHidden = true
         tmTempViewCell = cellview
     }
     
@@ -117,21 +119,24 @@ extension tmEquipmentBlueprintCategoryViewController {
         self.navigationItem.hidesBackButton = true
         presenter?.getFMResultSetFromProfitMaterial(withTechNumber: techNumber)
         collectionView.register(UINib.init(nibName: cellId, bundle:.main), forCellWithReuseIdentifier: cellId)
-        viewCellWidth = (UIScreen.main.bounds.size.width-bounds*6)/3
+        rowNumber = Int(UIScreen.main.bounds.size.width)/128
+        viewCellWidth = (UIScreen.main.bounds.size.width-bounds*2*CGFloat(rowNumber))/CGFloat(rowNumber)
     }
     
-    func getSelectedRow() -> Int? {
-        guard let temp = tmTempViewCell else { return nil }
-        if temp.chosenImage.isHidden {
-            return nil
-        } else {
-            return clickIndex
+    func getSelectedRow() -> [Int] {
+        var result:[Int] = []
+        for item in collectionView.visibleCells.enumerated() {
+            let element = item.element as! tmEquipmentBlueprintCollectionViewCell
+            if !element.chosenImage.isHidden {
+                result.append(item.offset)
+            }
         }
-        
+        return result
     }
     
     @objc func buttonClick() {
-        guard let row = getSelectedRow() else {
+        let row = getSelectedRow()
+        if row.count == 0 {
             alert()
             return
         }

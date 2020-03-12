@@ -77,8 +77,12 @@ extension tmProfitDetailViewController: UITableViewDataSource {
                 cell.minus.isHidden = false
             }
             guard let number = presenter?.getNumber(withRow: indexPath.row) else { return cell }
+//            print("index:\(indexPath.row)      number:\(number)")
             cell.number.text = String(number)
             cell.setCount(number)
+            cell.countChange = { (count) in
+                self.presenter!.changeNumber(count, indexPath.row)
+            }
             if presenter!.isBluePrint(withRow: indexPath.row) {
                 cell.bpIcon.isHidden = false
                 cell.icon.isHidden = true
@@ -269,7 +273,9 @@ extension tmProfitDetailViewController {
         let viewController = tmEquipmentBlueprintCategoryViewController(number: number)
         viewController.chosenElement = {(data) in
             guard let data = data else { return }
-            self.presenter?.addData(id: data.0, name: data.2, picture: data.1)
+            for item in data {
+                self.presenter?.addData(id: item.0, name: item.2, picture: item.1)
+            }
             self.tableview.reloadData()
         }
         self.navigationController?.pushViewController(viewController, animated: true)

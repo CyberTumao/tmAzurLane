@@ -17,6 +17,7 @@ class tmProfitDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var bpIcon: UIImageView!
     
     var count:Int = 0
+    var countChange:((Int) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +38,9 @@ class tmProfitDetailTableViewCell: UITableViewCell {
             minus.isEnabled = true
         }
         number.text = String(count)
+        if countChange != nil {
+            countChange!(count)
+        }
     }
     
     @IBAction func minusClick(_ sender: Any) {
@@ -45,13 +49,19 @@ class tmProfitDetailTableViewCell: UITableViewCell {
             count = 0
             minus.isEnabled = false
         }
+        if countChange != nil {
+            countChange!(count)
+        }
         number.text = String(count)
     }
     
     func setCount(_ count:Int) {
+        print(count)
         self.count = count
         if count <= 0 {
             minus.isEnabled = false
+        } else {
+            minus.isEnabled = true
         }
     }
     

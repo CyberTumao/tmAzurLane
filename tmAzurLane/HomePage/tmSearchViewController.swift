@@ -72,7 +72,13 @@ extension tmSearchViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! tmSearchTableViewCell
-        cell.contentView.backgroundColor = presenter?.getColor(withSection: indexPath.section, andRow: indexPath.row)
+        cell.background.image = presenter?.getBackground(withSection: indexPath.section, andRow: indexPath.row)
+        presenter?.getIcon(withSection: indexPath.section, andRow: indexPath.row, hasAddition: { (image) in
+            cell.icon.isHidden = false
+            cell.icon.image = image
+        }, hasNotAddition: {
+            cell.icon.isHidden = true
+        })
         cell.numberLabel.attributedText? = NSAttributedString(string: presenter!.getNumber(withSection: indexPath.section, andRow: indexPath.row))
         cell.nameLabel.text = presenter?.getName(withSection: indexPath.section, andRow: indexPath.row)
         cell.scaleLabel.text = presenter?.getScale(withSection: indexPath.section, andRow: indexPath.row)

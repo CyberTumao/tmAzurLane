@@ -59,11 +59,15 @@ extension tmEquipmentBlueprintPresenter {
     
     /// profitId, pictureName, name)
     /// - Parameter row: 被选中的元素
-    func getBlockData(_ row:Int) -> blockData {
-        let pictureName = getPicture(withRow: row)
-        let name = getName(withRow: row)
-        let profitId = getProfitId(withRow: row)
-        return (profitId, pictureName, name)
+    func getBlockData(_ row:[Int]) -> [blockData] {
+        var block:[blockData] = []
+        for item in row {
+            let pictureName = getPicture(withRow: item)
+            let name = getName(withRow: item)
+            let profitId = getProfitId(withRow: item)
+            block.append((profitId, pictureName, name))
+        }
+        return block
     }
     
 }

@@ -52,7 +52,7 @@ class tmSearchViewControllerPresenter {
         }
     }
     
-    /// 获取tableviewcell的底色
+    /// 获取tableviewcell的底色（不使用）
     /// - Parameters:
     ///   - section: <#section description#>
     ///   - row: <#row description#>
@@ -75,6 +75,76 @@ class tmSearchViewControllerPresenter {
             break
         }
         return color
+    }
+    
+    /// 获取tableview的背景图片
+    /// - Parameters:
+    ///   - section: <#section description#>
+    ///   - row: <#row description#>
+    func getBackground(withSection section:Int, andRow row:Int) -> UIImage? {
+        var quality = 0
+        var image:UIImage?
+        guard let techInfo = getTmTechInfo(withTechNumber: section, row: row) else {
+            quality = 3
+            return image
+        }
+        quality = techInfo.quality
+        switch quality {
+        case 0:
+            image = UIImage(named: "techInfoBackground_0")
+        case 1:
+            image = UIImage(named: "techInfoBackground_1")
+        case 2:
+            image = UIImage(named: "techInfoBackground_2")
+        default:
+            break
+        }
+        return image
+    }
+    
+    func getIcon(withSection section:Int, andRow row:Int, hasAddition:(UIImage?) -> Void, hasNotAddition:() -> Void) {
+        let number = getNumber(withSection: section, andRow: row)
+        if number.hasPrefix("D") {
+            guard let techInfo = getTmTechInfo(withTechNumber: section, row: row) else {
+                hasNotAddition()
+                return
+            }
+            guard let addition = techInfo.addition else {
+                hasNotAddition()
+                return
+            }
+            if section == 0 { //Monarch Ibuki Izumo Roon Saint_Louis Seattle Georgia Kitakaze Azuma Friedrich_der_Große Gascogne
+                if addition == nameOfTechShips.Neptune.value {
+                    hasAddition(UIImage(named: "ship_1_1"))
+                } else if addition == nameOfTechShips.Monarch.value {
+                    hasAddition(UIImage(named: "ship_1_2"))
+                } else if addition == nameOfTechShips.Ibuki.value {
+                    hasAddition(UIImage(named: "ship_1_3"))
+                } else if addition == nameOfTechShips.Izumo.value {
+                    hasAddition(UIImage(named: "ship_1_4"))
+                } else if addition == nameOfTechShips.Roon.value {
+                    hasAddition(UIImage(named: "ship_1_5"))
+                } else if addition == nameOfTechShips.Saint_Louis.value {
+                    hasAddition(UIImage(named: "ship_1_6"))
+                }
+            } else {
+                if addition == nameOfTechShips.Seattle.value {
+                    hasAddition(UIImage(named: "ship_2_1"))
+                } else if addition == nameOfTechShips.Georgia.value {
+                    hasAddition(UIImage(named: "ship_2_2"))
+                } else if addition == nameOfTechShips.Kitakaze.value {
+                    hasAddition(UIImage(named: "ship_2_3"))
+                } else if addition == nameOfTechShips.Azuma.value {
+                    hasAddition(UIImage(named: "ship_2_4"))
+                } else if addition == nameOfTechShips.Friedrich_der_Große.value {
+                    hasAddition(UIImage(named: "ship_2_5"))
+                } else if addition == nameOfTechShips.Gascogne.value {
+                    hasAddition(UIImage(named: "ship_2_6"))
+                }
+            }
+        } else {
+            hasNotAddition()
+        }
     }
     
     func getNumber(withSection section:Int, andRow row:Int) -> String {

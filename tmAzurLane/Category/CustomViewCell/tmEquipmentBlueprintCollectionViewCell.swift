@@ -39,10 +39,15 @@ class tmEquipmentBlueprintCollectionViewCell: UICollectionViewCell {
         let option = UIView.AnimationOptions.repeat.rawValue|UIView.AnimationOptions.autoreverse.rawValue|UIView.AnimationOptions.curveLinear.rawValue
         let text = self.introduction.text! as NSString
         let offset = text.size(withAttributes: [.font:UIFont.systemFont(ofSize: 18)]).width-width
-        
-        UIView.animate(withDuration: TimeInterval(3.0*offset/100), delay: 0, options:  UIView.AnimationOptions(rawValue: option), animations: {
-            self.introduction.transform = CGAffineTransform(translationX: -offset, y: 0)
-        }, completion: nil)
+        if offset < 20 {
+            UIView.animate(withDuration: TimeInterval(3.0*23/100), delay: 0, options:  UIView.AnimationOptions(rawValue: option), animations: {
+                self.introduction.transform = CGAffineTransform(translationX: -offset, y: 0)
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: TimeInterval(3.0*offset/100), delay: 0, options:  UIView.AnimationOptions(rawValue: option), animations: {
+                self.introduction.transform = CGAffineTransform(translationX: -offset, y: 0)
+            }, completion: nil)
+        }
     }
 
     func stopAnimate() {
