@@ -31,7 +31,8 @@ class tmSearchViewController: UIViewController {
     
 }
 
-extension tmSearchViewController:UITableViewDelegate {
+// MARK: - UITableViewDelegate
+extension tmSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = tmProfitViewController()
         viewController.techInfoId = (presenter?.getTechInfoId(withSection: indexPath.section, row: indexPath.row))!
@@ -39,7 +40,8 @@ extension tmSearchViewController:UITableViewDelegate {
     }
 }
 
-extension tmSearchViewController:UITableViewDataSource {
+// MARK: - UITableViewDataSource
+extension tmSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let text = tmDataBaseManager.shareInstance.selectFromTech(withNumber: section+1)
         let headView = tmHeadView()
@@ -86,7 +88,8 @@ extension tmSearchViewController:UITableViewDataSource {
     }
 }
 
-extension tmSearchViewController:UIGestureRecognizerDelegate {
+// MARK: - UIGestureRecognizerDelegate
+extension tmSearchViewController: UIGestureRecognizerDelegate {
     @objc fileprivate func showOrHide(tap sender:UITapGestureRecognizer) -> Void {
         guard sender.view!.tag >= 0 && sender.view!.tag<shArray.count else {
             return
@@ -97,7 +100,7 @@ extension tmSearchViewController:UIGestureRecognizerDelegate {
     }
 }
 
-extension tmSearchViewController:tmSearchDelegate {
+extension tmSearchViewController: tmSearchDelegate {
     
 }
 

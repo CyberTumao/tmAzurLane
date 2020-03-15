@@ -269,6 +269,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410C4C4F241E2509003FB906 /* MainCode */ = {
+			isa = PBXGroup;
+			children = (
+				416429AA2401765B006535DC /* Category */,
+				41F740E423FCEAC4004AAAE9 /* HomePage */,
+				416D18872407BBE7004981C1 /* Profit */,
+				416A2F1F2408F28400D6C3A8 /* ProfitDetail */,
+			);
+			path = MainCode;
+			sourceTree = "<group>";
+		};
 		4163A9F0240BA4F90014B643 /* AddTechDetailed */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +507,7 @@
 		417916E123FCE94E00D24C08 /* tmAzurLane */ = {
 			isa = PBXGroup;
 			children = (
+				410C4C4F241E2509003FB906 /* MainCode */,
 				41BFCB5E241483FB0080466C /* SSZipArchive */,
 				41BFCB4B241481EB0080466C /* FMDB */,
 				41642EC624062A9200F0E05A /* DefineFile */,
@@ -503,10 +515,6 @@
 				416BEA8B23FE3DB200FA9197 /* OpenCVMethod */,
 				41F740F223FD02EC004AAAE9 /* Bridge */,
 				41F740EA23FCEAC4004AAAE9 /* Database */,
-				416429AA2401765B006535DC /* Category */,
-				41F740E423FCEAC4004AAAE9 /* HomePage */,
-				416D18872407BBE7004981C1 /* Profit */,
-				416A2F1F2408F28400D6C3A8 /* ProfitDetail */,
 				417916E223FCE94E00D24C08 /* AppDelegate.swift */,
 				417916E423FCE94E00D24C08 /* SceneDelegate.swift */,
 				417916E623FCE94E00D24C08 /* ContentView.swift */,
