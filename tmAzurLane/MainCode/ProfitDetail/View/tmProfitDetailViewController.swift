@@ -111,10 +111,15 @@ extension tmProfitDetailViewController:UIImagePickerControllerDelegate,UINavigat
         } else {
             presenter?.startEdit()
             let fileArray = FileManager.default.subpaths(atPath: kTmpPath())
-            for fn in fileArray!{
-                try! FileManager.default.removeItem(atPath: kTmpPath() + "\(fn)")
+            for fn in fileArray! {
+                if fn != "com.apple.dyld" {
+                    try! FileManager.default.removeItem(atPath: kTmpPath() + "\(fn)")
+                }
+//                3.21
+//                真机运行时删除 com.apple.dyld 会崩溃
+//                try! FileManager.default.removeItem(atPath: kTmpPath() + "\(fn)")
             }
-            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 //初始化图片控制器
                 let picker = UIImagePickerController()
                 //设置代理
@@ -122,10 +127,9 @@ extension tmProfitDetailViewController:UIImagePickerControllerDelegate,UINavigat
                 //指定图片控制器类型
                 picker.sourceType = .photoLibrary
                 //弹出控制器，显示界面
-                self.present(picker, animated: true, completion: {
-                    () -> Void in
-                    
-                })
+                self.present(picker, animated: true) {
+
+                }
             }else{
                 print("读取相册错误")
             }
