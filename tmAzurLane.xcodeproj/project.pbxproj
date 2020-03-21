@@ -40,6 +40,7 @@
 		416BEA9A23FE86D000FA9197 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9923FE86D000FA9197 /* CoreGraphics.framework */; };
 		416BEA9E23FE86F100FA9197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9D23FE86F100FA9197 /* Foundation.framework */; };
 		416BEAA023FE86FA00FA9197 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416BEA9F23FE86FA00FA9197 /* UIKit.framework */; };
+		416E1B8E241F3BCD00E8E72D /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 416E1B8D241F3BCD00E8E72D /* loading.gif */; };
 		417916E323FCE94E00D24C08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417916E223FCE94E00D24C08 /* AppDelegate.swift */; };
 		417916E523FCE94E00D24C08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417916E423FCE94E00D24C08 /* SceneDelegate.swift */; };
 		417916E723FCE94E00D24C08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417916E623FCE94E00D24C08 /* ContentView.swift */; };
@@ -80,6 +81,7 @@
 		41BFCB94241484540080466C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BFCB932414844B0080466C /* libz.tbd */; };
 		41BFCB96241484790080466C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BFCB95241484620080466C /* libiconv.tbd */; };
 		41BFCB98241485100080466C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BFCB97241485100080466C /* Security.framework */; };
+		41E4C4A6242215AA001EBD6F /* tmCurring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E4C4A5242215AA001EBD6F /* tmCurring.swift */; };
 		41ED9B8823FFBB5700C40034 /* tmHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED9B8723FFBB5700C40034 /* tmHeadView.swift */; };
 		41ED9B8C23FFC02E00C40034 /* tmHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ED9B8B23FFC02E00C40034 /* tmHeadView.xib */; };
 		41F740EB23FCEAC4004AAAE9 /* tmSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F740E523FCEAC4004AAAE9 /* tmSearchViewController.xib */; };
@@ -147,6 +149,7 @@
 		416BEA9B23FE86E400FA9197 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		416BEA9D23FE86F100FA9197 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		416BEA9F23FE86FA00FA9197 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		416E1B8D241F3BCD00E8E72D /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		417916DF23FCE94E00D24C08 /* tmAzurLane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tmAzurLane.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		417916E223FCE94E00D24C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		417916E423FCE94E00D24C08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +219,7 @@
 		41BFCB932414844B0080466C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		41BFCB95241484620080466C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		41BFCB97241485100080466C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		41E4C4A5242215AA001EBD6F /* tmCurring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmCurring.swift; sourceTree = "<group>"; };
 		41ED9B8723FFBB5700C40034 /* tmHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tmHeadView.swift; sourceTree = "<group>"; };
 		41ED9B8B23FFC02E00C40034 /* tmHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tmHeadView.xib; sourceTree = "<group>"; };
 		41F740E523FCEAC4004AAAE9 /* tmSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tmSearchViewController.xib; sourceTree = "<group>"; };
@@ -278,6 +282,14 @@
 				416A2F1F2408F28400D6C3A8 /* ProfitDetail */,
 			);
 			path = MainCode;
+			sourceTree = "<group>";
+		};
+		410C4C55241E37EF003FB906 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				416E1B8D241F3BCD00E8E72D /* loading.gif */,
+			);
+			path = Pictures;
 			sourceTree = "<group>";
 		};
 		4163A9F0240BA4F90014B643 /* AddTechDetailed */ = {
@@ -507,6 +519,8 @@
 		417916E123FCE94E00D24C08 /* tmAzurLane */ = {
 			isa = PBXGroup;
 			children = (
+				41E4C4A424221590001EBD6F /* Currying */,
+				410C4C55241E37EF003FB906 /* Pictures */,
 				410C4C4F241E2509003FB906 /* MainCode */,
 				41BFCB5E241483FB0080466C /* SSZipArchive */,
 				41BFCB4B241481EB0080466C /* FMDB */,
@@ -657,6 +671,14 @@
 				41BFCB7E241483FB0080466C /* mz_strm_os.h */,
 			);
 			path = minizip;
+			sourceTree = "<group>";
+		};
+		41E4C4A424221590001EBD6F /* Currying */ = {
+			isa = PBXGroup;
+			children = (
+				41E4C4A5242215AA001EBD6F /* tmCurring.swift */,
+			);
+			path = Currying;
 			sourceTree = "<group>";
 		};
 		41ED9B8623FFBB2300C40034 /* HeadView */ = {
@@ -859,6 +881,7 @@
 				416429AE24017734006535DC /* tmEquipmentBlueprintCategoryViewController.xib in Resources */,
 				41F740EB23FCEAC4004AAAE9 /* tmSearchViewController.xib in Resources */,
 				416A2F232408F48700D6C3A8 /* tmProfitTableViewCell.xib in Resources */,
+				416E1B8E241F3BCD00E8E72D /* loading.gif in Resources */,
 				41BFCB86241483FC0080466C /* LICENSE in Resources */,
 				416A2F1D2408EF4B00D6C3A8 /* tmProfitViewController.xib in Resources */,
 				4163A9F4240BA5410014B643 /* tmAddTechDetailedViewController.xib in Resources */,
@@ -964,6 +987,7 @@
 				416A2F2D2408FD3600D6C3A8 /* tmProfitDetailPresenter.swift in Sources */,
 				41BFCB59241481EB0080466C /* FMDatabase.m in Sources */,
 				41F740EE23FCEAC4004AAAE9 /* tmSearchViewController.swift in Sources */,
+				41E4C4A6242215AA001EBD6F /* tmCurring.swift in Sources */,
 				41BFCB91241483FC0080466C /* mz_strm.c in Sources */,
 				416BEA9623FE417700FA9197 /* OpenCVMethods.mm in Sources */,
 				4143954D240F969F00D3065B /* tmProfitDetailedDelegate.swift in Sources */,

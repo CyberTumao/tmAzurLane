@@ -19,6 +19,8 @@ class tmSearchViewControllerPresenter {
     }
     
     func getProfitMaterialData() {
+        model.techDetailedInfosFirst.removeAll()
+        model.techDetailedInfosSecond.removeAll()
         getProfitMaterialData(withNumber: 1)
         getProfitMaterialData(withNumber: 2)
     }

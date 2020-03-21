@@ -15,7 +15,7 @@ class tmEquipmentBlueprintCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var chosenImage: UIImageView!
     
     lazy var hasClicked = {
-        return false
+        false
     }()
     
     override func awakeFromNib() {

@@ -56,7 +56,6 @@ class tmProfitDetailTableViewCell: UITableViewCell {
     }
     
     func setCount(_ count:Int) {
-        print(count)
         self.count = count
         if count <= 0 {
             minus.isEnabled = false

@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias swiftBlock = (_ str: String) -> Void
+typealias swiftBlock = () -> Void
 
 class tmHeadView: UIView {
 
@@ -41,7 +41,7 @@ class tmHeadView: UIView {
     
     @IBAction func editButton(_ sender: Any) {
         if callBack != nil {
-            callBack!("这里的闭包传递了一个字符串")
+            callBack!()
         }
     }
     

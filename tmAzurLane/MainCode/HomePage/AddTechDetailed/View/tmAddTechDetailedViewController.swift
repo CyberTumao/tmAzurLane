@@ -8,7 +8,9 @@
 
 import UIKit
 
-class tmAddTechDetailedViewController: UIViewController,tmAddTechDetailedDelegate {
+typealias saveDataResultBlock = (Bool) -> Void
+
+class tmAddTechDetailedViewController: UIViewController {
     @IBOutlet weak var transparentView: UIView!
     @IBOutlet weak var numberFirst: UIButton!
     @IBOutlet weak var numberSecond: UITextField!
@@ -26,6 +28,7 @@ class tmAddTechDetailedViewController: UIViewController,tmAddTechDetailedDelegat
         return tmAddTechDetailedPresenter(self)
     }()
     var techNumber:Int?
+    var result:saveDataResultBlock?
     
     convenience init(_ techNumber:Int) {
         self.init()
@@ -49,7 +52,6 @@ class tmAddTechDetailedViewController: UIViewController,tmAddTechDetailedDelegat
             numberSecondAlert()
         } else {
             presenter?.saveData(withTechNumber: techNumber!)
-            self.dismiss(animated: true, completion: nil)
         }
     }
     @IBAction func name(_ sender: Any) {
@@ -81,6 +83,11 @@ class tmAddTechDetailedViewController: UIViewController,tmAddTechDetailedDelegat
             presenter?.changeData(pickerView.selectedRow(inComponent: 0), 0)
             numberFirst.setAttributedTitle(NSAttributedString(string: presenter!.getPickerArray(techNumber!)[pickerView.selectedRow(inComponent: 0)]), for: .normal)
             if pickerView.selectedRow(inComponent: 0) == 1 {
+                if techNumber == 1 {
+                    additionButton.setTitle(nameOfTechShips.Neptune.value, for: .normal)
+                } else {
+                    additionButton.setTitle(nameOfTechShips.Seattle.value, for: .normal)
+                }
                 additionLabel.isHidden = false
                 additionButton.isHidden = false
             } else {
@@ -145,6 +152,25 @@ extension tmAddTechDetailedViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+}
+
+// MARK: - tmAddTechDetailedDelegate
+extension tmAddTechDetailedViewController: tmAddTechDetailedDelegate {
+    
+    func saveDataSuccess() {
+        if let result = result {
+            result(true)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func saveDataFailure() {
+        if let result = result {
+            result(false)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - Alert

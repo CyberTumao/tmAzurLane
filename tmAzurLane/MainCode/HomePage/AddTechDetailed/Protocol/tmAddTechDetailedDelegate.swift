@@ -10,4 +10,7 @@ import Foundation
 
 protocol tmAddTechDetailedDelegate:NSObjectProtocol {
     
+    func saveDataSuccess()
+    func saveDataFailure()
+    
 }

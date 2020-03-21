@@ -17,7 +17,7 @@ class tmSearchViewController: UIViewController {
         return temp
     }()
     lazy var presenter:tmSearchViewControllerPresenter? = {
-        return tmSearchViewControllerPresenter(self)
+        tmSearchViewControllerPresenter(self)
     }()
     
     @IBOutlet weak var tableView: UITableView!
@@ -42,6 +42,7 @@ extension tmSearchViewController: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 extension tmSearchViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let text = tmDataBaseManager.shareInstance.selectFromTech(withNumber: section+1)
         let headView = tmHeadView()
@@ -49,22 +50,30 @@ extension tmSearchViewController: UITableViewDataSource {
         headView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showOrHide(tap:))))
         headView.isUserInteractionEnabled = true
         headView.label.text = text
-        headView.callBackBlock {(str) in
-            self.present(tmAddTechDetailedViewController(section+1), animated: true, completion: nil)
+        headView.callBackBlock { () in
+            let vc = tmAddTechDetailedViewController(section+1)
+            vc.result = { result in
+                if result {
+                    self.reloadTableview()
+                } else {
+                    self.addTechFailureAlert()
+                }
+            }
+            self.present(vc, animated: true, completion: nil)
         }
         return headView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 90
+        90
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        2
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        80
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -100,16 +109,29 @@ extension tmSearchViewController: UIGestureRecognizerDelegate {
     }
 }
 
+// MARK: - tmSearchDelegate
 extension tmSearchViewController: tmSearchDelegate {
     
 }
 
+// MARK: - Private Method
 extension tmSearchViewController {
+    
     func initData() -> Void {
         tableView.register(UINib.init(nibName: cellId, bundle:.main), forCellReuseIdentifier: cellId)
         presenter?.getProfitMaterialData()
         self.navigationItem.title = "AzurLane"
     }
+    
+    func reloadTableview() {
+        presenter?.getProfitMaterialData()
+        tableView.reloadData()
+    }
+    
+    func addTechFailureAlert() {
+        
+    }
+    
 }
 
 // MARK: - swiftUI
@@ -117,7 +139,7 @@ struct UIBVCPresenter: UIViewControllerRepresentable {
     ///UIViewControllerRepresentable  协议中必须实现的方法 -  当 SwiftUI 准备好显示 view 时，它会调用此方法一次
     ///作用： 将需要Preview显示VC 返回出来。
     func makeUIViewController(context: UIViewControllerRepresentableContext<UIBVCPresenter>) -> tmSearchViewController {
-        return tmSearchViewController()
+        tmSearchViewController()
     }
     ///UIViewControllerRepresentable  协议中必须实现的方法
     ///    更新UIViewController时候会调用这个方法  可以做一系列l业务实现，

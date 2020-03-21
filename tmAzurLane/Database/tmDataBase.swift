@@ -59,14 +59,22 @@ class tmDataBaseManager: NSObject {
         }
     }
     
-    func insertIntoTechDetailedInfo(withTechNumber:Int, name:String, number:String, quality:Int, scale:Int, addition:String?) {
+    func insertIntoTechDetailedInfo(withTechNumber:Int, name:String, number:String, quality:Int, scale:Int, addition:String?, success:() -> Void, failure:() -> Void) {
         guard let addition = addition else {
             let sql = "INSERT INTO TechDetailedInfo(tech_number,name,number,quality,scale) VALUES (?,?,?,?,?)"
-            db.executeUpdate(sql, withArgumentsIn: [withTechNumber, name, number, quality, scale])
+            if db.executeUpdate(sql, withArgumentsIn: [withTechNumber, name, number, quality, scale]) {
+                success()
+            } else {
+                failure()
+            }
             return
         }
         let sql = "INSERT INTO TechDetailedInfo(tech_number,name,number,quality,scale,addition) VALUES (?,?,?,?,?,?)"
-        db.executeUpdate(sql, withArgumentsIn: [withTechNumber, name, number, quality, scale,addition])
+        if db.executeUpdate(sql, withArgumentsIn: [withTechNumber, name, number, quality, scale,addition]) {
+            success()
+        } else {
+            failure()
+        }
     }
     
     // MARK: - ProfitMaterial

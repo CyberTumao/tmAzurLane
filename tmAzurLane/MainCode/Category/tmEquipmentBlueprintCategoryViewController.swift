@@ -18,7 +18,7 @@ class tmEquipmentBlueprintCategoryViewController: UIViewController {
     var tmTempViewCell:tmEquipmentBlueprintCollectionViewCell? = nil
     var clickIndex:Int?
     lazy var presenter:tmEquipmentBlueprintPresenter? = {
-        return tmEquipmentBlueprintPresenter(self)
+        tmEquipmentBlueprintPresenter(self)
     }()
     let cellId = "tmEquipmentBlueprintCollectionViewCell"
     let bounds:CGFloat = 6
@@ -77,6 +77,7 @@ extension tmEquipmentBlueprintCategoryViewController: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! tmEquipmentBlueprintCollectionViewCell
+        cell.tag = indexPath.row
         guard let text = presenter?.getName(withRow: indexPath.row) else {
             cell.introduction.text = ""
             return cell
@@ -128,7 +129,7 @@ extension tmEquipmentBlueprintCategoryViewController {
         for item in collectionView.visibleCells.enumerated() {
             let element = item.element as! tmEquipmentBlueprintCollectionViewCell
             if !element.chosenImage.isHidden {
-                result.append(item.offset)
+                result.append(element.tag)
             }
         }
         return result
