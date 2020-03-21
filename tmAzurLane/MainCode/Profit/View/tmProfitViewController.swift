@@ -17,13 +17,12 @@ class tmProfitViewController: UIViewController {
     lazy var presenter:tmProfitPresenter? = {
         return tmProfitPresenter()
     }()
-    lazy var techInfoId:Int = {
-        return 0
-    }()
+    lazy var techInfoId:Int = { 0 }()
+    lazy var techNumber:String? = { "" }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initData()
+        initData()
     }
     
     // MARK: - Button Click
@@ -37,9 +36,11 @@ class tmProfitViewController: UIViewController {
     }
     
     func initData() -> Void {
+        self.title = techNumber
         presenter?.getData(techInfoId)
         tableView.register(UINib.init(nibName: cellId, bundle:.main), forCellReuseIdentifier: cellId)
     }
+
 }
 
 // MARK: - UITableViewDelegate

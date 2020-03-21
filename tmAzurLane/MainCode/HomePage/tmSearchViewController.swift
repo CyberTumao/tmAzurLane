@@ -36,6 +36,7 @@ extension tmSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = tmProfitViewController()
         viewController.techInfoId = (presenter?.getTechInfoId(withSection: indexPath.section, row: indexPath.row))!
+        viewController.techNumber = presenter?.getNumber(withSection: indexPath.section, andRow: indexPath.row)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

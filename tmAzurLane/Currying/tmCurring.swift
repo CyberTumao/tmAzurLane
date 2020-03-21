@@ -21,8 +21,14 @@ class tmCurrying: NSObject {
     }
 
     func test() -> Void {
+        
+        let addTwo = addCurrying(2)
+        let addEight = addCurrying(8)
+        let _ = addTwo(4)
+        let _ = addEight(4)
+        
         var car = "Benz"
-        let closure = { [] in
+        let closure = { [car] in
           print("I drive \(car)")
         }
         car = "Tesla"
