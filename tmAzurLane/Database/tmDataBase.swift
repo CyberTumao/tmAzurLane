@@ -59,6 +59,16 @@ class tmDataBaseManager: NSObject {
         }
     }
     
+    /// 添加新的 TechDetailedInfo
+    /// - Parameters:
+    ///   - withTechNumber: 科研id
+    ///   - name: 名称
+    ///   - number: 编号
+    ///   - quality: 品质
+    ///   - scale: 规模
+    ///   - addition: 定向研发时填入，船名
+    ///   - success: 添加成功时的回调
+    ///   - failure: 添加失败时的回调
     func insertIntoTechDetailedInfo(withTechNumber:Int, name:String, number:String, quality:Int, scale:Int, addition:String?, success:() -> Void, failure:() -> Void) {
         guard let addition = addition else {
             let sql = "INSERT INTO TechDetailedInfo(tech_number,name,number,quality,scale) VALUES (?,?,?,?,?)"
