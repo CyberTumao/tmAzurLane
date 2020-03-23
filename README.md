@@ -15,54 +15,54 @@
 ## tmAL.db
 + Tech
 
-id 主键
+  id 主键
 
-number 编号
+  number 编号
 
-name 名称
+  name 名称
 + ProfitMaterial
 
-id 主键
+  id 主键
 
-name 名称
+  name 名称
 
-picture 图片路径
+  picture 图片路径
 
-reference 预留字段
+  reference 预留字段
 
 + TechDetailidInfo
 
-id 主键
+  id 主键
 
-tech_number 几期科研
+  tech_number 几期科研
 
-name 名称
+  name 名称
 
-number 编号
+  number 编号
 
-quality 品质 0蓝1紫2金
+  quality 品质 0蓝1紫2金
 
-scale 规模 0小1中2大
+  scale 规模 0小1中2大
 
-addition 船名，用于定向研发时
+  addition 船名，用于定向研发时
 
 + historyAdd
 
-id 主键
+  id 主键
 
-techInfoId 科研项目id
+  techInfoId 科研项目id
 
-historyId 纪录id
+  historyId 纪录id
 
-date 日期
+  date 日期
 
 + history
 
-id 主键
+  id 主键
 
-number 纪录id
+  number 纪录id
 
-profitMeterialId 图纸id
+  profitMeterialId 图纸id
 
-profitNumber 数量
+  profitNumber 数量
 
